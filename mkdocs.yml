@@ -126,5 +126,5 @@ extra_css:
 nav:
 - index.md
 - Blog:
-  - 1/25.md
+  - 测试: 1/25.md
 - 标签: tag.md
