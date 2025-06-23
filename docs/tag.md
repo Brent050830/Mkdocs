@@ -1,5 +1,5 @@
 ---
-title: 分类
+title: 标签
 hide:
   #- navigation # 显示右
   #- toc #显示左
