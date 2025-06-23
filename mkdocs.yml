@@ -72,7 +72,7 @@ plugins:
   - blog
   - tags:
       tags_file: tags.md
-  - glightbox
+
 
 extra:
   social:
