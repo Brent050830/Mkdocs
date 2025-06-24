@@ -85,6 +85,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - def_list
   - footnotes
   - md_in_html
@@ -103,6 +106,13 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.caret
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.inlinehilite
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.tasklist:
@@ -112,6 +122,18 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex: # latex支持
+      generic: true
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+      linenums: true # 显示行号
+      # auto_title: true # 显示编程语言名称
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra_javascript:
   - javascripts/katex.js

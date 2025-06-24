@@ -10,7 +10,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-clock-fast:{ .lg .middle } __Tips__
+- :material-clock:{ .lg .middle } __Tips__  
 
     ---
 
