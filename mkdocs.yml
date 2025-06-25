@@ -24,6 +24,7 @@ theme:
   font:
     text: Roboto
   name: material
+  custom_dir: docs/overrides  #主要是这一行
   palette:
     # primary: deep purple
     # accent: orange
@@ -87,12 +88,15 @@ plugins:
       authors_file: "{blog}/.authors.yml" #作者信息
   - tags:
       tags_file: tags.md
+  - git-revision-date-localized:
+      enable_creation_date: true
 
 
 extra:
   social:
     - icon: fontawesome/brands/mastodon 
       link: https://fosstodon.org/@squidfunk
+  generator: false
 
 markdown_extensions:
   - abbr
