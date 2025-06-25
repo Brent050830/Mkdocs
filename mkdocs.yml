@@ -1,8 +1,11 @@
-site_name: Brent_blog
+site_name: Brent_note
+site_author: Brent
 site_url: https://brent050830.github.io/Mkdocs/
+site_description: Brent的笔记本
 theme:
   logo:
   favicon:
+  custom_dir: docs/overrides  # 必需配置！！！
   icon:
     admonition:
       note: octicons/tag-16
@@ -58,6 +61,7 @@ theme:
     - content.tabs.link
     - content.tooltips
     - content.code.copy #代码复制
+    - content.code.select
     - content.action.edit
     - content.action.view
     - content.code.annotate
@@ -69,7 +73,18 @@ theme:
 
 plugins:
   - search
-  - blog
+  - blog:
+      post_date_format: full #时间
+      draft: true
+      draft_if_future_date: true #自动将具有未来日期的帖子标记为草稿
+      post_readtime: true
+      post_readtime_words_per_minute: 265 #计算帖子的阅读时间时读者每分钟预计阅读的字数
+      post_url_format: "{date}/{slug}"
+      # categories_slugify: !!python/object/apply:pymdownx.slugs.slugify
+      #   kwds:
+      #     case: lower
+      pagination_url_format: "page/{page}"
+      authors_file: "{blog}/.authors.yml" #作者信息
   - tags:
       tags_file: tags.md
 
@@ -126,6 +141,7 @@ markdown_extensions:
       generic: true
   - toc:
       permalink: true # 固定标题位置为当前位置
+      toc_depth: 3
   - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
       linenums: true # 显示行号
@@ -139,11 +155,15 @@ extra_javascript:
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - javascripts/extra.js
 
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
+  - stylesheets/yuanjiao.css
+  - stylesheets/extra.css
 
-
+hooks:
+  - docs/overrides/hooks/reading_time.py  
 
 nav:
 - index.md
