@@ -1,2 +1,14 @@
+/* 使用支持CORS的CDN加载字体 */
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/style.min.css');
 
+body {
+    font-family: "LXGW WenKai", "Microsoft YaHei", sans-serif;
+    font-weight: normal;
+}
+
+button.md-top {
+    font-family: "LXGW WenKai", "Microsoft YaHei", sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+}
 
