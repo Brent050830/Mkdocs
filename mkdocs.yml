@@ -167,6 +167,7 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css
 
 
 hooks:
