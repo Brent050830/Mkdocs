@@ -74,6 +74,9 @@ theme:
 
 plugins:
   - search
+  - optimize
+  - privacy:
+      enabled: !ENV [CI, false]
   - blog:
       post_date_format: full #时间
       draft: true
