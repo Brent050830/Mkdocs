@@ -167,7 +167,7 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
-  - https://static.zeoseven.com/zsft/292/main/result.css
+
 
 hooks:
   - docs/overrides/hooks/reading_time.py  
