@@ -167,7 +167,7 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
-    - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/style.min.css
 
 
 hooks:
