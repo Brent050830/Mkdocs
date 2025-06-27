@@ -3,7 +3,7 @@
 }
 
 [data-md-color-scheme="slate"] .md-nav__list a.is-active {
-  color: #969696;
+  color: #A480F2;
 }
 
 .md-sidebar--secondary .md-nav > .md-nav__list > li > a + .md-nav {
@@ -12,24 +12,30 @@
 .md-sidebar--secondary .md-nav > .md-nav__list > li > a.is-active + .md-nav {
   display: block;
 }
-/* docs/css/extra.css */
-.md-nav__item--nested .md-nav {
-  display: none;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
+/* 修改右侧边栏目录文字大小 */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.78rem; /* 默认值约为 0.8rem，增大到 0.85rem */
+}
+/* 修改上标签页导航栏字体大小 */
+.md-tabs__link {
+  font-size: 0.9rem; /* 默认约为 0.8rem，可根据需要调整 */
 }
 
-.md-nav__toggle:checked ~ .md-nav {
-  display: block;
-  height: auto;
+/* 活跃标签页的字体样式 */
+.md-tabs__link--active {
+  font-size: 0.9rem; /* 活跃标签页可稍大 */
+  font-weight: 600;
 }
-
-.md-nav__toggle:checked ~ label .md-nav__icon {
-  transform: rotate(180deg);
+/* 修改页面标题字体大小 */
+div.md-header__topic:nth-child(2) > span:nth-child(1) {
+  font-size: 1.1rem; /* 默认约为 0.9rem，可根据需要调整 */
 }
-
-.md-nav__icon {
-  float: right;
-  transition: transform 0.3s ease;
+/* 修改左侧边栏 */
+li.md-nav__item--active:nth-child(2) > .md-nav__link {
+  font-size: 0.9rem; /* 调整为所需大小 */
+}
+/* 修改左侧活跃导航链接的字体大小和粗细 */
+.md-nav__link.md-nav__link--active {
+  font-size: 0.85rem;      /* 调整字体大小 */
+  font-weight: 600;       /* 加粗文本 */
 }
