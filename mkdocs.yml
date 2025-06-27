@@ -4,6 +4,9 @@ site_url: https://brent050830.xyz
 site_description: Brent的笔记本
 theme:
   logo:
+  font:
+    text: JetBrains Mono, LXGW WenKai Screen GB Screen 
+    code: JetBrains Mono, Consolas
   favicon:
   custom_dir: docs/overrides  # 必需配置！！！
   icon:
@@ -21,8 +24,6 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
   language: zh
-  font:
-    text: Roboto
   name: material
   custom_dir: docs/overrides  #主要是这一行
   palette:

@@ -25,6 +25,6 @@ button.md-top {
 } */
 @font-face {
   font-family: "LXGW WenKai";
-    src: url('https://github.com/Brent050830/Mkdocs/raw/main/docs/assets/fonts/LXGWWenKai-Light.ttf') format('truetype');
+    src: url('/assets/font/LXGWWenKai-Light.ttf') format('truetype');
 font-weight: normal;    
 }
