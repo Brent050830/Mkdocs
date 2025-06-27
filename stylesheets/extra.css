@@ -13,9 +13,9 @@ button.md-top {
 } */
 
 
-@font-face {
+/* @font-face {
     font-family: 'LXGW WenKai';
-    src: url('../font/LXGWWenKai-Light.ttf') format('truetype');
+    src: url('/assets/font/LXGWWenKai-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -23,5 +23,4 @@ button.md-top {
     font-family: "LXGW WenKai", "Microsoft YaHei", sans-serif;
     font-size: 16px;
     font-weight: lighter;
-}
-1
+} */
