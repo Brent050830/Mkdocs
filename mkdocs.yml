@@ -77,7 +77,7 @@ theme:
 plugins:
   - search
   - glightbox
-  - mermaid2
+  # - mermaid2
   - markmap
   - minify:
       minify_html: true
