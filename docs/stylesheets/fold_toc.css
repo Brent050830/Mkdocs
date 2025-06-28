@@ -18,17 +18,17 @@
 }
 /* 修改上标签页导航栏字体大小 */
 .md-tabs__link {
-  font-size: 0.9rem; /* 默认约为 0.8rem，可根据需要调整 */
+  font-size: 0.8rem; /* 默认约为 0.8rem，可根据需要调整 */
 }
 
 /* 活跃标签页的字体样式 */
 .md-tabs__link--active {
-  font-size: 0.9rem; /* 活跃标签页可稍大 */
-  font-weight: 600;
+  font-size: 0.8rem; /* 活跃标签页可稍大 */
+  font-weight: 500;
 }
 /* 修改页面标题字体大小 */
 div.md-header__topic:nth-child(2) > span:nth-child(1) {
-  font-size: 1.1rem; /* 默认约为 0.9rem，可根据需要调整 */
+  font-size: 1.0rem; /* 默认约为 0.9rem，可根据需要调整 */
 }
 /* 修改左侧边栏 */
 li.md-nav__item--active:nth-child(2) > .md-nav__link {
@@ -36,6 +36,6 @@ li.md-nav__item--active:nth-child(2) > .md-nav__link {
 }
 /* 修改左侧活跃导航链接的字体大小和粗细 */
 .md-nav__link.md-nav__link--active {
-  font-size: 0.85rem;      /* 调整字体大小 */
+  font-size: 0.8rem;      /* 调整字体大小 */
   font-weight: 600;       /* 加粗文本 */
 }
