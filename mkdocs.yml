@@ -76,7 +76,12 @@ theme:
 
 plugins:
   - search
-
+  - glightbox
+  - mermaid2
+  - markmap
+  - minify:
+      minify_html: true
+  - pub-obsidian
   - privacy:
       enabled: !ENV [CI, false]
   - blog:
