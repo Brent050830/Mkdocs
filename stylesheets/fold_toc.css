@@ -36,6 +36,6 @@ li.md-nav__item--active:nth-child(2) > .md-nav__link {
 }
 /* 修改左侧活跃导航链接的字体大小和粗细 */
 .md-nav__link.md-nav__link--active {
-  font-size: 0.8rem;      /* 调整字体大小 */
-  font-weight: 600;       /* 加粗文本 */
+  font-size: 0.85rem;      /* 调整字体大小 */
+  font-weight: 550;       /* 加粗文本 */
 }
