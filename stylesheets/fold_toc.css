@@ -45,11 +45,11 @@ li.md-nav__item--active:nth-child(2) > .md-nav__link {
 
 /* 修改所有 Admonition 标题的字体大小 */
 .admonition-title {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 /* 增大 admonition 内的字体大小 */
 .md-typeset .admonition, .md-typeset details {
-  font-size: inherit;
+  font-size: 0.75rem;
 }
 
 
