@@ -65,7 +65,24 @@
             }
           },
           {
-            "id": "33863a481e904b3c",
+            "id": "bdb83eb0ebf936c6",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "1/25.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "pinned": true,
+              "icon": "lucide-list",
+              "title": "25 的大纲"
+            }
+          },
+          {
+            "id": "7b648e202203a1ff",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -160,15 +177,23 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "templater-obsidian:Templater": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "aab451e2c4477199",
-  "lastOpenFiles": []
+  "active": "d3149a9f36047b6f",
+  "lastOpenFiles": [
+    "index 1.md",
+    "1/25.md",
+    "未命名",
+    "Excalidraw/Drawing 2025-06-28 17.32.25.excalidraw.md",
+    "Excalidraw"
+  ]
 }
