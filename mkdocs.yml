@@ -187,7 +187,7 @@ hooks:
   - docs/overrides/hooks/reading_time.py  
 
 nav:
-- index.md
-- Blog:
-  - 测试: 1/25.md
+- 主页: index.md
+- 杂项: 
+  - 车队: 杂项/车队/1.md
 - 标签: tag.md

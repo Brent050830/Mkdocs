@@ -1,5 +1,8 @@
 {
   "strictLineBreaks": true,
   "showLineNumber": true,
-  "useTab": false
+  "useTab": false,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./png",
+  "newLinkFormat": "relative"
 }
