@@ -81,6 +81,7 @@ plugins:
   - markmap
   - minify:
       minify_html: true
+
   - pub-obsidian
   - privacy:
       enabled: !ENV [CI, false]
@@ -187,7 +188,7 @@ hooks:
   - docs/overrides/hooks/reading_time.py  
 
 nav:
-- 主页: index.md
-- 杂项: 
+- 🏫主页: index.md
+- 🗃️杂项: 
   - 车队: 杂项/车队/1.md
-- 标签: tag.md
+- 🕑标签: tag.md
