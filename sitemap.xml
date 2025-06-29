@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://brent050830.xyz/</loc>
-         <lastmod>2025-06-28</lastmod>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://brent050830.xyz/index%201/</loc>
+         <lastmod>2025-06-29</lastmod>
     </url>
     <url>
          <loc>https://brent050830.xyz/tag/</loc>
-         <lastmod>2025-06-28</lastmod>
+         <lastmod>2025-06-29</lastmod>
     </url>
     <url>
          <loc>https://brent050830.xyz/1/25/</loc>
-         <lastmod>2025-06-28</lastmod>
+         <lastmod>2025-06-29</lastmod>
     </url>
     <url>
          <loc>https://brent050830.xyz/blog/</loc>
-         <lastmod>2025-06-28</lastmod>
+         <lastmod>2025-06-29</lastmod>
     </url>
 </urlset>
