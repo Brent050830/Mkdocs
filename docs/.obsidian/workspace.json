@@ -65,20 +65,18 @@
             }
           },
           {
-            "id": "bdb83eb0ebf936c6",
+            "id": "a6e62315a5fc673f",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "outline",
               "state": {
-                "file": "1/25.md",
+                "file": "杂项/车队/1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "pinned": true,
               "icon": "lucide-list",
-              "title": "25 的大纲"
+              "title": "1 的大纲"
             }
           },
           {
@@ -91,11 +89,13 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
