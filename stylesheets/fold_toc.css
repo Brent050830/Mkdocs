@@ -12,10 +12,7 @@
 .md-sidebar--secondary .md-nav > .md-nav__list > li > a.is-active + .md-nav {
   display: block;
 }
-/* 修改右侧边栏目录文字大小 */
-.md-sidebar--secondary .md-nav__link {
-  font-size: 0.78rem; /* 默认值约为 0.8rem，增大到 0.85rem */
-}
+
 /* 修改上标签页导航栏字体大小 */
 .md-tabs__link {
   font-size: 0.8rem; /* 默认约为 0.8rem，可根据需要调整 */
@@ -26,20 +23,24 @@
   font-size: 0.8rem; /* 活跃标签页可稍大 */
   font-weight: 500;
 }
-/* 修改页面标题字体大小 */
-div.md-header__topic:nth-child(2) > span:nth-child(1) {
-  font-size: 1.0rem; /* 默认约为 0.9rem，可根据需要调整 */
+
+/* 修改左侧活跃导航链接的字体大小和粗细 */
+.md-nav__link {
+  font-size: 0.75rem;      /* 调整字体大小 */
+  font-weight: 500;       /* 加粗文本 */
 }
 /* 修改左侧边栏 */
-li.md-nav__item--active:nth-child(2) > .md-nav__link {
-  font-size: 0.9rem; /* 调整为所需大小 */
+li.md-nav__item--active > .md-nav__link {
+  font-size: 0.8rem; /* 调整为所需大小 */
 }
-/* 修改左侧活跃导航链接的字体大小和粗细 */
-.md-nav__link.md-nav__link--active {
-  font-size: 0.85rem;      /* 调整字体大小 */
-  font-weight: 550;       /* 加粗文本 */
+/* 修改右侧边栏目录文字大小 */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.78rem; /* 默认值约为 0.8rem，增大到 0.85rem */
 }
-
+/* 修改页面标题字体大小 */
+div.md-header__topic {
+  font-size: 1.0rem; /* 默认约为 0.9rem，可根据需要调整 */
+}
 
 
 
