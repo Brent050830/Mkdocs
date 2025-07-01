@@ -143,36 +143,36 @@ markdown_extensions:
   #     nbsp: True  # 不断行空格
   # - pymdownx.arithmatex:
   #     generic: true
-  # - pymdownx.caret
-  # - pymdownx.betterem
-  # - pymdownx.critic
-  # - pymdownx.snippets
-  # - pymdownx.smartsymbols
-  # - pymdownx.keys
-  # - pymdownx.details
-  # - pymdownx.inlinehilite
-  # - pymdownx.mark
-  # - pymdownx.tilde
-  # - pymdownx.tasklist:
-  #     custom_checkbox: true
-  # - pymdownx.superfences:
-  #     custom_fences:
-  #       - name: mermaid
-  #         class: mermaid
-  #         format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.caret
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   # - pymdownx.arithmatex: # latex支持
   #     generic: true
-  # - toc:
-  #     permalink: true # 固定标题位置为当前位置
-  #     toc_depth: 3
-  # - pymdownx.highlight: # 代码块高亮
-  #     anchor_linenums: true
-  #     linenums: true # 显示行号
-      # auto_title: true # 显示编程语言名称
-  # - pymdownx.tabbed:
-  #     alternate_style: true
-  # - pymdownx.tasklist:
-  #     custom_checkbox: true
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+      toc_depth: 3
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+      linenums: true # 显示行号
+      auto_title: true # 显示编程语言名称
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra_javascript:
   - javascripts/katex.js
