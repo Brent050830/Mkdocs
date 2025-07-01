@@ -75,9 +75,9 @@ theme:
     - content.code.annotate
   language: zh # 一些提示性的文字会变成中文
 
-  icon:
-    repo: fontawesome/brands/github #右上角图标
-    logo: logo
+  # icon:
+  #   repo: fontawesome/brands/github #右上角图标
+  #   logo: logo
 
 plugins:
   - search
@@ -137,7 +137,7 @@ markdown_extensions:
   - toc:
       permalink: true
       title: On this page
-  - tables
+  # - tables
   # - pymdownx.escapeall:
   #     hardbreak: True  # 硬换行
   #     nbsp: True  # 不断行空格
