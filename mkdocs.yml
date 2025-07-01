@@ -114,7 +114,7 @@ plugins:
 #       link: https://fosstodon.org/@squidfunk
 #   generator: false
 
-markdown_extensions:
+# markdown_extensions:
   # - abbr
   # - admonition
   # - pymdownx.details
