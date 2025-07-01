@@ -108,11 +108,11 @@ plugins:
       enable_creation_date: true
 
 
-extra:
-  social:
-    - icon: fontawesome/brands/mastodon 
-      link: https://fosstodon.org/@squidfunk
-  generator: false
+# extra:
+#   social:
+#     - icon: fontawesome/brands/mastodon 
+#       link: https://fosstodon.org/@squidfunk
+#   generator: false
 
 markdown_extensions:
   - abbr
