@@ -1,10 +1,29 @@
-.md-nav__list a.is-active {
-  color: var(--md-default-fg-color--light);
+
+/* 夜间模式配色 */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #202020;
+  --md-primary-fg-color--dark: #202020;
+  --md-default-fg-color: rgba(235, 235, 235, 0.9);
+  --md-default-fg-color--light: rgba(255, 255, 255, 0.7);
+  --md-default-fg-color--lighter: rgba(255, 255, 255, 0.8);
+  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.4);
+  --md-default-bg-color: rgba(40, 40, 40, 0.5);
+  --md-accent-fg-color:  	#D9D9BF;
+  --md-code-bg-color: rgba(40, 40, 40, 0.8);
+  --md-code-hl-name-color: #dbdbdb;
+  --md-code-hl-comment-color: #8a8c94;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(0deg, rgba(30, 30, 30, 1) 0%, rgba(70, 70, 70, 1) 100%);
 }
 
-[data-md-color-scheme="slate"] .md-nav__list a.is-active {
-  color: #A480F2;
+
+
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: 	#FFD700 !important; /* 更亮的紫色，适配深色背景 */
 }
+
 
 .md-sidebar--secondary .md-nav > .md-nav__list > li > a + .md-nav {
   display: none;
@@ -37,10 +56,12 @@ li.md-nav__item--active > .md-nav__link {
 .md-sidebar--secondary .md-nav__link {
   font-size: 0.78rem; /* 默认值约为 0.8rem，增大到 0.85rem */
 }
-/* 修改页面标题字体大小 */
-div.md-header__topic {
-  font-size: 1.0rem; /* 默认约为 0.9rem，可根据需要调整 */
-}
+
+
+
+
+
+
 
 
 

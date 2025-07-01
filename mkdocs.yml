@@ -34,6 +34,7 @@ theme:
     # Palette toggle for light mode
     - scheme: default
       primary: deep purple
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
@@ -41,6 +42,7 @@ theme:
     # Palette toggle for dark mode
     - scheme: slate
       primary: deep purple
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
