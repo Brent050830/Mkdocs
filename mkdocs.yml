@@ -176,17 +176,14 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/katex.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-    type:url  # 关键声明 
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-    type:url  # 关键声明 
+  - href: https://unpkg.com/katex@0/dist/katex.min.js
+  - href: https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
   - javascripts/extra.js
   - javascripts/custom.js
   - javascripts/toc.js
 
 extra_css:
-  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
-    type:url  # 关键声明 
+  - href: https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
   # - custom.css
