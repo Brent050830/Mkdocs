@@ -2,7 +2,7 @@ site_name: Brent_note
 site_author: Brent
 site_url: https://brent050830.xyz
 site_description: Brent的笔记本
-use_directory_urls: false 
+
 theme:
   logo:
   font:
@@ -109,10 +109,7 @@ plugins:
 
 
 extra:
-  social:
-    - icon: fontawesome/brands/mastodon 
-      link: https://fosstodon.org/@squidfunk
-  generator: false
+
 
 markdown_extensions:
   - abbr
