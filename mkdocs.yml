@@ -184,6 +184,7 @@ extra_javascript:
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
+    type:url  # 关键声明 
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
   # - custom.css
