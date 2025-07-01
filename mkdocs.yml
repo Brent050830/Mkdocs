@@ -2,6 +2,7 @@ site_name: Brent_note
 site_author: Brent
 site_url: https://brent050830.xyz
 site_description: Brent的笔记本
+use_directory_urls: false 
 theme:
   logo:
   font:
@@ -83,8 +84,8 @@ plugins:
   - glightbox
   # - mermaid2
   - markmap
-  - minify:
-      minify_html: true
+  # - minify:
+  #     minify_html: true
 
   - pub-obsidian
   - privacy:
