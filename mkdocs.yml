@@ -134,15 +134,15 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  # - toc:
-  #     permalink: true
-  #     title: On this page
-  # - tables
-  # # - pymdownx.escapeall:
-  # #     hardbreak: True  # 硬换行
-  # #     nbsp: True  # 不断行空格
-  # - pymdownx.arithmatex:
-  #     generic: true
+  - toc:
+      permalink: true
+      title: On this page
+  - tables
+  # - pymdownx.escapeall:
+  #     hardbreak: True  # 硬换行
+  #     nbsp: True  # 不断行空格
+  - pymdownx.arithmatex:
+      generic: true
   # - pymdownx.caret
   # - pymdownx.betterem
   # - pymdownx.critic
