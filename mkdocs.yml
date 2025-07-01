@@ -7,7 +7,7 @@ theme:
   logo:
   font:
     text: JetBrains Mono, LXGW WenKai Screen GB Screen 
-    code: JetBrains Mono, Consolas
+    # code: JetBrains Mono, Consolas
   favicon:
   custom_dir: docs/overrides  # 必需配置！！！
   icon:
@@ -75,9 +75,9 @@ theme:
     - content.code.annotate
   language: zh # 一些提示性的文字会变成中文
 
-  icon:
-    repo: fontawesome/brands/github #右上角图标
-    logo: logo
+  # icon:
+  #   repo: fontawesome/brands/github #右上角图标
+  #   logo: logo
 
 plugins:
   - search
@@ -109,7 +109,10 @@ plugins:
 
 
 extra:
-
+  # social:
+  #   - icon: fontawesome/brands/mastodon 
+  #     link: https://fosstodon.org/@squidfunk
+  # generator: false
 
 markdown_extensions:
   - abbr
