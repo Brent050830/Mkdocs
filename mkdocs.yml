@@ -141,8 +141,8 @@ markdown_extensions:
   # - pymdownx.escapeall:
   #     hardbreak: True  # 硬换行
   #     nbsp: True  # 不断行空格
-  # - pymdownx.arithmatex:
-  #     generic: ture
+  - pymdownx.arithmatex:
+      generic: ture
   - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
