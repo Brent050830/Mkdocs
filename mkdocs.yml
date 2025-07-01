@@ -137,6 +137,9 @@ markdown_extensions:
       permalink: true
       title: On this page
   - tables
+  - pymdownx.escapeall:
+      hardbreak: True  # 硬换行
+      nbsp: True  # 不断行空格
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.caret
@@ -179,7 +182,7 @@ extra_javascript:
   - javascripts/toc.js
 
 extra_css:
-  - https://unpkg.com/katex@0/dist/katex.min.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
   # - custom.css
