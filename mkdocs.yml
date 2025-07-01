@@ -96,12 +96,12 @@ plugins:
       draft_if_future_date: true #自动将具有未来日期的帖子标记为草稿
       post_readtime: true
       post_readtime_words_per_minute: 265 #计算帖子的阅读时间时读者每分钟预计阅读的字数
-      post_url_format: "{date}/{slug}"
+      # post_url_format: "{date}/{slug}"
       # categories_slugify: !!python/object/apply:pymdownx.slugs.slugify
       #   kwds:
       #     case: lower
-      pagination_url_format: "page/{page}"
-      authors_file: "{blog}/.authors.yml" #作者信息
+      # pagination_url_format: "page/{page}"
+      # authors_file: "{blog}/.authors.yml" #作者信息
   - tags:
       tags_file: tags.md
   - git-revision-date-localized:
