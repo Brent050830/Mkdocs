@@ -160,8 +160,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.arithmatex: # latex支持
-      generic: true
+  # - pymdownx.arithmatex: # latex支持
+  #     generic: true
   - toc:
       permalink: true # 固定标题位置为当前位置
       toc_depth: 3
