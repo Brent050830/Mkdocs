@@ -81,15 +81,15 @@ theme:
 
 plugins:
   - search
-  - glightbox
+  # - glightbox
   # - mermaid2
   - markmap
   # - minify:
   #     minify_html: true
 
   - pub-obsidian
-  - privacy:
-      enabled: !ENV [CI, false]
+  # - privacy:
+  #     enabled: !ENV [CI, false]
   - blog:
       post_date_format: full #时间
       draft: true
@@ -104,8 +104,8 @@ plugins:
       # authors_file: "{blog}/.authors.yml" #作者信息
   - tags:
       tags_file: tags.md
-  - git-revision-date-localized:
-      enable_creation_date: true
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
 
 
 extra:
