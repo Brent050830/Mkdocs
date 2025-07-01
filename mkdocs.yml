@@ -176,14 +176,15 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/katex.js
-  - href: https://unpkg.com/katex@0/dist/katex.min.js
-  - href: https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
   - javascripts/extra.js
   - javascripts/custom.js
   - javascripts/toc.js
 
 extra_css:
-  - href: https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
+
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
   # - custom.css
