@@ -109,10 +109,10 @@ plugins:
 
 
 extra:
-  # social:
-  #   - icon: fontawesome/brands/mastodon 
-  #     link: https://fosstodon.org/@squidfunk
-  # generator: false
+  social:
+    - icon: fontawesome/brands/mastodon 
+      link: https://fosstodon.org/@squidfunk
+  generator: false
 
 markdown_extensions:
   - abbr
