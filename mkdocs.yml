@@ -41,7 +41,7 @@ theme:
 
     # Palette toggle for dark mode
     - scheme: slate
-      primary: deep purple
+      # primary: deep purple
       accent: custom
       toggle:
         icon: material/weather-sunny
@@ -50,7 +50,7 @@ theme:
   features:
     - announce.dismiss #呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
     - toc.follow
-    - navigation.instant
+    # - navigation.instant
     #- header.autohide  #自动隐藏
     - navigation.tracking #地址栏中的 URL 将自动更新为在目录中突出显示的活动锚点
     - navigation.instant.prefetch
