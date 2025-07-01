@@ -21,7 +21,7 @@
 
 
 [data-md-color-scheme="slate"] .md-nav__link--active {
-  color: 	#FFD700 !important; /* 更亮的紫色，适配深色背景 */
+  color: 	#FFD700 !important; /* 更亮的黄色，适配深色背景 */
 }
 
 
@@ -121,4 +121,8 @@ h6:before {
 /* 文章内的加粗文本 */
 article strong {
   color: #6DA6A0; /* 绿色 */
+}
+.md-typeset a {
+  color: #6DA6A0; /* 主紫色 */
+
 }
