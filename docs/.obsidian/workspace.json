@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/车队/2.md",
+                "file": "杂项/srtp/1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2"
+              "title": "1"
             }
           }
         ]
@@ -188,8 +188,11 @@
   },
   "active": "aab451e2c4477199",
   "lastOpenFiles": [
-    "杂项/车队/1.md",
     "杂项/车队/2.md",
+    "杂项/srtp/1.md",
+    "杂项/srtp",
+    "杂项/车队/未命名",
+    "杂项/车队/1.md",
     "tag.md",
     "index.md",
     "杂项/车队/png/3b2af831bfc9eec0f45836855d107a2.jpg",
@@ -211,9 +214,7 @@
     "1/png/image-20250531140703634.png",
     "1/png - 副本",
     "1/png",
-    "1/新建文件夹",
     "index 1.md",
-    "未命名",
     "Excalidraw/Drawing 2025-06-28 17.32.25.excalidraw.md"
   ]
 }
