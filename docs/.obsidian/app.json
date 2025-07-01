@@ -4,5 +4,6 @@
   "useTab": false,
   "newFileLocation": "current",
   "attachmentFolderPath": "./png",
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "readableLineLength": true
 }
