@@ -142,8 +142,7 @@ markdown_extensions:
   #     hardbreak: True  # 硬换行
   #     nbsp: True  # 不断行空格
   - pymdownx.arithmatex:
-      generic: true
-      block_inline: true 
+      generic: false
   - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
