@@ -133,3 +133,17 @@ article strong {
   color: #6DA6A0; /* 主紫色 */
 
 }
+
+
+/* 块级公式容器的上下边距调整 */
+div.arithmatex {
+    margin-top: 0;    /* 上边缘距 */
+    margin-bottom: 0; /* 下边缘距 */
+    margin-left: 0;       /* 左边缘距（可根据需求调整） */
+    margin-right: 0;      /* 右边缘距（可根据需求调整） */
+    /* 可选：添加内边距使公式与边框更宽松 */
+    padding: 0px;
+}
+.arithmatex .katex-display {
+  margin: 0 !important;  /* 移除上下左右边距，!important提升优先级 */
+}
