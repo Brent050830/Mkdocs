@@ -17,12 +17,14 @@
   background-image: linear-gradient(0deg, rgba(30, 30, 30, 1) 0%, rgba(70, 70, 70, 1) 100%);
 }
 
-
-
-
-[data-md-color-scheme="slate"] .md-nav__link--active {
-  color: 	#FFD700 !important; /* 更亮的黄色，适配深色背景 */
+.md-nav__list a.is-active {
+  color: #6DA6A0;
 }
+[data-md-color-scheme="slate"] .md-nav__list a.is-active {
+  color: #FFD700;
+}
+
+
 
 
 .md-sidebar--secondary .md-nav > .md-nav__list > li > a + .md-nav {
@@ -30,6 +32,10 @@
 }
 .md-sidebar--secondary .md-nav > .md-nav__list > li > a.is-active + .md-nav {
   display: block;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: 	#FFD700 ; /* 更亮的黄色，适配深色背景 */
 }
 
 /* 修改上标签页导航栏字体大小 */
