@@ -13,12 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/车队/2.md",
+                "file": "杂项/srtp/2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "2"
+            }
+          },
+          {
+            "id": "f8663345b8e6d6fd",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-07-02 20.20.45.excalidraw"
             }
           },
           {
@@ -41,15 +53,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "杂项/srtp/2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "2"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -121,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -214,35 +228,38 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "aab451e2c4477199",
+  "active": "ca93b9c077d917eb",
   "lastOpenFiles": [
-    "杂项/车队/1.md",
-    "杂项/车队/2.md",
+    "杂项/srtp/png/Pasted image 20250703002944.png",
+    "杂项/srtp/png/Pasted image 20250703002800.png",
+    "杂项/srtp/png/Pasted image 20250703002519.png",
+    "杂项/srtp/png/Pasted image 20250703002143.png",
+    "杂项/srtp/png/Pasted image 20250703001756.png",
+    "杂项/srtp/png/Pasted image 20250703001311.png",
+    "杂项/srtp/png/Pasted image 20250703001145.png",
     "杂项/srtp/1.md",
+    "index.md",
+    "杂项/srtp/2.md",
+    "杂项/车队/2.md",
+    "杂项/车队/1.md",
+    "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
+    "杂项/srtp/png/Pasted image 20250702221032.png",
+    "杂项/srtp/png",
+    "Excalidraw",
     "overrides/hooks/__pycache__/fix_math_blocks.cpython-313.pyc",
     "overrides/hooks/__pycache__/fix_math_blocks.cpython-313.pyc.1888331017520",
     "overrides/hooks/fix_math_blocks.py",
     "javascripts/mathjax.js",
     "杂项/srtp/index.md",
-    "index.md",
     "杂项/srtp",
     "杂项/车队/未命名",
     "tag.md",
     "杂项/车队/png/3b2af831bfc9eec0f45836855d107a2.jpg",
     "杂项/车队/png",
     "杂项/车队/新建 文本文档.txt",
-    "杂项/车队",
-    "杂项/新建文件夹",
     "1/25.md",
     "1/png/Pasted image 20250629163209.png",
     "1/png/Pasted image 20250629163049.png",
-    "1/png/Pasted image 20250629162908.png",
-    "1/png/image-20250530150644010.png",
-    "1/png/image-20250530144008217.png",
-    "1/png/image-20250624182802085.png",
-    "1/png/image-20250623194844886.png",
-    "1/png/image-20250623194455622.png",
-    "1/png/image-20250531140703634.png",
     "index 1.md",
     "Excalidraw/Drawing 2025-06-28 17.32.25.excalidraw.md"
   ]

@@ -5,5 +5,6 @@
   "newFileLocation": "current",
   "attachmentFolderPath": "./png",
   "newLinkFormat": "relative",
-  "readableLineLength": true
+  "readableLineLength": true,
+  "useMarkdownLinks": true
 }
