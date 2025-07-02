@@ -145,24 +145,22 @@ markdown_extensions:
       generic: true
 
   # - pymdownx.caret
-  - pymdownx.betterem
-  - pymdownx.critic
-  - pymdownx.snippets
-  - pymdownx.smartsymbols
-  - pymdownx.keys
-  - pymdownx.details
-  - pymdownx.inlinehilite
-  - pymdownx.mark
-  # - pymdownx.tilde
-  - pymdownx.tasklist:
-      custom_checkbox: true
+  # - pymdownx.betterem
+  # - pymdownx.critic
+  # - pymdownx.snippets
+  # - pymdownx.smartsymbols
+  # - pymdownx.keys
+  # - pymdownx.details
+  # - pymdownx.inlinehilite
+  # - pymdownx.mark
+  # # - pymdownx.tilde
+  # - pymdownx.tasklist:
+  #     custom_checkbox: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  # - pymdownx.arithmatex: # latex支持
-  #     generic: true
   - toc:
       permalink: true # 固定标题位置为当前位置
       toc_depth: 3
