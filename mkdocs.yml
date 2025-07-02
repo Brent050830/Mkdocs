@@ -142,8 +142,8 @@ markdown_extensions:
   #     hardbreak: True  # 硬换行
   #     nbsp: True  # 不断行空格
   - pymdownx.arithmatex:
-      generic: false
-      
+      generic: true
+
   - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
@@ -176,17 +176,17 @@ markdown_extensions:
       custom_checkbox: true
 
 extra_javascript:
-  # - javascripts/katex.js
-  # - https://unpkg.com/katex@0/dist/katex.min.js
-  # - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js
+  # - javascripts/mathjax.js
+  # - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/extra.js
   - javascripts/custom.js
   - javascripts/toc.js
 
 extra_css:
-  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
+  - https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
 
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
