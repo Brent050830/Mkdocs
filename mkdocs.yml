@@ -51,6 +51,7 @@ theme:
   features:
     - announce.dismiss #呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
     - toc.follow
+    - content.action.edit  # 支持编辑按钮 在页面右上角添加编辑按钮，跳转到源码仓库的对应文件
     # - navigation.instant
     #- header.autohide  #自动隐藏
     - navigation.tracking #地址栏中的 URL 将自动更新为在目录中突出显示的活动锚点
@@ -145,17 +146,17 @@ markdown_extensions:
       generic: true
 
   # - pymdownx.caret
-  # - pymdownx.betterem
-  # - pymdownx.critic
-  # - pymdownx.snippets
-  # - pymdownx.smartsymbols
-  # - pymdownx.keys
-  # - pymdownx.details
-  # - pymdownx.inlinehilite
-  # - pymdownx.mark
-  # # - pymdownx.tilde
-  # - pymdownx.tasklist:
-  #     custom_checkbox: true
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  # - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
