@@ -51,12 +51,14 @@
             "id": "ca93b9c077d917eb",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "杂项/srtp/png/Pasted image 20250704234548.png"
+                "file": "杂项/srtp/2.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250704234548"
+              "icon": "lucide-file",
+              "title": "2"
             }
           }
         ],
@@ -227,13 +229,13 @@
   },
   "active": "ca93b9c077d917eb",
   "lastOpenFiles": [
+    "杂项/srtp/png/Pasted image 20250704234548.png",
+    "index.md",
     "杂项/srtp/png/Pasted image 20250704235010.png",
     "杂项/srtp/2.md",
-    "杂项/srtp/png/Pasted image 20250704234548.png",
     "杂项/srtp/png/Pasted image 20250704234021.png",
     "杂项/srtp/png/Pasted image 20250704233858.png",
     "杂项/srtp/png/Pasted image 20250704233759.png",
-    "index.md",
     "杂项/车队/creo.md",
     "杂项/车队/2.md",
     "杂项/srtp/1.md",
