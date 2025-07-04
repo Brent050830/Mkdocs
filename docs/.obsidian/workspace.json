@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/srtp/2.md",
+                "file": "杂项/车队/creo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2"
+              "title": "creo"
             }
           },
           {
@@ -61,8 +61,7 @@
               "title": "2"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -134,8 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -228,8 +226,13 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "ca93b9c077d917eb",
+  "active": "aab451e2c4477199",
   "lastOpenFiles": [
+    "杂项/车队/2.md",
+    "杂项/srtp/2.md",
+    "杂项/srtp/1.md",
+    "杂项/车队/creo.md",
+    "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "杂项/srtp/png/Pasted image 20250703224543.png",
     "杂项/srtp/png/Pasted image 20250703204756.png",
     "杂项/srtp/png/Pasted image 20250703204506.png",
@@ -240,13 +243,8 @@
     "杂项/srtp/png/Pasted image 20250703104103.png",
     "杂项/srtp/png/Pasted image 20250703002944.png",
     "杂项/srtp/png/Pasted image 20250703002800.png",
-    "杂项/srtp/png/Pasted image 20250703002519.png",
-    "杂项/srtp/1.md",
     "index.md",
-    "杂项/srtp/2.md",
-    "杂项/车队/2.md",
     "杂项/车队/1.md",
-    "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "杂项/srtp/png",
     "Excalidraw",
     "overrides/hooks/__pycache__/fix_math_blocks.cpython-313.pyc",
