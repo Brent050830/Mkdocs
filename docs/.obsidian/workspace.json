@@ -51,17 +51,16 @@
             "id": "ca93b9c077d917eb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "杂项/srtp/2.md",
-                "mode": "source",
-                "source": false
+                "file": "杂项/srtp/png/Pasted image 20250704234548.png"
               },
-              "icon": "lucide-file",
-              "title": "2"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250704234548"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -226,24 +225,24 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "aab451e2c4477199",
+  "active": "ca93b9c077d917eb",
   "lastOpenFiles": [
-    "杂项/车队/2.md",
+    "杂项/srtp/png/Pasted image 20250704235010.png",
     "杂项/srtp/2.md",
-    "杂项/srtp/1.md",
+    "杂项/srtp/png/Pasted image 20250704234548.png",
+    "杂项/srtp/png/Pasted image 20250704234021.png",
+    "杂项/srtp/png/Pasted image 20250704233858.png",
+    "杂项/srtp/png/Pasted image 20250704233759.png",
+    "index.md",
     "杂项/车队/creo.md",
+    "杂项/车队/2.md",
+    "杂项/srtp/1.md",
     "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "杂项/srtp/png/Pasted image 20250703224543.png",
     "杂项/srtp/png/Pasted image 20250703204756.png",
     "杂项/srtp/png/Pasted image 20250703204506.png",
     "杂项/srtp/png/Pasted image 20250703200959.png",
     "杂项/srtp/png/Pasted image 20250703200110.png",
-    "杂项/srtp/png/Pasted image 20250703195410.png",
-    "杂项/srtp/png/Pasted image 20250703104350.png",
-    "杂项/srtp/png/Pasted image 20250703104103.png",
-    "杂项/srtp/png/Pasted image 20250703002944.png",
-    "杂项/srtp/png/Pasted image 20250703002800.png",
-    "index.md",
     "杂项/车队/1.md",
     "杂项/srtp/png",
     "Excalidraw",
