@@ -22,18 +22,6 @@
             }
           },
           {
-            "id": "f8663345b8e6d6fd",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2025-07-02 20.20.45.excalidraw"
-            }
-          },
-          {
             "id": "ccb8b869d6a60719",
             "type": "leaf",
             "state": {
@@ -62,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -111,10 +99,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "杂项/车队/2.md",
+                "file": "杂项/srtp/2.md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "多级"
+                "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "2 的大纲"
@@ -130,7 +118,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -229,17 +218,17 @@
   },
   "active": "ca93b9c077d917eb",
   "lastOpenFiles": [
-    "杂项/srtp/png/Pasted image 20250704234548.png",
+    "杂项/车队/creo.md",
+    "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "index.md",
-    "杂项/srtp/png/Pasted image 20250704235010.png",
     "杂项/srtp/2.md",
+    "杂项/srtp/png/Pasted image 20250704234548.png",
+    "杂项/srtp/png/Pasted image 20250704235010.png",
     "杂项/srtp/png/Pasted image 20250704234021.png",
     "杂项/srtp/png/Pasted image 20250704233858.png",
     "杂项/srtp/png/Pasted image 20250704233759.png",
-    "杂项/车队/creo.md",
     "杂项/车队/2.md",
     "杂项/srtp/1.md",
-    "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "杂项/srtp/png/Pasted image 20250703224543.png",
     "杂项/srtp/png/Pasted image 20250703204756.png",
     "杂项/srtp/png/Pasted image 20250703204506.png",
