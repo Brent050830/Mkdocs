@@ -118,8 +118,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -216,15 +215,18 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "ca93b9c077d917eb",
+  "active": "d3149a9f36047b6f",
   "lastOpenFiles": [
-    "杂项/大三春夏/控制1.md",
-    "杂项/大三春夏/png/Pasted image 20250707172438.png",
-    "杂项/大三春夏/png/Pasted image 20250707172432.png",
+    "大三秋冬/控制",
+    "大三春夏/png/未命名",
+    "杂项/srtp/png/Pasted image 20250708001619.png",
+    "大三秋冬/控制/控制1.md",
+    "大三秋冬/控制/png/Pasted image 20250707172438.png",
+    "大三秋冬/控制/png/Pasted image 20250707172432.png",
     "杂项/srtp/2.md",
-    "杂项/大三春夏/png/Pasted image 20250707113840.png",
-    "杂项/大三春夏/png",
-    "杂项/大三春夏",
+    "大三秋冬/控制/png/Pasted image 20250707113840.png",
+    "大三秋冬/控制/png",
+    "大三秋冬",
     "杂项/车队/未命名",
     "杂项/srtp/png/Pasted image 20250705235938.png",
     "杂项/车队/creo.md",
@@ -237,7 +239,6 @@
     "杂项/srtp/png/Pasted image 20250704233759.png",
     "杂项/车队/2.md",
     "杂项/srtp/1.md",
-    "杂项/srtp/png/Pasted image 20250703224543.png",
     "杂项/车队/1.md",
     "杂项/srtp/png",
     "Excalidraw",
@@ -246,7 +247,6 @@
     "overrides/hooks/fix_math_blocks.py",
     "javascripts/mathjax.js",
     "杂项/srtp/index.md",
-    "杂项/srtp",
     "tag.md",
     "1/25.md",
     "index 1.md",
