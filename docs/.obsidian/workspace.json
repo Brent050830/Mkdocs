@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/srtp/2.md",
+                "file": "大三秋冬/控制/控制1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2"
+              "title": "控制1"
             }
           }
         ],
@@ -99,12 +99,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "大三秋冬/控制/控制1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "控制1 的大纲"
             }
           },
           {
@@ -214,47 +215,10 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "floating": {
-    "id": "2181b2b313a09861",
-    "type": "floating",
-    "children": [
-      {
-        "id": "b8ac256e18e9dc80",
-        "type": "window",
-        "children": [
-          {
-            "id": "d3a5474e1f560598",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "83ba9dd7e987c4e2",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://platers.github.io/obsidian-linter/settings/spacing-rules/#empty-line-around-blockquotes",
-                    "title": "Spacing Rules - Linter",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Spacing Rules - Linter"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 448,
-        "y": 116,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "83ba9dd7e987c4e2",
+  "active": "ca93b9c077d917eb",
   "lastOpenFiles": [
+    "大三秋冬/控制/png/Pasted image 20250708175603.png",
+    "大三秋冬/控制/png/Pasted image 20250708171141.png",
     "杂项/srtp/2.md",
     "杂项/srtp/1.md",
     "大三秋冬/控制/控制1.md",
@@ -275,7 +239,6 @@
     "杂项/srtp/png/Pasted image 20250704235010.png",
     "杂项/srtp/png/Pasted image 20250704234021.png",
     "杂项/srtp/png/Pasted image 20250704233858.png",
-    "杂项/srtp/png/Pasted image 20250704233759.png",
     "杂项/车队/2.md",
     "杂项/车队/1.md",
     "杂项/srtp/png",
