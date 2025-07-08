@@ -99,13 +99,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "杂项/srtp/2.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -215,11 +214,50 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "ca93b9c077d917eb",
+  "floating": {
+    "id": "2181b2b313a09861",
+    "type": "floating",
+    "children": [
+      {
+        "id": "b8ac256e18e9dc80",
+        "type": "window",
+        "children": [
+          {
+            "id": "d3a5474e1f560598",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "83ba9dd7e987c4e2",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer",
+                  "state": {
+                    "url": "https://platers.github.io/obsidian-linter/settings/spacing-rules/#empty-line-around-blockquotes",
+                    "title": "Spacing Rules - Linter",
+                    "mode": "webview"
+                  },
+                  "icon": "globe-2",
+                  "title": "Spacing Rules - Linter"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 448,
+        "y": 116,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "83ba9dd7e987c4e2",
   "lastOpenFiles": [
+    "杂项/srtp/2.md",
     "杂项/srtp/1.md",
     "大三秋冬/控制/控制1.md",
-    "杂项/srtp/2.md",
     "大三秋冬/控制",
     "大三春夏/png/未命名",
     "杂项/srtp/png/Pasted image 20250708001619.png",
