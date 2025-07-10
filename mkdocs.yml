@@ -164,7 +164,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       permalink: true # 固定标题位置为当前位置
-      toc_depth: 3
+      toc_depth: 5
   - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
       linenums: true # 显示行号
