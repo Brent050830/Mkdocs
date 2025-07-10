@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "杂项/srtp/1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "1"
             }
           },
           {
@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -99,13 +99,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/控制/控制1.md",
+                "file": "杂项/srtp/1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "控制1 的大纲"
+              "title": "1 的大纲"
             }
           },
           {
@@ -215,13 +215,16 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "ca93b9c077d917eb",
+  "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
-    "大三秋冬/控制/png/Pasted image 20250708175603.png",
-    "大三秋冬/控制/png/Pasted image 20250708171141.png",
     "杂项/srtp/2.md",
     "杂项/srtp/1.md",
+    "杂项/srtp/png/Pasted image 20250710220032.png",
+    "杂项/srtp/png/Pasted image 20250710215545.png",
     "大三秋冬/控制/控制1.md",
+    "index.md",
+    "大三秋冬/控制/png/Pasted image 20250708175603.png",
+    "大三秋冬/控制/png/Pasted image 20250708171141.png",
     "大三秋冬/控制",
     "大三春夏/png/未命名",
     "杂项/srtp/png/Pasted image 20250708001619.png",
@@ -234,11 +237,7 @@
     "杂项/srtp/png/Pasted image 20250705235938.png",
     "杂项/车队/creo.md",
     "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
-    "index.md",
     "杂项/srtp/png/Pasted image 20250704234548.png",
-    "杂项/srtp/png/Pasted image 20250704235010.png",
-    "杂项/srtp/png/Pasted image 20250704234021.png",
-    "杂项/srtp/png/Pasted image 20250704233858.png",
     "杂项/车队/2.md",
     "杂项/车队/1.md",
     "杂项/srtp/png",
