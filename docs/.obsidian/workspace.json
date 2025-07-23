@@ -109,7 +109,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -204,6 +205,9 @@
   },
   "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
+    "大三秋冬/控制/png/Pasted image 20250714213151.png",
+    "大三秋冬/控制/png/Pasted image 20250714212859.png",
+    "大三秋冬/控制/png/Pasted image 20250714171403.png",
     "大三秋冬/控制/png/Pasted image 20250714170607.png",
     "大三秋冬/控制/png/Pasted image 20250714165931.png",
     "大三秋冬/控制/png/Pasted image 20250711213850.png",
@@ -218,9 +222,6 @@
     "大三秋冬/控制",
     "大三春夏/png/未命名",
     "杂项/srtp/png/Pasted image 20250708001619.png",
-    "大三秋冬/控制/png/Pasted image 20250707172438.png",
-    "大三秋冬/控制/png/Pasted image 20250707172432.png",
-    "大三秋冬/控制/png/Pasted image 20250707113840.png",
     "大三秋冬/控制/png",
     "大三秋冬",
     "杂项/车队/未命名",
