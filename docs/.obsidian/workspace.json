@@ -109,7 +109,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -204,6 +205,8 @@
   },
   "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
+    "大三秋冬/控制/png/Pasted image 20250724151921.png",
+    "大三秋冬/控制/png/Pasted image 20250724151211.png",
     "大三秋冬/控制/png/Pasted image 20250724150153.png",
     "大三秋冬/控制/png/Pasted image 20250724150119.png",
     "大三秋冬/控制/png/Pasted image 20250723231528.png",
@@ -213,10 +216,8 @@
     "大三秋冬/控制/png/Pasted image 20250714171403.png",
     "大三秋冬/控制/png/Pasted image 20250714170607.png",
     "大三秋冬/控制/png/Pasted image 20250714165931.png",
-    "大三秋冬/控制/png/Pasted image 20250711213850.png",
     "杂项/srtp/2.md",
     "杂项/srtp/1.md",
-    "杂项/srtp/png/Pasted image 20250710220032.png",
     "大三秋冬/控制/控制1.md",
     "index.md",
     "大三秋冬/控制",
