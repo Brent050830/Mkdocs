@@ -104,7 +104,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -203,6 +204,9 @@
   },
   "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
+    "自学/人工智能/png/Pasted image 20250731180031.png",
+    "自学/人工智能/png/00CF564E.png",
+    "自学/人工智能/png",
     "大三秋冬/控制/控制1.md",
     "自学/人工智能/入门.md",
     "自学/人工智能/新建 文本文档.txt",
@@ -219,7 +223,6 @@
     "大三秋冬/控制/png/Pasted image 20250727183845.png",
     "大三秋冬/控制/png/Pasted image 20250726232757.png",
     "大三秋冬/控制/png/Pasted image 20250726230531.png",
-    "大三秋冬/控制/png/Pasted image 20250726225848.png",
     "杂项/srtp/2.md",
     "杂项/srtp/1.md",
     "index.md",
@@ -227,7 +230,6 @@
     "大三春夏/png/未命名",
     "大三秋冬/控制/png",
     "大三秋冬",
-    "杂项/车队/未命名",
     "杂项/车队/creo.md",
     "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "杂项/车队/2.md",
