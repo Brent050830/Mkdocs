@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/控制/控制1.md",
+                "file": "自学/人工智能/入门.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "控制1"
+              "title": "入门"
             }
           }
         ],
@@ -85,13 +85,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/控制/控制1.md",
+                "file": "自学/人工智能/入门.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "控制1 的大纲"
+              "title": "入门 的大纲"
             }
           },
           {
@@ -104,13 +104,11 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -205,6 +203,7 @@
   },
   "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
+    "大三秋冬/控制/控制1.md",
     "自学/人工智能/入门.md",
     "自学/人工智能/新建 文本文档.txt",
     "自学/人工智能",
@@ -223,7 +222,6 @@
     "大三秋冬/控制/png/Pasted image 20250726225848.png",
     "杂项/srtp/2.md",
     "杂项/srtp/1.md",
-    "大三秋冬/控制/控制1.md",
     "index.md",
     "大三秋冬/控制",
     "大三春夏/png/未命名",
