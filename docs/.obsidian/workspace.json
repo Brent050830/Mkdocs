@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/车队/creo.md",
+                "file": "自学/人工智能/入门.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "creo"
+              "title": "入门"
+            }
+          },
+          {
+            "id": "8d20e3c3eb01a288",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://scikit-learn.org.cn/",
+                "title": "scikit-learn中文社区",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "scikit-learn中文社区"
             }
           }
         ]
@@ -70,13 +84,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "杂项/车队/1.md",
+                "file": "自学/人工智能/入门.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "1 的大纲"
+              "title": "入门 的大纲"
             }
           },
           {
@@ -89,11 +103,13 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -188,21 +204,22 @@
   },
   "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
+    "自学/人工智能/png/Pasted image 20250822005149.png",
+    "自学/人工智能/png/Pasted image 20250822004825.png",
+    "自学/人工智能/png/Pasted image 20250822004756.png",
+    "自学/人工智能/入门.md",
+    "杂项/车队/creo.md",
+    "杂项/车队/png/ddd626e1fd3626e40af64d9fb4ca89a3.jpg",
+    "杂项/车队/png/e3e219cb4a3057cf7e3f42cbdd03ea59.jpg",
     "杂项/车队/2.md",
     "杂项/车队/1.md",
-    "杂项/车队/creo.md",
     "杂项/车队/png/Pasted image 20250807000428.png",
     "杂项/车队/png/Pasted image 20250807000322.png",
     "杂项/车队/png/ac5a26993b5dab9d313f5fd062696914.jpg",
     "杂项/车队/png/Pasted image 20250805220546.png",
     "杂项/车队/png/Pasted image 20250805171935.png",
     "杂项/车队/png/Pasted image 20250805165459.png",
-    "杂项/车队/png/Pasted image 20250805164344.png",
     "杂项/srtp/1.md",
-    "杂项/车队/png/3b2af831bfc9eec0f45836855d107a2.jpg",
-    "自学/人工智能/入门.md",
-    "自学/人工智能/png/Pasted image 20250731180031.png",
-    "自学/人工智能/png/00CF564E.png",
     "自学/人工智能/png",
     "大三秋冬/控制/控制1.md",
     "自学/人工智能/新建 文本文档.txt",
