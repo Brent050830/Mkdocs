@@ -20,20 +20,6 @@
               "icon": "lucide-file",
               "title": "入门"
             }
-          },
-          {
-            "id": "8d20e3c3eb01a288",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://scikit-learn.org.cn/",
-                "title": "scikit-learn中文社区",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "scikit-learn中文社区"
-            }
           }
         ]
       }
@@ -191,6 +177,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:创建新数据库": false,
       "templater-obsidian:Templater": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
       "switcher:打开快速切换": false,
@@ -204,10 +191,10 @@
   },
   "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
+    "自学/人工智能/入门.md",
     "自学/人工智能/png/Pasted image 20250822005149.png",
     "自学/人工智能/png/Pasted image 20250822004825.png",
     "自学/人工智能/png/Pasted image 20250822004756.png",
-    "自学/人工智能/入门.md",
     "杂项/车队/creo.md",
     "杂项/车队/png/ddd626e1fd3626e40af64d9fb4ca89a3.jpg",
     "杂项/车队/png/e3e219cb4a3057cf7e3f42cbdd03ea59.jpg",
@@ -218,7 +205,6 @@
     "杂项/车队/png/ac5a26993b5dab9d313f5fd062696914.jpg",
     "杂项/车队/png/Pasted image 20250805220546.png",
     "杂项/车队/png/Pasted image 20250805171935.png",
-    "杂项/车队/png/Pasted image 20250805165459.png",
     "杂项/srtp/1.md",
     "自学/人工智能/png",
     "大三秋冬/控制/控制1.md",
