@@ -89,11 +89,13 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -189,6 +191,8 @@
   },
   "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
+    "自学/人工智能/png/机器学习.png",
+    "自学/人工智能/png/Pasted image 20250827220950.png",
     "自学/人工智能/新的.md",
     "自学/人工智能/入门.md",
     "自学/人工智能/png/Pasted image 20250826231618.png",
@@ -201,7 +205,6 @@
     "自学/人工智能/png/Pasted image 20250825002811.png",
     "自学/人工智能/png/Pasted image 20250824230413.png",
     "自学/人工智能/png/Pasted image 20250822005149.png",
-    "自学/人工智能/png/Pasted image 20250822004825.png",
     "杂项/车队/creo.md",
     "杂项/车队/2.md",
     "杂项/车队/1.md",
