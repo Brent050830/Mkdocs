@@ -15,7 +15,7 @@
               "state": {
                 "file": "自学/人工智能/入门.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "入门"
