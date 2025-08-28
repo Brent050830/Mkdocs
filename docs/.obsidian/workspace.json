@@ -33,8 +33,7 @@
               "title": "版本说明 1.9.12"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -83,12 +82,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "自学/人工智能/入门.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "入门 的大纲"
             }
           },
           {
@@ -106,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -200,7 +201,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "e338bcb6ecbee499",
+  "active": "ccb8b869d6a60719",
   "lastOpenFiles": [
     "自学/人工智能/入门.md",
     "自学/人工智能/png/机器学习.png",
