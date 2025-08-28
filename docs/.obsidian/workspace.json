@@ -33,7 +33,8 @@
               "title": "版本说明 1.9.12"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -82,13 +83,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自学/人工智能/入门.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "入门 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -200,12 +200,12 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "ccb8b869d6a60719",
+  "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "自学/人工智能/入门.md",
     "自学/人工智能/png/机器学习.png",
     "自学/人工智能/png/Pasted image 20250827220950.png",
     "自学/人工智能/新的.md",
-    "自学/人工智能/入门.md",
     "自学/人工智能/png/Pasted image 20250826231618.png",
     "自学/人工智能/png/Pasted image 20250826180723.png",
     "自学/人工智能/就是一个数组.md",
@@ -215,7 +215,6 @@
     "自学/人工智能/png/Pasted image 20250825193939.png",
     "自学/人工智能/png/Pasted image 20250825002811.png",
     "自学/人工智能/png/Pasted image 20250824230413.png",
-    "自学/人工智能/png/Pasted image 20250822005149.png",
     "杂项/车队/creo.md",
     "杂项/车队/2.md",
     "杂项/车队/1.md",
