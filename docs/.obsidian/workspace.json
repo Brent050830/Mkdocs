@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "随笔/杂事/杂事.md",
+                "file": "随笔/杂事/学车.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "杂事"
+              "title": "学车"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "随笔/杂事/杂事.md",
+                "file": "随笔/杂事/学车.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "杂事 的大纲"
+              "title": "学车 的大纲"
             }
           },
           {
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -189,11 +190,19 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
-    "随笔/随笔.md",
+    "自学/人工智能/入门.md",
+    "自学/人工智能/png/Pasted image 20250829154631.png",
+    "杂项/srtp/1.md",
+    "杂项/srtp/2.md",
+    "杂项/车队/creo.md",
+    "自学/人工智能/png/Pasted image 20250829132703.png",
+    "自学/人工智能/png/Pasted image 20250828213621.png",
+    "杂项/车队/1.md",
+    "杂项/车队/2.md",
     "随笔/杂事/杂事.md",
+    "随笔/随笔.md",
     "随笔/杂事/学车.md",
     "闲来无事/杂事记录/未命名.md",
-    "自学/人工智能/入门.md",
     "自学/人工智能/就是一个数组.md",
     "随笔/感想",
     "随笔/日记",
@@ -207,13 +216,6 @@
     "自学/人工智能/png/Pasted image 20250826155338.png",
     "自学/人工智能/png/Pasted image 20250826115447.png",
     "自学/人工智能/png/Pasted image 20250825230349.png",
-    "自学/人工智能/png/Pasted image 20250825193939.png",
-    "自学/人工智能/png/Pasted image 20250825002811.png",
-    "自学/人工智能/png/Pasted image 20250824230413.png",
-    "杂项/车队/creo.md",
-    "杂项/车队/2.md",
-    "杂项/车队/1.md",
-    "杂项/srtp/1.md",
     "自学/人工智能/png",
     "大三秋冬/控制/控制1.md",
     "自学/人工智能/新建 文本文档.txt",
@@ -221,7 +223,6 @@
     "自学/新建文件夹",
     "自学",
     "新建文件夹",
-    "杂项/srtp/2.md",
     "index.md",
     "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "杂项/srtp/index.md",
