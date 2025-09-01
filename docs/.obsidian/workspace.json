@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自学/人工智能/入门.md",
+                "file": "随笔/杂事/学车.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "入门"
+              "title": "学车"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自学/人工智能/入门.md",
+                "file": "随笔/杂事/学车.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "入门 的大纲"
+              "title": "学车 的大纲"
             }
           },
           {
