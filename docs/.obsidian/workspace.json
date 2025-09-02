@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "随笔/杂事/学车.md",
+                "file": "自学/人工智能/入门.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "学车"
+              "title": "入门"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "随笔/杂事/学车.md",
+                "file": "自学/人工智能/入门.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "学车 的大纲"
+              "title": "入门 的大纲"
             }
           },
           {
@@ -191,9 +191,9 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "随笔/杂事/学车.md",
     "自学/人工智能/入门.md",
     "自学/人工智能/png/graphviz.png",
-    "随笔/杂事/学车.md",
     "自学/人工智能/png/Pasted image 20250830182153.png",
     "随笔/随笔.md",
     "随笔/杂事/杂事.md",
