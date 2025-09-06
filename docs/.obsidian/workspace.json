@@ -15,7 +15,7 @@
               "state": {
                 "file": "自学/人工智能/入门.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "入门"
@@ -191,6 +191,8 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "自学/人工智能/png/31740f175a440817de8160d979da3208.png",
+    "自学/人工智能/png/graphviz 1.png",
     "随笔/杂事/学车.md",
     "自学/人工智能/入门.md",
     "自学/人工智能/png/graphviz.png",
@@ -216,7 +218,6 @@
     "自学/人工智能/新的.md",
     "自学/人工智能/png/Pasted image 20250826231618.png",
     "自学/人工智能/png/Pasted image 20250826180723.png",
-    "自学/人工智能/png/Pasted image 20250826155338.png",
     "自学/人工智能/png",
     "大三秋冬/控制/控制1.md",
     "自学/人工智能/新建 文本文档.txt",
