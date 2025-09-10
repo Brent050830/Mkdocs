@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -189,6 +190,7 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "自学/人工智能/png/Pasted image 20250910185849.png",
     "cedict_ts.u8",
     "自学/人工智能/深度学习.md",
     "自学/人工智能/png/Pasted image 20250909233743.png",
@@ -223,7 +225,6 @@
     "自学/人工智能",
     "自学/新建文件夹",
     "自学",
-    "新建文件夹",
     "index.md",
     "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "杂项/srtp/index.md",
