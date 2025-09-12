@@ -89,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -190,6 +191,8 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "自学/人工智能/png/png.png",
+    "自学/人工智能/png/Pasted image 20250911175756.png",
     "自学/人工智能/png/Pasted image 20250910185849.png",
     "cedict_ts.u8",
     "自学/人工智能/深度学习.md",
@@ -202,8 +205,6 @@
     "自学/人工智能/png/Pasted image 20250909122956.png",
     "自学/人工智能/png/Pasted image 20250909122920.png",
     "自学/人工智能/png/Pasted image 20250909000629.png",
-    "自学/人工智能/png/Pasted image 20250908225104.png",
-    "自学/人工智能/png/Pasted image 20250908162510.png",
     "随笔/杂事/学车.md",
     "随笔/随笔.md",
     "随笔/杂事/杂事.md",
