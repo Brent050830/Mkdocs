@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自学/人工智能/深度学习.md",
+                "file": "大三秋冬/动力系统/动力系统.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "深度学习"
+              "title": "动力系统"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自学/人工智能/深度学习.md",
+                "file": "大三秋冬/动力系统/动力系统.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "深度学习 的大纲"
+              "title": "动力系统 的大纲"
             }
           },
           {
@@ -89,8 +89,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -191,11 +190,15 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "大三秋冬/设计/设计.md",
+    "大三秋冬/动力系统/动力系统.md",
+    "自学/人工智能/深度学习.md",
+    "大三秋冬/动力系统",
+    "大三秋冬/设计",
     "自学/人工智能/png/png.png",
     "自学/人工智能/png/Pasted image 20250911175756.png",
     "自学/人工智能/png/Pasted image 20250910185849.png",
     "cedict_ts.u8",
-    "自学/人工智能/深度学习.md",
     "自学/人工智能/png/Pasted image 20250909233743.png",
     "自学/人工智能/png/Pasted image 20250909231224.png",
     "自学/人工智能/png/Pasted image 20250909220419.png",
@@ -204,7 +207,6 @@
     "自学/人工智能/png/Pasted image 20250909180931.png",
     "自学/人工智能/png/Pasted image 20250909122956.png",
     "自学/人工智能/png/Pasted image 20250909122920.png",
-    "自学/人工智能/png/Pasted image 20250909000629.png",
     "随笔/杂事/学车.md",
     "随笔/随笔.md",
     "随笔/杂事/杂事.md",
@@ -224,8 +226,6 @@
     "大三秋冬/控制/控制1.md",
     "自学/人工智能/新建 文本文档.txt",
     "自学/人工智能",
-    "自学/新建文件夹",
-    "自学",
     "index.md",
     "Excalidraw/Drawing 2025-07-02 20.20.45.excalidraw.md",
     "杂项/srtp/index.md",
