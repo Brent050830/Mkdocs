@@ -51,16 +51,18 @@ li.md-nav__item--active:nth-child(2) > .md-nav__link {
 .md-typeset .admonition, .md-typeset details {
   font-size: 0.75rem;
 }
-/* 表格内的字体 */
-md-typeset__table {
-  font-size: 0.75rem;
+
+
+.md-content .md-typeset__table {
+  font-size: 1.2rem !important; /* 先尝试不带!important，若无效再添加 */
 }
-/* 针对表格内的单元格文本进行细化设置 */
-.md-typeset__table table td,
-.md-typeset__table table th {
-  font-size: 1.1rem; /* 单元格字体大小，与整体保持一致或单独调整 */
-  line-height: 1.5; /* 可选：调整行高，避免文字拥挤 */
+
+.md-content .md-typeset__table table td,
+.md-content .md-typeset__table table th {
+  font-size: 1.2rem !important;
 }
+
+
 /* The source code was written by @TonyCrane */
 h1 {
     counter-reset: h2;
