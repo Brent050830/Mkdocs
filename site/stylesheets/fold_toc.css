@@ -51,7 +51,10 @@ li.md-nav__item--active:nth-child(2) > .md-nav__link {
 .md-typeset .admonition, .md-typeset details {
   font-size: 0.75rem;
 }
-
+/* 表格内的字体 */
+md-typeset__table {
+  font-size: 0.75rem;
+}
 
 /* The source code was written by @TonyCrane */
 h1 {
