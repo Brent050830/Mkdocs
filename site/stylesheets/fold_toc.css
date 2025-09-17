@@ -53,15 +53,15 @@ li.md-nav__item--active:nth-child(2) > .md-nav__link {
 }
 
 
-.md-content .md-typeset__table {
-  font-size: 1.2rem !important; /* 先尝试不带!important，若无效再添加 */
+/* 针对表格内的表头单元格（th） */
+.md-typeset__table th {
+  font-size: 16px !important; /* 自定义字体大小，单位可换rem等 */
 }
 
-.md-content .md-typeset__table table td,
-.md-content .md-typeset__table table th {
-  font-size: 1.2rem !important;
+/* 针对表格内的内容单元格（td） */
+.md-typeset__table td {
+  font-size: 14px !important; /* 内容字体大小，可与表头区分 */
 }
-
 
 /* The source code was written by @TonyCrane */
 h1 {
