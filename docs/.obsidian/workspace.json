@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自学/人工智能/人工智能引论.md",
+                "file": "随笔/杂事/杂事.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "人工智能引论"
+              "title": "杂事"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自学/人工智能/人工智能引论.md",
+                "file": "随笔/杂事/杂事.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "人工智能引论 的大纲"
+              "title": "杂事 的大纲"
             }
           },
           {
@@ -89,8 +89,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -190,10 +189,12 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "杂项/车队/1.md",
+    "杂项/车队/creo.md",
+    "自学/人工智能/人工智能引论.md",
     "自学/人工智能/png/Pasted image 20250921201132.png",
     "大三秋冬/设计/设计.md",
     "大三秋冬/传热学/传热学1.md",
-    "自学/人工智能/人工智能引论.md",
     "随笔/杂事/杂事.md",
     "随笔/杂事/学车.md",
     "自学/simulink/入门.md",
@@ -206,7 +207,6 @@
     "自学/simulink/png/Pasted image 20250921162253.png",
     "自学/simulink/png/Pasted image 20250921161111.png",
     "自学/simulink/png/Pasted image 20250921155237.png",
-    "自学/simulink/png/Pasted image 20250921154400.png",
     "自学/simulink/png",
     "自学/simulink",
     "大三秋冬/汽车理论/理论1.md",
@@ -226,8 +226,6 @@
     "随笔/随笔.md",
     "杂项/srtp/1.md",
     "杂项/srtp/2.md",
-    "杂项/车队/creo.md",
-    "杂项/车队/1.md",
     "杂项/车队/2.md",
     "闲来无事/杂事记录/未命名.md",
     "自学/人工智能/就是一个数组.md",
