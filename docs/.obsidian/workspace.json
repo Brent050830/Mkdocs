@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -187,7 +188,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "d3149a9f36047b6f",
+  "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
     "自学/simulink/png/Pasted image 20250921170554.png",
     "自学/simulink/png/Pasted image 20250921170510.png",
