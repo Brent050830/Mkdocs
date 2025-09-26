@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/控制/控制1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "传热学1"
+              "title": "控制1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/控制/控制1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "传热学1 的大纲"
+              "title": "控制1 的大纲"
             }
           },
           {
@@ -190,22 +190,22 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
-    "大三秋冬/传热学/png/Pasted image 20250924130216.png",
-    "大三秋冬/传热学/png/Pasted image 20250924130205.png",
-    "大三秋冬/动力系统/动力系统1.md",
-    "大三秋冬/传热学/传热学1.md",
-    "大三秋冬/传热学/png/Pasted image 20250923192442.png",
-    "大三秋冬/动力系统/png/Pasted image 20250923161101.png",
-    "大三秋冬/动力系统/png/Pasted image 20250923141400.png",
-    "大三秋冬/动力系统/png/Pasted image 20250923141354.png",
-    "大三秋冬/动力系统/png/Pasted image 20250923140936.png",
-    "大三秋冬/动力系统/png/Pasted image 20250923140933.png",
-    "大三秋冬/动力系统/png/Pasted image 20250923140930.png",
-    "大三秋冬/动力系统/png/Pasted image 20250923140908.png",
-    "大三秋冬/动力系统/png/Pasted image 20250923140854.png",
-    "大三秋冬/控制/控制1.md",
-    "自学/simulink/官方教学.md",
+    "大三秋冬/控制/png/Pasted image 20250926225228.png",
+    "大三秋冬/控制/png/Pasted image 20250926225200.png",
+    "大三秋冬/控制/png/Pasted image 20250926225139.png",
     "自学/simulink/入门.md",
+    "自学/simulink/png/Pasted image 20250924220809.png",
+    "自学/simulink/png/Pasted image 20250924220504.png",
+    "自学/simulink/png/Pasted image 20250924194117.png",
+    "自学/simulink/png/Pasted image 20250924193016.png",
+    "自学/simulink/png/Pasted image 20250924192601.png",
+    "自学/simulink/png/Pasted image 20250924192258.png",
+    "自学/simulink/png/Pasted image 20250924190910.png",
+    "自学/simulink/官方教学.md",
+    "大三秋冬/传热学/传热学1.md",
+    "大三秋冬/传热学/png/Pasted image 20250924130216.png",
+    "大三秋冬/动力系统/动力系统1.md",
+    "大三秋冬/控制/控制1.md",
     "大三秋冬/设计/设计.md",
     "随笔/杂事/杂事.md",
     "杂项/车队/1.md",
