@@ -94,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -188,8 +189,9 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "a6e62315a5fc673f",
+  "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "大三秋冬/动力系统/png/Pasted image 20250929204243.png",
     "大三秋冬/传热学/传热学1.md",
     "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/动力系统/png/Pasted image 20250928212126.png",
