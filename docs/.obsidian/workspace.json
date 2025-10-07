@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "自学/人工智能/人工智能引论.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "传热学1"
+              "title": "人工智能引论"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "自学/人工智能/人工智能引论.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "传热学1 的大纲"
+              "title": "人工智能引论 的大纲"
             }
           },
           {
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1/25.md",
+                "file": "自学/人工智能/人工智能引论.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "25 的反向链接列表"
+              "title": "人工智能引论 的反向链接列表"
             }
           },
           {
@@ -171,7 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -190,18 +190,19 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "自学/人工智能/png/Pasted image 20251007232114.png",
+    "自学/人工智能/png/Pasted image 20251007230820.png",
+    "自学/人工智能/png/Pasted image 20251007230425.png",
+    "自学/人工智能/png/Pasted image 20251007225909.png",
+    "自学/人工智能/png/Pasted image 20251007225753.png",
+    "自学/人工智能/png/Pasted image 20251007225739.png",
+    "自学/人工智能/png/Pasted image 20251007224807.png",
+    "自学/人工智能/png/Pasted image 20251007224606.png",
+    "自学/人工智能/png/Pasted image 20251007224127.png",
+    "自学/人工智能/png/Pasted image 20251007223631.png",
+    "自学/人工智能/png/Pasted image 20251007221423.png",
     "大三秋冬/传热学/传热学1.md",
-    "大三秋冬/传热学/png/Pasted image 20251001223352.png",
-    "大三秋冬/传热学/png/Pasted image 20251001223343.png",
-    "大三秋冬/传热学/png/Pasted image 20251001222615.png",
-    "大三秋冬/传热学/png/Pasted image 20251001222448.png",
     "大三秋冬/动力系统/动力系统1.md",
-    "大三秋冬/动力系统/png/Pasted image 20250929205835.png",
-    "大三秋冬/动力系统/png/Pasted image 20250929204243.png",
-    "大三秋冬/动力系统/png/Pasted image 20250928212126.png",
-    "大三秋冬/动力系统/png/Pasted image 20250928211412.png",
-    "大三秋冬/动力系统/png/Pasted image 20250928210926.png",
-    "大三秋冬/动力系统/png/Pasted image 20250928210525.png",
     "自学/人工智能/人工智能引论.md",
     "自学/人工智能/入门.md",
     "随笔/随笔.md",
