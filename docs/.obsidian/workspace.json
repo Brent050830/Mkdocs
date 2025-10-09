@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/动力系统/动力系统1.md",
+                "file": "大三秋冬/设计/设计.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "动力系统1"
+              "title": "设计"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/动力系统/动力系统1.md",
+                "file": "大三秋冬/设计/设计.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "动力系统1 的大纲"
+              "title": "设计 的大纲"
             }
           },
           {
@@ -188,22 +188,23 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "a6e62315a5fc673f",
+  "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "大三秋冬/设计/png/Pasted image 20251009223104.png",
+    "大三秋冬/设计/png/Pasted image 20251009221756.png",
+    "大三秋冬/设计/png/Pasted image 20251009221730.png",
+    "大三秋冬/设计/png/Pasted image 20251009221249.png",
+    "大三秋冬/设计/png/Pasted image 20251009220716.png",
+    "大三秋冬/设计/png/Pasted image 20251009220701 3.png",
+    "大三秋冬/设计/png/Pasted image 20251009220701 2.png",
+    "大三秋冬/设计/png/Pasted image 20251009220701 1.png",
+    "大三秋冬/设计/png/Pasted image 20251009220701.png",
+    "大三秋冬/设计/png/Pasted image 20251009220034.png",
+    "大三秋冬/设计/png/Pasted image 20251009215146.png",
+    "大三秋冬/动力系统/动力系统1.md",
     "自学/人工智能/人工智能引论.md",
-    "自学/人工智能/png/Pasted image 20251009200053.png",
-    "自学/人工智能/png/Pasted image 20251009194017.png",
-    "自学/人工智能/png/Pasted image 20251009193646.png",
-    "自学/人工智能/png/Pasted image 20251009193041.png",
-    "自学/人工智能/png/Pasted image 20251009185140.png",
-    "自学/人工智能/png/Pasted image 20251009154713.png",
-    "自学/人工智能/png/Pasted image 20251009154352.png",
-    "自学/人工智能/png/Pasted image 20251009153701.png",
-    "自学/人工智能/png/Pasted image 20251009151045.png",
-    "自学/人工智能/png/Pasted image 20251009150812.png",
     "自学/人工智能/深度学习.md",
     "大三秋冬/设计/设计.md",
-    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/传热学/传热学1.md",
     "大三秋冬/控制/控制1.md",
     "大三秋冬/控制/数学基础.md",
