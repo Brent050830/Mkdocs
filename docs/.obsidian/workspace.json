@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自学/人工智能/人工智能引论.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "人工智能引论"
+              "title": "动力系统1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自学/人工智能/人工智能引论.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "人工智能引论 的大纲"
+              "title": "动力系统1 的大纲"
             }
           },
           {
@@ -188,8 +188,9 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "e338bcb6ecbee499",
+  "active": "a6e62315a5fc673f",
   "lastOpenFiles": [
+    "自学/人工智能/人工智能引论.md",
     "自学/人工智能/png/Pasted image 20251009200053.png",
     "自学/人工智能/png/Pasted image 20251009194017.png",
     "自学/人工智能/png/Pasted image 20251009193646.png",
@@ -200,11 +201,9 @@
     "自学/人工智能/png/Pasted image 20251009153701.png",
     "自学/人工智能/png/Pasted image 20251009151045.png",
     "自学/人工智能/png/Pasted image 20251009150812.png",
-    "自学/人工智能/png/Pasted image 20251009150628.png",
     "自学/人工智能/深度学习.md",
     "大三秋冬/设计/设计.md",
     "大三秋冬/动力系统/动力系统1.md",
-    "自学/人工智能/人工智能引论.md",
     "大三秋冬/传热学/传热学1.md",
     "大三秋冬/控制/控制1.md",
     "大三秋冬/控制/数学基础.md",
