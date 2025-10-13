@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "传热学1"
+              "title": "动力系统1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "传热学1 的大纲"
+              "title": "动力系统1 的大纲"
             }
           },
           {
@@ -190,6 +190,11 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "大三秋冬/动力系统/png/Pasted image 20251013225700.png",
+    "大三秋冬/动力系统/png/Pasted image 20251013225352.png",
+    "大三秋冬/动力系统/png/Pasted image 20251013224656.png",
+    "大三秋冬/传热学/传热学1.md",
+    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/传热学/png/Pasted image 20251012224811.png",
     "大三秋冬/传热学/png/Pasted image 20251012224521.png",
     "大三秋冬/传热学/png/Pasted image 20251012224137.png",
@@ -198,16 +203,11 @@
     "大三秋冬/传热学/png/Pasted image 20251012223710.png",
     "大三秋冬/传热学/png/Pasted image 20251012223701.png",
     "大三秋冬/传热学/png/Pasted image 20251012223208.png",
-    "大三秋冬/传热学/png/Pasted image 20251012223012.png",
-    "大三秋冬/传热学/png/Pasted image 20251012222958.png",
-    "大三秋冬/传热学/png/Pasted image 20251012222700.png",
     "大三秋冬/控制/控制1.md",
     "大三秋冬/设计/CAD装配图.md",
     "大三秋冬/设计/设计.md",
-    "大三秋冬/动力系统/动力系统1.md",
     "自学/人工智能/人工智能引论.md",
     "自学/人工智能/深度学习.md",
-    "大三秋冬/传热学/传热学1.md",
     "大三秋冬/控制/数学基础.md",
     "自学/人工智能/入门.md",
     "随笔/随笔.md",
