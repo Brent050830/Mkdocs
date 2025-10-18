@@ -11,12 +11,14 @@
             "id": "e338bcb6ecbee499",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "大三秋冬/汽车理论/png/Pasted image 20251017230524.png"
+                "file": "大三秋冬/设计/设计.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20251017230524"
+              "icon": "lucide-file",
+              "title": "设计"
             }
           }
         ]
@@ -68,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自学/数学竞赛/自学.md",
+                "file": "大三秋冬/设计/设计.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "自学 的大纲"
+              "title": "设计 的大纲"
             }
           },
           {
@@ -87,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -187,17 +190,18 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
-    "大三秋冬/汽车理论/理论1.md",
+    "大三秋冬/设计/png/Pasted image 20251018130325.png",
+    "大三秋冬/设计/png/Pasted image 20251018130256.png",
+    "大三秋冬/设计/png/Pasted image 20251018130001.png",
+    "大三秋冬/设计/png/Pasted image 20251018125808.png",
+    "大三秋冬/设计/png/Pasted image 20251018123959.png",
     "大三秋冬/汽车理论/png/Pasted image 20251017230524.png",
+    "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/汽车理论/png/Pasted image 20251017222536.png",
     "大三秋冬/汽车理论/png/Pasted image 20251017221407.png",
     "大三秋冬/汽车理论/png/Pasted image 20251017222008.png",
     "大三秋冬/汽车理论/png/Pasted image 20251017180233.png",
     "大三秋冬/汽车理论/png/Pasted image 20251017154823.png",
-    "大三秋冬/汽车理论/png/Pasted image 20251017154640.png",
-    "大三秋冬/汽车理论/png/Pasted image 20251017152645.png",
-    "大三秋冬/汽车理论/png/Pasted image 20251017152627.png",
-    "大三秋冬/汽车理论/png/Pasted image 20251017151818.png",
     "大三秋冬/汽车理论/png",
     "自学/数学竞赛/自学.md",
     "自学/数学竞赛",
