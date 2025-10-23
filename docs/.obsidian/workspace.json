@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自学/人工智能/人工智能引论.md",
+                "file": "大三秋冬/控制/控制1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "人工智能引论"
+              "title": "控制1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自学/人工智能/人工智能引论.md",
+                "file": "大三秋冬/控制/控制1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "人工智能引论 的大纲"
+              "title": "控制1 的大纲"
             }
           },
           {
@@ -190,6 +190,14 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
+    "大三秋冬/控制/png/Pasted image 20251023200430.png",
+    "大三秋冬/控制/png/Pasted image 20251023200353.png",
+    "大三秋冬/控制/数学基础.md",
+    "随笔/日记/支教.md",
+    "随笔/杂事/学车.md",
+    "随笔/杂事/杂事.md",
+    "随笔/随笔.md",
+    "自学/人工智能/人工智能引论.md",
     "自学/人工智能/png/Pasted image 20251022213220.png",
     "自学/人工智能/png/Pasted image 20251022212228.png",
     "自学/人工智能/png/Pasted image 20251022212143.png",
@@ -199,10 +207,7 @@
     "自学/人工智能/png/Pasted image 20251022204531.png",
     "自学/人工智能/png/Pasted image 20251022203820.png",
     "自学/人工智能/png/Pasted image 20251022203511.png",
-    "自学/人工智能/png/Pasted image 20251022203509.png",
-    "自学/人工智能/png/Pasted image 20251022114336.png",
     "大三秋冬/传热学/传热学1.md",
-    "自学/人工智能/人工智能引论.md",
     "自学/人工智能/入门.md",
     "大三秋冬/设计/CAD装配图.md",
     "大三秋冬/控制/控制1.md",
@@ -212,11 +217,7 @@
     "大三秋冬/汽车理论/png",
     "自学/数学竞赛/自学.md",
     "自学/数学竞赛",
-    "大三秋冬/控制/数学基础.md",
     "自学/人工智能/深度学习.md",
-    "随笔/随笔.md",
-    "随笔/杂事/杂事.md",
-    "随笔/杂事/学车.md",
     "自学/simulink/官方教学.md",
     "自学/simulink/入门.md",
     "杂项/车队/1.md",
@@ -234,7 +235,6 @@
     "杂项/车队/2.md",
     "闲来无事/杂事记录/未命名.md",
     "自学/人工智能/就是一个数组.md",
-    "自学/人工智能/新的.md",
-    "index.md"
+    "自学/人工智能/新的.md"
   ]
 }
