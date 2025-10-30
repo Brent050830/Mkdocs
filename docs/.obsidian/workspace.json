@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/控制/控制1.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "控制1"
+              "title": "动力系统1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/控制/控制1.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "控制1 的大纲"
+              "title": "动力系统1 的大纲"
             }
           },
           {
@@ -94,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -111,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "自学/人工智能/人工智能引论.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "人工智能引论 的反向链接列表"
+              "title": "动力系统1 的反向链接列表"
             }
           },
           {
@@ -191,26 +190,26 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
-    "大三秋冬/控制/png/Pasted image 20251029174302.png",
-    "大三秋冬/控制/png/Pasted image 20251029173514.png",
-    "大三秋冬/控制/png/Pasted image 20251029171425.png",
-    "大三秋冬/控制/png/Pasted image 20251029171415.png",
-    "大三秋冬/控制/png/Pasted image 20251029164555.png",
-    "大三秋冬/控制/png/Pasted image 20251029164045.png",
-    "大三秋冬/控制/png/Pasted image 20251029163939.png",
-    "大三秋冬/控制/png/Pasted image 20251029163154.png",
-    "大三秋冬/控制/png/Pasted image 20251029162911.png",
-    "大三秋冬/控制/png/Pasted image 20251029162610.png",
-    "大三秋冬/控制/png/Pasted image 20251029162050.png",
-    "大三秋冬/动力系统/动力系统1.md",
+    "大三秋冬/动力系统/png/Pasted image 20251030200813.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030200715.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030200342.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030200251.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030195422.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030194530.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030194257.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030194124.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030194052.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030193004.png",
+    "大三秋冬/动力系统/png/Pasted image 20251030192859.png",
+    "大三秋冬/传热学/传热学1.md",
     "大三秋冬/控制/控制1.md",
+    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/控制/数学基础.md",
     "随笔/日记/支教.md",
     "随笔/杂事/学车.md",
     "随笔/杂事/杂事.md",
     "随笔/随笔.md",
     "自学/人工智能/人工智能引论.md",
-    "大三秋冬/传热学/传热学1.md",
     "自学/人工智能/入门.md",
     "大三秋冬/设计/CAD装配图.md",
     "大三秋冬/设计/设计.md",
