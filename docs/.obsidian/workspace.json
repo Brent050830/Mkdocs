@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/设计/设计.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "设计"
+              "title": "动力系统1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/设计/设计.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "设计 的大纲"
+              "title": "动力系统1 的大纲"
             }
           },
           {
@@ -190,6 +190,8 @@
   },
   "active": "a6e62315a5fc673f",
   "lastOpenFiles": [
+    "大三秋冬/汽车理论/理论1.md",
+    "大三秋冬/设计/设计.md",
     "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/动力系统/png/Pasted image 20251103150012.png",
     "大三秋冬/动力系统/png/Pasted image 20251103145002.png",
@@ -201,9 +203,7 @@
     "大三秋冬/动力系统/png/Pasted image 20251103142839.png",
     "大三秋冬/动力系统/png/Pasted image 20251103142828.png",
     "大三秋冬/动力系统/png/Pasted image 20251103142635.png",
-    "大三秋冬/设计/设计.md",
     "大三秋冬/控制/控制1.md",
-    "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/传热学/传热学1.md",
     "大三秋冬/控制/数学基础.md",
     "随笔/日记/支教.md",
