@@ -94,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -190,17 +191,17 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
-    "大三秋冬/设计/png/Pasted image 20251102120120.png",
-    "大三秋冬/设计/png/Pasted image 20251102120114.png",
-    "大三秋冬/设计/png/Pasted image 20251102115927.png",
-    "大三秋冬/设计/png/Pasted image 20251102115916.png",
-    "大三秋冬/设计/png/Pasted image 20251102115723.png",
-    "大三秋冬/设计/png/Pasted image 20251102115445.png",
-    "大三秋冬/设计/png/Pasted image 20251102115208.png",
-    "大三秋冬/设计/png/Pasted image 20251102114855.png",
-    "大三秋冬/设计/png/Pasted image 20251102114610.png",
-    "大三秋冬/设计/png/Pasted image 20251102114333.png",
-    "大三秋冬/设计/png/Pasted image 20251102114135.png",
+    "大三秋冬/设计/png/Pasted image 20251103122408.png",
+    "大三秋冬/设计/png/Pasted image 20251103122344.png",
+    "大三秋冬/设计/png/Pasted image 20251103121951.png",
+    "大三秋冬/设计/png/Pasted image 20251103121615.png",
+    "大三秋冬/设计/png/Pasted image 20251103121440.png",
+    "大三秋冬/设计/png/Pasted image 20251103114830.png",
+    "大三秋冬/设计/png/Pasted image 20251103113458.png",
+    "大三秋冬/设计/png/Pasted image 20251103112526.png",
+    "大三秋冬/设计/png/Pasted image 20251103111311.png",
+    "大三秋冬/设计/png/Pasted image 20251103111034.png",
+    "大三秋冬/设计/png/Pasted image 20251103110527.png",
     "大三秋冬/控制/控制1.md",
     "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/动力系统/动力系统1.md",
