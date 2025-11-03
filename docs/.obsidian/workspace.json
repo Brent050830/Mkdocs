@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/设计/设计.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "设计"
+              "title": "动力系统1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/设计/设计.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "设计 的大纲"
+              "title": "动力系统1 的大纲"
             }
           },
           {
@@ -191,17 +191,18 @@
   },
   "active": "e338bcb6ecbee499",
   "lastOpenFiles": [
-    "大三秋冬/设计/png/Pasted image 20251103122408.png",
-    "大三秋冬/设计/png/Pasted image 20251103122344.png",
-    "大三秋冬/设计/png/Pasted image 20251103121951.png",
-    "大三秋冬/设计/png/Pasted image 20251103121615.png",
-    "大三秋冬/设计/png/Pasted image 20251103121440.png",
-    "大三秋冬/设计/png/Pasted image 20251103114830.png",
-    "大三秋冬/设计/png/Pasted image 20251103113458.png",
-    "大三秋冬/设计/png/Pasted image 20251103112526.png",
-    "大三秋冬/设计/png/Pasted image 20251103111311.png",
-    "大三秋冬/设计/png/Pasted image 20251103111034.png",
-    "大三秋冬/设计/png/Pasted image 20251103110527.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103150012.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103145002.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103144348.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103144337.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103143853.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103143523.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103143406.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103142839.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103142828.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103142635.png",
+    "大三秋冬/动力系统/png/Pasted image 20251103140917.png",
+    "大三秋冬/设计/设计.md",
     "大三秋冬/控制/控制1.md",
     "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/动力系统/动力系统1.md",
@@ -214,7 +215,6 @@
     "自学/人工智能/人工智能引论.md",
     "自学/人工智能/入门.md",
     "大三秋冬/设计/CAD装配图.md",
-    "大三秋冬/设计/设计.md",
     "大三秋冬/汽车理论/png",
     "自学/数学竞赛/自学.md",
     "自学/数学竞赛",
