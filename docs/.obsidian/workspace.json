@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/控制/控制1.md",
+                "file": "大三秋冬/设计/设计.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "控制1"
+              "title": "设计"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/控制/控制1.md",
+                "file": "大三秋冬/设计/设计.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "控制1 的大纲"
+              "title": "设计 的大纲"
             }
           },
           {
@@ -188,8 +188,10 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "e338bcb6ecbee499",
+  "active": "a6e62315a5fc673f",
   "lastOpenFiles": [
+    "大三秋冬/动力系统/动力系统1.md",
+    "大三秋冬/控制/控制1.md",
     "大三秋冬/控制/png/Pasted image 20251107200801.png",
     "大三秋冬/控制/png/Pasted image 20251107200758.png",
     "大三秋冬/控制/png/Pasted image 20251107102720.png",
@@ -201,10 +203,7 @@
     "大三秋冬/传热学/png/Pasted image 20251106174413.png",
     "大三秋冬/传热学/png/Pasted image 20251106174410.png",
     "大三秋冬/传热学/png/Pasted image 20251106174407.png",
-    "大三秋冬/传热学/png/Pasted image 20251106174328.png",
-    "大三秋冬/控制/控制1.md",
     "大三秋冬/汽车理论/理论1.md",
-    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/设计/设计.md",
     "大三秋冬/控制/数学基础.md",
     "随笔/日记/支教.md",
