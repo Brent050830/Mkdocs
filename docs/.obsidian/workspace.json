@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/控制/复习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "传热学1"
+              "title": "复习"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/控制/复习.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "传热学1 的大纲"
+              "title": "复习 的大纲"
             }
           },
           {
@@ -89,8 +89,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -188,24 +187,25 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "a6e62315a5fc673f",
+  "active": "3f81e8c9f8e46641",
   "lastOpenFiles": [
+    "大三秋冬/控制/复习.md",
+    "大三秋冬/传热学/传热学1.md",
+    "大三秋冬/传热学/png/Pasted image 20251113174042.png",
+    "大三秋冬/传热学/png/Pasted image 20251113173736.png",
+    "大三秋冬/传热学/png/Pasted image 20251113173325.png",
+    "大三秋冬/传热学/png/Pasted image 20251113172228.png",
+    "大三秋冬/传热学/png/Pasted image 20251113165836.png",
+    "大三秋冬/传热学/png/Pasted image 20251113164023.png",
+    "大三秋冬/传热学/png/Pasted image 20251113163637.png",
+    "大三秋冬/传热学/png/Pasted image 20251113163500.png",
+    "大三秋冬/传热学/png/Pasted image 20251113163216.png",
+    "大三秋冬/传热学/png/Pasted image 20251113163129.png",
+    "大三秋冬/控制/控制1.md",
+    "大三秋冬/控制/数学基础.md",
     "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/设计/设计.md",
-    "大三秋冬/动力系统/png/Pasted image 20251110150058.png",
-    "大三秋冬/动力系统/png/Pasted image 20251110145636.png",
-    "大三秋冬/动力系统/png/Pasted image 20251110144912.png",
-    "大三秋冬/动力系统/png/Pasted image 20251110144214.png",
-    "大三秋冬/动力系统/png/Pasted image 20251110143556.png",
-    "大三秋冬/动力系统/png/Pasted image 20251110143013.png",
-    "大三秋冬/动力系统/png/Pasted image 20251110140539.png",
-    "大三秋冬/动力系统/png/Pasted image 20251110140332.png",
-    "大三秋冬/设计/png/Pasted image 20251110122216.png",
-    "大三秋冬/设计/png/Pasted image 20251110121912.png",
-    "大三秋冬/控制/控制1.md",
-    "大三秋冬/传热学/传热学1.md",
     "大三秋冬/汽车理论/理论1.md",
-    "大三秋冬/控制/数学基础.md",
     "随笔/日记/支教.md",
     "随笔/杂事/学车.md",
     "随笔/杂事/杂事.md",
@@ -233,7 +233,6 @@
     "杂项/srtp/2.md",
     "杂项/车队/2.md",
     "闲来无事/杂事记录/未命名.md",
-    "自学/人工智能/就是一个数组.md",
-    "自学/人工智能/新的.md"
+    "自学/人工智能/就是一个数组.md"
   ]
 }
