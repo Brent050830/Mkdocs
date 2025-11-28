@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "杂项/srtp/2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "传热学1"
+              "title": "2"
             }
           },
           {
@@ -82,13 +82,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "杂项/srtp/2.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "传热学1 的大纲"
+              "title": "2 的大纲"
             }
           },
           {
@@ -202,6 +202,12 @@
   },
   "active": "3f81e8c9f8e46641",
   "lastOpenFiles": [
+    "杂项/srtp/png/Pasted image 20251128205343.png",
+    "杂项/srtp/png/Pasted image 20251128200129.png",
+    "杂项/srtp/png/Pasted image 20251128163816.png",
+    "杂项/srtp/1.md",
+    "大三秋冬/控制/控制1.md",
+    "大三秋冬/传热学/传热学1.md",
     "大三秋冬/传热学/png/Pasted image 20251127173237.png",
     "大三秋冬/传热学/png/Pasted image 20251127173215.png",
     "大三秋冬/传热学/png/Pasted image 20251127173104.png",
@@ -210,17 +216,12 @@
     "大三秋冬/传热学/png/Pasted image 20251127171025.png",
     "大三秋冬/传热学/png/Pasted image 20251127171017.png",
     "大三秋冬/传热学/png/Pasted image 20251127171006.png",
-    "大三秋冬/传热学/png/Pasted image 20251127164351.png",
-    "大三秋冬/传热学/png/Pasted image 20251127164100.png",
-    "大三秋冬/传热学/png/Pasted image 20251127163837.png",
     "大三秋冬/动力系统/动力系统1.md",
-    "大三秋冬/传热学/传热学1.md",
     "自学/人工智能/人工智能引论.md",
     "大三秋冬/设计/设计.md",
     "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/控制/复习.md",
     "大三秋冬/控制/数学基础.md",
-    "大三秋冬/控制/控制1.md",
     "随笔/日记/支教.md",
     "随笔/杂事/学车.md",
     "随笔/杂事/杂事.md",
@@ -243,7 +244,6 @@
     "大三秋冬/设计/png",
     "大三秋冬/传热学/png",
     "大三秋冬/传热学",
-    "杂项/srtp/1.md",
     "杂项/srtp/2.md",
     "杂项/车队/2.md",
     "闲来无事/杂事记录/未命名.md",
