@@ -101,8 +101,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -200,97 +199,27 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "floating": {
-    "id": "4bccd47ac48fca17",
-    "type": "floating",
-    "children": [
-      {
-        "id": "e9a496d1e9d2e820",
-        "type": "window",
-        "children": [
-          {
-            "id": "8e192a26f7789dc7",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "8ffab1738ab1fd59",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://platers.github.io/obsidian-linter/settings/spacing-rules/#empty-line-around-math-blocks",
-                    "title": "Spacing Rules - Linter",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Spacing Rules - Linter"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 448,
-        "y": 116,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      },
-      {
-        "id": "041e9d6a3369f2e2",
-        "type": "window",
-        "children": [
-          {
-            "id": "caf9ad3e46ce86ce",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "3c81f8126b4a1341",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://platers.github.io/obsidian-linter/settings/spacing-rules/#empty-line-around-math-blocks",
-                    "title": "Spacing Rules - Linter",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Spacing Rules - Linter"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 57,
-        "y": 112,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "a6e62315a5fc673f",
+  "active": "3f81e8c9f8e46641",
   "lastOpenFiles": [
+    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/传热学/传热学1.md",
+    "大三秋冬/传热学/未命名.md",
+    "大三秋冬/传热学/未命名 1.md",
+    "大三秋冬/传热学/png/Pasted image 20251204173914.png",
+    "大三秋冬/传热学/png/Pasted image 20251204173301.png",
+    "大三秋冬/传热学/png/Pasted image 20251204165908.png",
+    "大三秋冬/传热学/png/Pasted image 20251204165221.png",
+    "大三秋冬/传热学/png/Pasted image 20251204165035.png",
+    "大三秋冬/传热学/png/Pasted image 20251204164426.png",
+    "大三秋冬/传热学/png/Pasted image 20251204163415.png",
+    "大三秋冬/传热学/png/Pasted image 20251204162917.png",
+    "大三秋冬/传热学/png/Pasted image 20251204162829.png",
     "自学/人工智能/人工智能引论.md",
     "自学/人工智能/png/Pasted image 20251203231734.png",
-    "自学/人工智能/png/Pasted image 20251203214654.png",
-    "自学/人工智能/png/Pasted image 20251203214352.png",
-    "自学/人工智能/png/Pasted image 20251203213453.png",
-    "自学/人工智能/png/Pasted image 20251203213006.png",
-    "自学/人工智能/png/Pasted image 20251203212213.png",
-    "自学/人工智能/png/Pasted image 20251203212101.png",
-    "自学/人工智能/png/Pasted image 20251203205056.png",
-    "自学/人工智能/png/Pasted image 20251203204926.png",
-    "自学/人工智能/png/Pasted image 20251203204802.png",
     "自学/人工智能/未命名.md",
     "自学/人工智能/入门.md",
     "杂项/srtp/2.md",
     "大三秋冬/汽车理论/理论1.md",
-    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/设计/设计.md",
     "杂项/srtp/1.md",
     "大三秋冬/控制/控制1.md",
@@ -317,7 +246,6 @@
     "大三秋冬/设计/png",
     "大三秋冬/传热学/png",
     "大三秋冬/传热学",
-    "杂项/车队/2.md",
-    "闲来无事/杂事记录/未命名.md"
+    "杂项/车队/2.md"
   ]
 }
