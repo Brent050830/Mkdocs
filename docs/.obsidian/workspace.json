@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/设计/CAD装配图.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CAD装配图"
+              "title": "动力系统1"
             }
           },
           {
@@ -82,13 +82,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/设计/CAD装配图.md",
+                "file": "大三秋冬/动力系统/动力系统1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "CAD装配图 的大纲"
+              "title": "动力系统1 的大纲"
             }
           },
           {
@@ -101,11 +101,13 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -201,21 +203,22 @@
   },
   "active": "3f81e8c9f8e46641",
   "lastOpenFiles": [
-    "大三秋冬/设计/png/Pasted image 20251205225507.png",
-    "大三秋冬/设计/CAD装配图.md",
-    "大三秋冬/设计/png/5a51eddfcc09a79499cf207467b75685.png",
-    "大三秋冬/设计/png/Pasted image 20251205201344.png",
-    "大三秋冬/设计/png/Pasted image 20251205201150.png",
-    "大三秋冬/设计/png/Pasted image 20251205201109.png",
-    "大三秋冬/设计/png/Pasted image 20251205201045.png",
-    "大三秋冬/设计/png/Pasted image 20251205200845.png",
-    "大三秋冬/设计/png/Pasted image 20251205200745.png",
-    "大三秋冬/设计/png/d8cc91811c98136d9f7c85b0f3afb10f.png",
-    "大三秋冬/设计/png/Pasted image 20251205200647.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208150207.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208150032.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208145539.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208145117.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208145055.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208144519.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208144144.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208143823.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208143623.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208143549.png",
+    "大三秋冬/动力系统/png/Pasted image 20251208143351.png",
     "大三秋冬/设计/设计.md",
+    "大三秋冬/动力系统/动力系统1.md",
+    "大三秋冬/设计/CAD装配图.md",
     "自学/人工智能/人工智能引论.md",
     "大三秋冬/传热学/传热学1.md",
-    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/传热学/未命名.md",
     "大三秋冬/传热学/未命名 1.md",
     "自学/人工智能/未命名.md",
