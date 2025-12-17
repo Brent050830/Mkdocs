@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/汽车理论/理论1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "传热学1"
+              "title": "理论1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/汽车理论/理论1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "传热学1 的大纲"
+              "title": "理论1 的大纲"
             }
           },
           {
@@ -188,20 +188,21 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "a6e62315a5fc673f",
+  "active": "3f81e8c9f8e46641",
   "lastOpenFiles": [
-    "大三秋冬/动力系统/动力系统1.md",
+    "大三秋冬/汽车理论/png/Pasted image 20251217000053.png",
+    "大三秋冬/汽车理论/png/Pasted image 20251217000037.png",
+    "大三秋冬/汽车理论/png/Pasted image 20251216235237.png",
+    "大三秋冬/汽车理论/png/Pasted image 20251216234714.png",
+    "大三秋冬/汽车理论/png/Pasted image 20251216234335.png",
+    "大三秋冬/汽车理论/png/Pasted image 20251216233113.png",
+    "大三秋冬/汽车理论/png/Pasted image 20251216232959.png",
     "大三秋冬/传热学/传热学1.md",
+    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/传热学/png/Pasted image 20251216153448.png",
     "大三秋冬/传热学/png/Pasted image 20251216152038.png",
     "大三秋冬/传热学/png/Pasted image 20251216152016.png",
     "大三秋冬/传热学/png/Pasted image 20251216151958.png",
-    "大三秋冬/传热学/png/Pasted image 20251216151942.png",
-    "大三秋冬/传热学/png/Pasted image 20251216151109.png",
-    "大三秋冬/传热学/png/Pasted image 20251216144050.png",
-    "大三秋冬/动力系统/png/Pasted image 20251216113150.png",
-    "大三秋冬/动力系统/png/Pasted image 20251216113113.png",
-    "大三秋冬/动力系统/png/Pasted image 20251216113108.png",
     "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/设计/设计.md",
     "大三秋冬/设计/CAD装配图.md",
