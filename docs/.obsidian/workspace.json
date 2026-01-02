@@ -89,12 +89,12 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -188,7 +188,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "3f81e8c9f8e46641",
+  "active": "a6e62315a5fc673f",
   "lastOpenFiles": [
     "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/传热学/传热学1.md",
