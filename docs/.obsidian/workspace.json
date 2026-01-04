@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/汽车理论/理论1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "传热学1"
+              "title": "理论1"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三秋冬/传热学/传热学1.md",
+                "file": "大三秋冬/汽车理论/理论1.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "传热学1 的大纲"
+              "title": "理论1 的大纲"
             }
           },
           {
@@ -89,13 +89,11 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -191,22 +189,23 @@
   },
   "active": "3f81e8c9f8e46641",
   "lastOpenFiles": [
-    "大三秋冬/动力系统/动力系统1.md",
+    "大三秋冬/汽车理论/png/Pasted image 20260104234145.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104233614.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104233149.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104230339.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104201738.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104200837.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104193147.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104192335.png",
     "大三秋冬/传热学/传热学1.md",
-    "大三秋冬/动力系统/png/Pasted image 20251230112437.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230111608.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230105605.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230102758.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230102615.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230101600.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230101549.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230101531.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230101346.png",
-    "大三秋冬/动力系统/png/Pasted image 20251230101211.png",
+    "大三秋冬/汽车理论/理论1.md",
+    "大三秋冬/汽车理论/png/Pasted image 20260104191225.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104191117.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260104185121.png",
+    "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/汽车理论/README.md",
     "大三秋冬/设计/设计.md",
     "大三秋冬/汽车理论/作业.md",
-    "大三秋冬/汽车理论/理论1.md",
     "自学/python/数据处理部分.md",
     "大三秋冬/设计/CAD装配图.md",
     "自学/python/png",
