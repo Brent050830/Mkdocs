@@ -89,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -187,11 +188,16 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "d3149a9f36047b6f",
+  "active": "a6e62315a5fc673f",
   "lastOpenFiles": [
-    "大三秋冬/动力系统/测验.md",
-    "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/汽车理论/作业.md",
+    "大三秋冬/汽车理论/理论1.md",
+    "大三秋冬/汽车理论/png/Pasted image 20260115163755.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260115163709.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260115163421.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260115163301.png",
+    "大三秋冬/汽车理论/png/Pasted image 20260115145013.png",
+    "大三秋冬/动力系统/测验.md",
     "大三秋冬/汽车理论/README.md",
     "大三秋冬/动力系统/总的.md",
     "大三秋冬/动力系统/动力系统1.md",
@@ -200,11 +206,6 @@
     "大三秋冬/动力系统/png/Pasted image 20260113224227.png",
     "大三秋冬/动力系统/png/Pasted image 20260113224122.png",
     "大三秋冬/动力系统/png/Pasted image 20260113223909.png",
-    "大三秋冬/动力系统/png/Pasted image 20260113223804.png",
-    "大三秋冬/动力系统/png/Pasted image 20260113223652.png",
-    "大三秋冬/动力系统/png/Pasted image 20260113223623.png",
-    "大三秋冬/动力系统/png/Pasted image 20260113211709.png",
-    "大三秋冬/动力系统/png/Pasted image 20260113211607.png",
     "大三秋冬/传热学/传热学1.md",
     "大三秋冬/传热学/未命名.md",
     "大三秋冬/设计/设计.md",
