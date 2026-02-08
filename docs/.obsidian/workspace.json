@@ -13,24 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自学/人工智能/人工智能引论.md",
+                "file": "自学/节能减排/寒假学习/强化学习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "人工智能引论"
+              "title": "强化学习"
             }
           },
           {
-            "id": "d09c002e01874a4a",
+            "id": "d5b840bc87782a01",
             "type": "leaf",
             "state": {
               "type": "release-notes",
               "state": {
-                "currentVersion": "1.11.5"
+                "currentVersion": "1.11.7"
               },
               "icon": "lucide-book-up",
-              "title": "版本说明 1.11.5"
+              "title": "版本说明 1.11.7"
             }
           }
         ]
@@ -105,7 +105,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -199,31 +200,33 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "d3149a9f36047b6f",
+  "active": "e7d2f7edf69f5483",
   "lastOpenFiles": [
+    "自学/节能减排/寒假学习/png/Pasted image 20260207234530.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207233745.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207232642.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207230432.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207225833.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207225610.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207225547.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207225402.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207224939.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207224922.png",
+    "自学/节能减排/寒假学习/png/Pasted image 20260207224808.png",
     "自学/节能减排/寒假学习/强化学习.md",
+    "自学/节能减排/寒假学习/png",
+    "自学/人工智能/人工智能引论.md",
     "自学/人工智能/入门.md",
     "自学/节能减排/寒假学习",
     "自学/节能减排",
-    "自学/人工智能/人工智能引论.md",
     "自学/人工智能/深度学习.md",
     "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/设计/未命名.md",
-    "大三秋冬/汽车理论/png/Pasted image 20260115213307.png",
-    "大三秋冬/汽车理论/png/Pasted image 20260115213036.png",
     "大三秋冬/汽车理论/作业.md",
-    "大三秋冬/汽车理论/png/Pasted image 20260115163755.png",
-    "大三秋冬/汽车理论/png/Pasted image 20260115163709.png",
-    "大三秋冬/汽车理论/png/Pasted image 20260115163421.png",
-    "大三秋冬/汽车理论/png/Pasted image 20260115163301.png",
-    "大三秋冬/汽车理论/png/Pasted image 20260115145013.png",
     "大三秋冬/动力系统/测验.md",
     "大三秋冬/汽车理论/README.md",
     "大三秋冬/动力系统/总的.md",
     "大三秋冬/动力系统/动力系统1.md",
-    "大三秋冬/动力系统/png/Pasted image 20260113224341.png",
-    "大三秋冬/动力系统/png/Pasted image 20260113224313.png",
-    "大三秋冬/动力系统/png/Pasted image 20260113224227.png",
     "大三秋冬/传热学/传热学1.md",
     "大三秋冬/传热学/未命名.md",
     "大三秋冬/设计/设计.md",
@@ -240,12 +243,10 @@
     "大三秋冬/控制/复习.md",
     "大三秋冬/控制/数学基础.md",
     "随笔/日记/支教.md",
-    "随笔/杂事/学车.md",
     "大三秋冬/汽车理论/png",
     "自学/数学竞赛",
     "自学/simulink/png",
     "自学/simulink",
-    "大三秋冬/动力系统/png",
-    "大三秋冬/汽车理论/未命名"
+    "大三秋冬/动力系统/png"
   ]
 }
