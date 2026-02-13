@@ -106,8 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -203,6 +202,7 @@
   },
   "active": "e7d2f7edf69f5483",
   "lastOpenFiles": [
+    "自学/节能减排/png/Pasted image 20260213193451.png",
     "自学/节能减排/png/Pasted image 20260213185054.png",
     "自学/节能减排/png/Pasted image 20260213183221.png",
     "自学/节能减排/png/Pasted image 20260213181435.png",
@@ -213,7 +213,6 @@
     "自学/节能减排/png/Pasted image 20260213174853.png",
     "自学/节能减排/png/Pasted image 20260213173456.png",
     "自学/节能减排/png/Pasted image 20260213173106.png",
-    "自学/节能减排/png/Pasted image 20260213172658.png",
     "自学/人工智能/人工智能引论.md",
     "自学/节能减排/强化学习.md",
     "自学/节能减排/png",
