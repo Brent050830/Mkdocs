@@ -1,0 +1,40 @@
+.highlight {
+    max-height: 400px;  /* 设置代码块初始的最大高度 */
+    overflow: hidden;  /* 隐藏超出部分 */
+    position: relative;  /* 使按钮相对于代码块定位 */
+}
+
+.code-show {
+    max-height: none !important;  /* 展开后移除最大高度限制 */
+}
+
+.code-more-box {
+    width: 100%;
+    padding-top: 50px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+    position: absolute;  /* 确保按钮在代码块内定位 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;  /* 确保按钮显示在上面 */
+}
+
+.code-more-btn {
+    display: block;
+    margin: auto;
+    width: 44px;
+    height: 22px;
+    background: #f0f0f5;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-top: 6px;
+    cursor: pointer;
+}
+
+.code-more-img {
+    cursor: pointer !important;
+    display: block;
+    margin: auto;
+    width: 22px;
+    height: 16px;
+}

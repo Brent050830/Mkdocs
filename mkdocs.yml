@@ -183,14 +183,15 @@ extra_javascript:
   # - javascripts/mathjax.js
   # - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/extra.js
+  - javascripts/script.js
   - javascripts/custom.js
   - javascripts/toc.js
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
-
   - stylesheets/yuanjiao.css
   - stylesheets/extra.css
+  - stylesheets/styles.css  # 你将 CSS 存储的文件路径
   # - custom.css
   - stylesheets/fold_toc.css
   # - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
