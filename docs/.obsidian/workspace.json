@@ -20,18 +20,6 @@
               "icon": "lucide-file",
               "title": "代码实践"
             }
-          },
-          {
-            "id": "e7394266a1c8b8dd",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.12.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.12.4"
-            }
           }
         ]
       }
@@ -105,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -201,6 +190,14 @@
   },
   "active": "c207b807fe0e53cf",
   "lastOpenFiles": [
+    "大三春夏/习概/成绩.md",
+    "tag.md",
+    "index.md",
+    "未命名.canvas",
+    "自学/节能减排/代码实践.md",
+    "大三春夏/习概",
+    "大三春夏",
+    "大三秋冬/未命名",
     "自学/节能减排/png/Pasted image 20260302122856.png",
     "自学/节能减排/png/Pasted image 20260302122231.png",
     "自学/节能减排/强化学习.md",
@@ -211,10 +208,8 @@
     "大三秋冬/动力系统/总的.md",
     "大三秋冬/动力系统/动力系统1.md",
     "大三秋冬/动力系统/测验.md",
-    "自学/节能减排/代码实践.md",
     "Excalidraw/Drawing 2026-03-01 23.07.45.excalidraw.md",
     "Excalidraw/Drawing 2026-03-01 23.08.06.excalidraw.md",
-    "未命名.canvas",
     "大三秋冬/控制/数学基础.md",
     "自学/人工智能/入门.md",
     "大三秋冬/传热学/传热学1.md",
@@ -234,10 +229,6 @@
     "自学/节能减排/png/Pasted image 20260213181435.png",
     "自学/节能减排/png/Pasted image 20260213180732.png",
     "自学/节能减排/png/Pasted image 20260213180331.png",
-    "自学/节能减排/png/Pasted image 20260213180315.png",
-    "自学/节能减排/png",
-    "自学/节能减排/寒假学习",
-    "自学/节能减排",
     "大三秋冬/汽车理论/理论1.md",
     "大三秋冬/设计/未命名.md",
     "大三秋冬/汽车理论/作业.md",
@@ -245,8 +236,6 @@
     "大三秋冬/传热学/未命名.md",
     "自学/python/数据处理部分.md",
     "自学/数学竞赛/自学.md",
-    "大三秋冬/传热学/未命名 1.md",
-    "杂项/srtp/2.md",
-    "杂项/srtp/1.md"
+    "大三秋冬/传热学/未命名 1.md"
   ]
 }
