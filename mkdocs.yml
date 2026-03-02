@@ -89,7 +89,6 @@ plugins:
   - markmap
   - minify:
       minify_html: true
-
   - pub-obsidian
   # - privacy:
   #     enabled: !ENV [CI, false]
@@ -109,7 +108,7 @@ plugins:
       tags_file: tags.md
   - git-revision-date-localized:
       enable_creation_date: true
-
+  - callouts  
 
 # extra:
 #   social:
