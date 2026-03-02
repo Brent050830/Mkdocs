@@ -89,7 +89,7 @@ plugins:
   - markmap
   - minify:
       minify_html: true
-  - pub-obsidian
+  # - pub-obsidian
   # - privacy:
   #     enabled: !ENV [CI, false]
   - blog:
@@ -145,10 +145,10 @@ markdown_extensions:
   #     nbsp: True  # 不断行空格
   - pymdownx.arithmatex:
       generic: true
-
   # - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
+  - nl2br
   - pymdownx.snippets
   - pymdownx.smartsymbols
   - pymdownx.keys
@@ -199,7 +199,7 @@ extra_css:
 
 hooks:
   - docs/overrides/hooks/reading_time.py  
-  - docs/overrides/hooks/fix_math_blocks.py
+  # - docs/overrides/hooks/fix_math_blocks.py
 nav:
 - 🏫主页: index.md
 - 🗃️杂项: 
