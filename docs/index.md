@@ -73,48 +73,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // 提取类别作为 footer（基于 url 路径），并且利用 decodeURIComponent 解码中文
         let decodedUrl = decodeURIComponent(doc.location);
-
-        // 使用最高级别的正则清理：直接去除 doc.title 开头所有的各种“数字、点、空格、特殊标点符号”
-        // \d 代表数字，\s 代表空白，\.\- 匹配点和横线，\uff0e\u3000 是全角点号和全角空格
-        let cleanTitle = doc.title.replace(/^[\d\s\.\-—_\uff0e\u3000]+/, '');
-
-        // 如果名字被不小心全删光了，做个安全回退
-        if (!cleanTitle) {
-          cleanTitle = doc.title;
-        }
-
-        // 终极暴力截断：如果还是有 "0.1 " 这4个字符开头，直接切掉它！
-        if (cleanTitle.startsWith("0.1 ")) {
-            cleanTitle = cleanTitle.substring(4);
-        } else if (cleanTitle.startsWith("0.1")) {
-            cleanTitle = cleanTitle.substring(3);
-        }
         
+        // 核心思路：不再相信被插件污染的 doc.title，直接从文件的 URL 路径中截取真正干净的名字本身作为标题！
         let pathParts = decodedUrl.replace(/\/$/, '').split('/');
+        // 最后一个路径层级就是实际的文件名（比如 "电子与控制.md" 转成 "电子与控制" / 或者作为文件夹的名称）
         let rawFilename = pathParts[pathParts.length - 1];
-        let category = pathParts.filter(p => p !== '' && p !== rawFilename).join(' / ');
-        if (!category) category = '笔记漫游';
-        // 删掉最后跟着的 / 以及替换横线
-        category = category.replace(/-/g, ' ');
         
-        let style = cardStyles[index % cardStyles.length];
+        // 如果提取出来的文件名是空的或者只是 "#"，就回退使用清理过的 doc.title，否则直接使用文件名
+        let cleanTitle = rawFilename && rawFilename !== '#' ? rawFilename : doc.title;
+        // 把可能被 URL 编码成连字符的空格转回来
+        cleanTitle = cleanTitle.replace(/-/g, ' ');
+        // 【终极清道夫】：不管是从 URL 来的，还是回退到 doc.title 来的，一律把开头的 "0.1"、数字、点号和空格全部暴力斩断！
+        cleanTitle = cleanTitle.replace(/^[\d\.\s\-]+/, '').trim();
 
-        htmlContent += `
-          <a href="${doc.location}" class="home-card" title="${cleanTitle}">
-            <div class="home-card-image" style="background: ${style.bg};">
-              ${style.icon}
-            </div>
+        let category = pathParts.filter(p => p !== '' && p !== rawFilename).join(' / ');
+        if (!category) category = '未分类笔记';
+
+        // 生成卡片 HTML 结构（采用半透明磨砂质感和无图标无图片的极简纯文字风格）
+        let htmlElement = `
+          <a href="${doc.location}" class="home-card">
             <div class="home-card-content">
-              <div class="home-card-jump">↗ 点击跳转</div>
-              <h3 class="home-card-title">${cleanTitle}</h3>
+              <div class="home-card-jump">访问笔记 →</div>
+              <div class="home-card-title" title="${cleanTitle}">${cleanTitle}</div>
               <div class="home-card-meta">
-                <span><span class="twemoji">✨</span> 漫游笔记</span>
+                <span><i class="fa fa-folder-open"></i> ${category}</span>
               </div>
               <p class="home-card-desc">${excerpt}</p>
-              <div class="home-card-footer">${category}</div>
+              <div class="home-card-footer">
+                ${decodedUrl}
+              </div>
             </div>
           </a>
         `;
+        htmlContent += htmlElement; // Append the generated htmlElement to htmlContent
       });
       document.getElementById('random-cards-container').innerHTML = htmlContent;
     })

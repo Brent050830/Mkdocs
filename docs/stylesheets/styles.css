@@ -186,16 +186,3 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-/* 遮挡粒子背景，让中间的阅读区背景半透明 */
-.md-main__inner {
-    position: relative;
-    z-index: 10;
-}
-
-/* 让主体内容区完全不透明，彻底遮挡粒子背景，保持原本的宽度和布局，不添加多余的 padding 或 margin */
-.md-content {
-    background-color: var(--md-default-bg-color) !important;
-    position: relative;
-    z-index: 10;
-}
