@@ -128,12 +128,50 @@ document.addEventListener('DOMContentLoaded', function () {
   particlesDiv.style.width = '100%';
   particlesDiv.style.height = '100%';
   particlesDiv.style.zIndex = '-1';   // 确保放置于所有内容下方
-  particlesDiv.style.pointerEvents = 'none'; // 防止阻挡鼠标事件，但下方配置的 onhover 依赖 canvas 自己的拦截，所以如果想有互动，需特别处理。
-  // Mkdocs Material 会有各种层叠，我们需要使其背景融入。如果希望鼠标互动：
-  // 先把 pointerEvents 打开，依靠 z-index 放到最底层即可
-  particlesDiv.style.pointerEvents = 'auto';
+  particlesDiv.style.pointerEvents = 'auto'; // 允许鼠标事件进行排斥
 
   document.body.appendChild(particlesDiv);
+
+  // 动态更新剪裁区域，使得粒子的画布在文章主体区域被“物理挖空”
+  function updateParticleMask() {
+    // 专门抓取文章的实际内容区域（不包含左右侧边栏目录）
+    const mainContent = document.querySelector('.md-content');
+    if (!mainContent) return;
+
+    // 获取文章主体的屏幕坐标
+    const rect = mainContent.getBoundingClientRect();
+
+    // 如果屏幕非常窄（手机端），为了避免完全看不到特效，我们可以不挖空，或者仅仅稍微缩减一点挖空范围
+    if (rect.width > window.innerWidth * 0.95) {
+      // 手机端让背景完全被压在底部即可，因为本来横向空间就很小
+      particlesDiv.style.clipPath = 'none';
+      return;
+    }
+
+    // 使用 CSS clip-path: polygon 绘制一个带有中心镂空的遮罩
+    // 这会在画布中心切出一个完全透明的长方形，使得左、右侧边栏均能显示特效，唯独中间文字区没有。
+    const left = rect.left;
+    const right = rect.right;
+    const top = 0; // 从屏幕最顶部切开，防止头部的标题也被背景覆盖
+    const bottom = window.innerHeight; // 直到屏幕最底部
+
+    // 使用奇偶环绕规则挖除非零环绕洞：大矩形顺时针，小矩形逆时针
+    // 由于浏览器兼容性，更稳妥的做法是切分成四块外围矩形。
+    const clipPathStr = `polygon(
+      0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 
+      ${left}px ${top}px, ${left}px ${bottom}px, ${right}px ${bottom}px, ${right}px ${top}px, ${left}px ${top}px
+    )`;
+    // 奇偶填充规则在clip-path中需要明确指定 fill-rule
+    // 不过 polygon 配合 clip-rule: evenodd 是最佳做法。
+    particlesDiv.style.clipPath = clipPathStr;
+    particlesDiv.style.clipRule = 'evenodd';
+  }
+
+  // 初次更新和窗口变化时更新
+  window.addEventListener('resize', updateParticleMask);
+  window.addEventListener('scroll', updateParticleMask);
+  // 加个小延迟确保DOM排版完成
+  setTimeout(updateParticleMask, 500);
 
   // 确保 particlesJS 加载完毕后再执行
   if (typeof particlesJS !== 'undefined') {
@@ -141,108 +179,23 @@ document.addEventListener('DOMContentLoaded', function () {
       "particles": {
         "number": {
           "value": 120,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
+          "density": { "enable": true, "value_area": 800 }
         },
-        "color": {
-          "value": "#f3afca"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          },
-          "polygon": {
-            "nb_sides": 5
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false,
-          "anim": {
-            "enable": false,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 4,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 40,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 80,
-          "color": "#f3afca",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 1,
-          "direction": "none",
-          "random": true,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
+        "color": { "value": "#f3afca" },
+        "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 } },
+        "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } },
+        "size": { "value": 4, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } },
+        "line_linked": { "enable": true, "distance": 80, "color": "#f3afca", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
       },
       "interactivity": {
         "detect_on": "window",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "grab"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "repulse"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 200,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 250,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "repulse" }, "resize": true },
+        "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 250, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } }
       },
       "retina_detect": true
     });
-    console.log('particles.js loaded via extra.js');
+    console.log('particles.js loaded via extra.js with center hole mask');
   } else {
     console.warn("particlesJS is not defined. Ensure CDN is loaded in mkdocs.yml.");
   }
