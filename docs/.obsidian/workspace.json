@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三春夏/汽车电子与控制/电子与控制.md",
+                "file": "大三春夏/汽车电子与控制/carsim的使用.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "电子与控制"
+              "title": "carsim的使用"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三春夏/汽车电子与控制/电子与控制.md",
+                "file": "大三春夏/汽车电子与控制/carsim的使用.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "电子与控制 的大纲"
+              "title": "carsim的使用 的大纲"
             }
           },
           {
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -188,23 +187,26 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "c207b807fe0e53cf",
+  "active": "d3149a9f36047b6f",
   "lastOpenFiles": [
-    "大三春夏/汽车电子与控制/png/Pasted image 20260303142428.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260303140443.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260303140427.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260303134704.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304222818.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304222633.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304220223.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304215944.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304215939.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304214105.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304213604.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304213428.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304213103.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304212440.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260304212248.png",
+    "大三春夏/汽车设计/汽车设计.md",
+    "大三春夏/汽车电子与控制/电子与控制.md",
+    "大三春夏/汽车设计",
+    "大三春夏/汽车电子与控制/carsim的使用.md",
     "大三春夏/汽车电子与控制/png",
     "大三春夏/汽车振动与噪声/NVH绪论.md",
-    "大三春夏/汽车电子与控制/电子与控制.md",
     "大三春夏/汽车电子与控制",
-    "大三春夏/汽车振动与噪声/png/Pasted image 20260303133635.png",
-    "大三春夏/汽车振动与噪声/png/Pasted image 20260303133619.png",
-    "大三春夏/汽车振动与噪声/png/Pasted image 20260303133104.png",
-    "大三春夏/汽车振动与噪声/png/Pasted image 20260303111050.png",
-    "大三春夏/汽车振动与噪声/png/Pasted image 20260303110707.png",
-    "大三春夏/汽车振动与噪声/png/Pasted image 20260303110147.png",
-    "大三春夏/汽车振动与噪声/png/Pasted image 20260303105722.png",
     "大三春夏/汽车振动与噪声/png",
     "大三春夏/汽车振动与噪声",
     "自学/节能减排/代码实践.md",
@@ -232,10 +234,7 @@
     "自学/人工智能/入门.md",
     "大三秋冬/传热学/传热学1.md",
     "大三秋冬/设计/设计.md",
-    "assets/icons",
     "大三秋冬/汽车理论/理论1.md",
-    "大三秋冬/设计/未命名.md",
-    "大三秋冬/汽车理论/作业.md",
-    "大三秋冬/汽车理论/README.md"
+    "大三秋冬/设计/未命名.md"
   ]
 }
