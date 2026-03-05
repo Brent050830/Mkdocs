@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三春夏/汽车电子与控制/电子与控制.md",
+                "file": "自学/节能减排/代码实践.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "电子与控制"
+              "title": "代码实践"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三春夏/汽车电子与控制/电子与控制.md",
+                "file": "自学/节能减排/代码实践.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "电子与控制 的大纲"
+              "title": "代码实践 的大纲"
             }
           },
           {
@@ -89,12 +89,12 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "df3022d2d0e54ff8",
@@ -188,8 +188,9 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "c207b807fe0e53cf",
+  "active": "a6e62315a5fc673f",
   "lastOpenFiles": [
+    "大三春夏/汽车电子与控制/电子与控制.md",
     "大三春夏/汽车电子与控制/png/Pasted image 20260305145522.png",
     "大三春夏/汽车电子与控制/png/Pasted image 20260305145017.png",
     "大三春夏/汽车电子与控制/png/Pasted image 20260305144609.png",
@@ -200,10 +201,8 @@
     "大三春夏/汽车电子与控制/png/Pasted image 20260305143337.png",
     "大三春夏/汽车电子与控制/png/Pasted image 20260305143236.png",
     "大三春夏/汽车电子与控制/png/Pasted image 20260305143202.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305142838.png",
     "大三春夏/汽车电子与控制/carsim的使用.md",
     "大三春夏/汽车设计/汽车设计.md",
-    "大三春夏/汽车电子与控制/电子与控制.md",
     "大三春夏/汽车设计",
     "大三春夏/汽车电子与控制/png",
     "大三春夏/汽车振动与噪声/NVH绪论.md",
