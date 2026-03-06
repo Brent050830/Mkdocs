@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自学/节能减排/代码实践.md",
+                "file": "大三春夏/汽车电子与控制/carsim的使用.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "代码实践"
+              "title": "carsim的使用"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自学/节能减排/代码实践.md",
+                "file": "大三春夏/汽车电子与控制/carsim的使用.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "代码实践 的大纲"
+              "title": "carsim的使用 的大纲"
             }
           },
           {
@@ -188,19 +188,21 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "a6e62315a5fc673f",
+  "active": "c207b807fe0e53cf",
   "lastOpenFiles": [
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306153207.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306153054.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306152825.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306152742.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306152343.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306152328.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306151449.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306151302.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306150354.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306145716.png",
+    "大三春夏/汽车电子与控制/png/Pasted image 20260306145656.png",
+    "自学/节能减排/代码实践.md",
     "大三春夏/汽车电子与控制/电子与控制.md",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305145522.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305145017.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305144609.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305144405.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305144002.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305143838.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305143653.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305143337.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305143236.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260305143202.png",
     "大三春夏/汽车电子与控制/carsim的使用.md",
     "大三春夏/汽车设计/汽车设计.md",
     "大三春夏/汽车设计",
@@ -209,7 +211,6 @@
     "大三春夏/汽车电子与控制",
     "大三春夏/汽车振动与噪声/png",
     "大三春夏/汽车振动与噪声",
-    "自学/节能减排/代码实践.md",
     "blog/index.md",
     "blog/posts",
     "blog",
