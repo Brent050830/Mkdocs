@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三春夏/汽车电子与控制/carsim的使用.md",
+                "file": "自学/节能减排/代码实践.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "carsim的使用"
+              "title": "代码实践"
             }
           }
         ]
@@ -70,13 +70,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大三春夏/汽车电子与控制/carsim的使用.md",
+                "file": "自学/节能减排/代码实践.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "carsim的使用 的大纲"
+              "title": "代码实践 的大纲"
             }
           },
           {
@@ -89,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -187,23 +188,28 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "c207b807fe0e53cf",
+  "active": "a6e62315a5fc673f",
   "lastOpenFiles": [
-    "自学/节能减排/代码实践.md",
     "自学/节能减排/强化学习.md",
     "自学/人工智能/深度学习.md",
-    "自学/人工智能/人工智能工具的使用.md",
-    "自学/人工智能/png/Pasted image 20260306204617.png",
+    "自学/java/入门.md",
     "大三春夏/汽车电子与控制/carsim的使用.md",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306153207.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306153054.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306152825.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306152742.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306152343.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306152328.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306151449.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306151302.png",
-    "大三春夏/汽车电子与控制/png/Pasted image 20260306150354.png",
+    "自学/java/png/Pasted image 20260307231232.png",
+    "自学/java/png/Pasted image 20260307231147.png",
+    "自学/java/png/Pasted image 20260307231128.png",
+    "自学/java/png/Pasted image 20260307231030.png",
+    "自学/java/png/Pasted image 20260307230901.png",
+    "自学/java/png/Pasted image 20260307225309.png",
+    "自学/java/vim.md",
+    "自学/java/png/Pasted image 20260307222640.png",
+    "自学/java/png/Pasted image 20260307221133.png",
+    "自学/java/png/Pasted image 20260307215626.png",
+    "自学/java/png/Pasted image 20260307214952.png",
+    "自学/java/png",
+    "自学/节能减排/代码实践.md",
+    "自学/java",
+    "自学/人工智能/人工智能引论.md",
+    "自学/人工智能/人工智能工具的使用.md",
     "大三春夏/汽车电子与控制/电子与控制.md",
     "大三春夏/汽车设计/汽车设计.md",
     "大三春夏/汽车设计",
@@ -220,9 +226,6 @@
     "index.md",
     "未命名.canvas",
     "大三春夏/习概",
-    "大三春夏",
-    "大三秋冬/未命名",
-    "自学/人工智能/人工智能引论.md",
     "大三秋冬/设计/CAD装配图.md",
     "大三秋冬/动力系统/总的.md",
     "大三秋冬/动力系统/动力系统1.md",
@@ -232,8 +235,6 @@
     "大三秋冬/控制/数学基础.md",
     "自学/人工智能/入门.md",
     "大三秋冬/传热学/传热学1.md",
-    "大三秋冬/设计/设计.md",
-    "大三秋冬/汽车理论/理论1.md",
-    "大三秋冬/设计/未命名.md"
+    "大三秋冬/设计/设计.md"
   ]
 }
