@@ -186,3 +186,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* 调整表格内字体大小，使其与正文一致 */
+.md-typeset table:not([class]),
+.md-typeset .md-data-table {
+    font-size: 0.9em !important;
+}
