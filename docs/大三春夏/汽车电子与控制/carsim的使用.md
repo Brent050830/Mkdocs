@@ -262,8 +262,9 @@
 > 可以点击 simulink 进行联合运行  
 > 点进去之后选择一个模型  
 > ![](png/Pasted%20image%2020260306134856.png)  
-> 输入接口和输出接口  
-> 选择一个，点击 send to simulink  
+> 输入接口（就是 simulink 到 carsim 的输入）和输出（就是 carsim 的输出）接口  
+> 输入就是  
+> 选择一个（在外面进行选择），点击 send to simulink  
 > ![](png/Pasted%20image%2020260306135212.png)  
 > 就会自动打开 simulink  
 > ![](png/Pasted%20image%2020260306135508.png)  
