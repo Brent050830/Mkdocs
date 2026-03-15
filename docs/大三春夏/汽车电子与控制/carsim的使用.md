@@ -269,6 +269,9 @@
 > ![](png/Pasted%20image%2020260306135508.png)  
 > 上面就是 carsim 中的 ABS 的模型的 simulink 的显示  
 
+![](png/Pasted%20image%2020260315112754.png)  
+打开已有的文件（dataset），然后才能点击 send to simulink（也就是得在外面选中的，之前的都是新建的 simulink）
+
 - 再下面还有输出文件的格式和输出文件中输出的变量
 - 实时动画  
     联合仿真完成之后就可以运行得到结果  
