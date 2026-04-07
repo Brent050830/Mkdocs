@@ -912,7 +912,8 @@ $$
 
 ### 量化振动的大小
 - $当 1> 1时 , \because \sqrt {l^2- 1}< l$ $\therefore S_{1, 2}< 0$ 系统在过阻尼状态，不产生振动；
-- $当\zeta=1$ 时，$S_{1, 2}= - \omega _n$ $\chi _c= ( B_3+ B_4t) e^{- \omega _nt}$ 系统临界阻尼状态，非周期运动； 当《<1时，$s_12=-\zeta\omega_n\pm j\sqrt{1-\zeta^2}\omega_n=-\zeta\omega_n\pm j\omega_d$ 在小阻尼状态，周期运动。
+- $当\zeta=1$ 时，$S_{1, 2}= - \omega _n$ $\chi _c= ( B_3+ B_4t) e^{- \omega _nt}$ 系统临界阻尼状态，非周期运动； 当《<1 时，$s_12=-\zeta\omega_n\pm j\sqrt{1-\zeta^2}\omega_n=-\zeta\omega_n\pm j\omega_d$ 在小阻尼状态，周期运动。
 - $\omega _d= \sqrt {1- \zeta ^2}\omega _n$ $\omega _n, \omega _d$ ,了 是系统固有性质，与初始条件和激振力无关。
 
 当处于减振的位置（根号 2）时，阻尼比越小越好（衰减的幅值越大），不在减振的位置时，越小反而放大的倍数越大
+  
