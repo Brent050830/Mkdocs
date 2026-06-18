@@ -1573,6 +1573,135 @@ MPC:
     回归段写入后 _tracking_route 在车辆附近不连续，根因是回归段起点 s/d 没有用真实 base projection
 ```
 
+### 轨迹筛选部分
+
+```python
+offsets = (
+    -1.20, -1.10, -1.05, -1.00, -0.90, -0.70, -0.55, -0.45, -0.35, -0.25, -0.15,
+    0.0,
+    0.15, 0.25, 0.35, 0.45, 0.55, 0.70, 0.90, 1.00, 1.05, 1.10, 1.20,
+)
+target = start_offset + scale * lane_width
+```
+
+现在的候选偏移有这些  
+横向过渡的长度为：$T=\frac{L_t}{v_{\mathrm{ego}}}$
+
+$$
+L_t=L\rho
+$$
+
+#### 硬筛
+- 长度不能太短（这个不是已经改了吗）$L\geq14.0\mathrm{m}$
+- 横向加速度不能过大
+
+$$
+a_{y}=\frac{10\sqrt{3}}{3}\frac{|\Delta d|}{T^{2}}\quad a_{y}\leq3.8\mathrm{m/s}^{2}
+$$
+
+- 不能和前车横向重叠
+
+$$
+\Delta d_{\mathrm{front}}=d_{\mathrm{front}}-d_{\mathrm{cand}}\quad |\Delta d_{\mathrm{front}}|\leq B_{\mathrm{lat,front}}-0.15
+$$
+
+也就是在前车位置处的轨迹的横向偏移与前车的横向偏移的差值必须大
+
+- 与所有的障碍物做时空冲突检测  
+前面的不冲突时，代码才会真正构造：
+
+```python
+trajectory = RouteOffsetLaneChangeTrajectory(...)
+```
+
+采样的范围为：
+
+$$
+s_\mathrm{local}\in[0,L+2]
+$$
+时间和前车的位置为：
+
+$$
+\begin{gathered}t=\frac{s_{\mathrm{local}}}{v_{\mathrm{ego}}}\\s_{\mathrm{actor,pred}}=s_{\mathrm{actor,0}}+v_{\mathrm{actor}}t\end{gathered}
+$$
+
+然后在 0~L+2 这个范围内以步长为 1 m 比较即可
+
+### 代价部分
+#### 安全代价
+前方净距离：
+
+$$
+D_{\text{clear}} = D_{\text{front}} + v_{\text{front}} T
+$$
+
+距离代价：
+
+$$
+J_d = \frac{\max(0,\, 0.75L - D_{\text{clear}} + 4)^2}{25}
+$$
+
+TTC 代价：
+
+$$
+J_{\text{TTC}} = \max(0,\, T - TTC + 0.4)^2
+$$
+
+安全代价：
+
+$$
+J_{\text{safety}} = -J_d + J_{\text{TTC}}
+$$
+
+#### 舒适性代价
+
+$$
+J_{\mathrm{comfort}}=\left(\frac{a_y}{a_{y,\max}}\right)^2+0.20\frac{|\Delta d|}{W}
+$$
+
+#### 跟踪代价
+
+$$
+J_{\mathrm{tracking}}=0.35\sum|\Delta\psi_{\mathrm{ref}}|+0.30\max|d^{\prime}(s)|
+$$
+
+代码会采样 6 段，计算参考航向变化总量和最大横向斜率
+
+#### 中心偏移代价
+
+$$
+J_{\mathrm{center}}=\frac{|d_{\mathrm{tar}}|}{W}
+$$
+
+总代价为：
+
+$$
+J=4J_\mathrm{safety}+2J_\mathrm{comfort}+J_\mathrm{tracking}+0.6J_\mathrm{center}
+$$
+
+```python
+total_cost = 4.0 * safety_cost + 2.0 * comfort_cost + tracking_cost + 0.6 * center_error
+```
+
+优先选择右偏的：
+
+$$
+d_{\mathrm{tar}}>d_0+0.05
+$$
+
+$$
+T^*
+=
+\begin{cases}
+\arg\min_{T_i\in\mathcal{T}_{\mathrm{right}}}J_i,
+& \mathcal{T}_{\mathrm{right}}\neq\varnothing \\
+\arg\min_{T_i\in\mathcal{T}_{\mathrm{left}}}J_i,
+& \mathcal{T}_{\mathrm{right}}=\varnothing,\ \mathcal{T}_{\mathrm{left}}\neq\varnothing \\
+\arg\min_{T_i\in\mathcal{T}_{\mathrm{valid}}}J_i,
+& \text{otherwise}
+\end{cases}
+$$
+
 ## MPC 的主要思想
 ### 状态空间：
 
