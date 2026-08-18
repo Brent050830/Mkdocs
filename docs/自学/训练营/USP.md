@@ -201,3 +201,98 @@ void algo_step() {
 ![](png/Pasted%20image%2020260818140724.png)
 
 在服务——文档中有很多的接口
+
+```text
+读取 CSV
+   ↓
+调用 anti_pinch_detector_init() 一次
+   ↓
+每隔 2 ms 注入一行传感器数据
+   ↓
+调用 anti_pinch_detector_step()
+   ↓
+读取防夹输出
+   ↓
+生成 eval_output.csv 和时序图
+```
+
+|          项目          |      `test.csv`      |    `validate.csv`     |
+| :------------------: | :------------------: | :-------------------: |
+|         数据行数         |       24349 行        |        2996 行         |
+|         时间范围         |  0.1062s 到 48.8022s  |  0.0413s 到 29.9912s   |
+|         采样间隔         |        固定 2ms        |     约 10ms，有轻微抖动      |
+|        电机电流范围        |      0 到 10636       |       0 到 3019        |
+| 位置原始范围 `ntfAxisPosn` |       0 到 101        |        3 到 94         |
+|         电机状态         |      停止/正转/反转都有      |     主要正转，少量停止和反转      |
+|         电压范围         | 有开头 0，运行时约 13.5V ADC | 约 13.85V 到 13.91V ADC |
+|        防夹参考点         |          有           |    按绘图脚本逻辑没有明显参考点     |
+
+| CSV 列名                               | 含义                         | 算法里对应接口                                    |
+| :----------------------------------- | :------------------------- | :----------------------------------------- |
+| `time`                               | 当前样本时间，单位秒                 | runner 用来按序喂数据                             |
+| `ntfMotCurr`                         | 电机电流，夹住时通常会升高              | `SeatBackRclnMotDD_u16MotCur()`            |
+| `ntfAxisPosn`                        | 座椅靠背位置原始值                  | SDK 会映射后给 `BO_Atm_SeatBackRcln_ntfPosn()`  |
+| `ntfHallWidth`                       | 霍尔脉冲宽度，可反映速度变化；变大通常代表变慢/受阻 | `SeatBackRclnHallDD_u32CurrHallPlsWidth()` |
+| `Atm_SeatAxisAdjBackIncln_ntfMotSts` | 电机状态：0 停止，1 正转，2 反转        | `BO_Atm_SeatBackRcln_ntfOperSt()`          |
+| `ntfBattVol`                         | 供电电压 ADC 值                 | `SeatBackRclnMotDD_u16MotPwrVolt()`        |
+| `ntfRealPosn_Hall`                   | 霍尔位置计数                     | `BO_Atm_SeatBackRcln_ntfHallPosn()`        |
+
+```text
+程序启动
+  ↓
+anti_pinch_detector_init()        只调用 1 次，初始化内部状态
+  ↓
+读取第 1 行数据
+anti_pinch_detector_step()        调用 1 次，输出一次 0/1
+  ↓
+读取第 2 行数据
+anti_pinch_detector_step()        再调用 1 次，输出一次 0/1
+  ↓
+...
+  ↓
+读取完 CSV
+程序结束
+```
+
+就是不断读取数据，然后放入缓冲区（只放正常运行的数据进去）（放一定量的，定时覆盖），使用缓冲区中的计算基线，偏离太多为异常值，计入 CUSUM 分数，这个分数太高认定为防夹触发（正常的话会减少这个，连续正常这个会清零）
+
+现在使用的是电流和霍尔脉宽作为基线
+
+---
+
+1. 参考代码里有一个小逻辑问题  
+   在 [student_solution_ref.c](</C:/Users/17871/Desktop/防夹/sdk/antipinch/student_solution_ref.c:234>) 先把 `g_det.prev_oper_st = oper_st_val;` 更新了，后面 [student_solution_ref.c](</C:/Users/17871/Desktop/防夹/sdk/antipinch/student_solution_ref.c:236>) 再判断：
+
+   ```c
+   if (!motor_running && g_det.prev_oper_st != OPERMOTST_NO_RUNNING)
+   ```
+
+   这个条件基本进不去，因为停车时 `prev_oper_st` 已经被改成停车了。应该把 `prev_oper_st` 的更新放到这段逻辑之后，或者先保存旧状态。
+
+2. `stall_counter` 算了但没参与判断  
+   [student_solution_ref.c](</C:/Users/17871/Desktop/防夹/sdk/antipinch/student_solution_ref.c:276>) 统计了位置停滞，但后续没用。可以把它作为第三个辅助条件：电流异常 + 霍尔脉宽异常 + 位置短时间不变化，更稳。
+
+3. `fabs()` 可能会带来误判  
+   现在电流和霍尔脉宽都用绝对偏差：
+
+   ```c
+   fabs(g_det.curr_dev) > curr_thresh
+   fabs(g_det.hw_dev) > hw_thresh
+   ```
+
+   但防夹通常更像“电流升高、速度变慢、霍尔脉宽变大”。可以考虑改成方向性判断：
+
+   ```c
+   g_det.curr_dev > curr_thresh
+   g_det.hw_dev > hw_thresh
+   ```
+
+   这样对突然下降类噪声不敏感。
+
+4. 采样周期要注意  
+   代码里的 `STARTUP_DELAY_SAMPLES`、`CUSUM_MIN_FRAMES` 都默认 2ms 一帧。但我看 `validate.csv` 实际大约是 10ms 一行。官方如果就是按 SDK 的 2ms 调用，那没问题；如果本地 runner 是每行调用一次，那这些“帧数阈值”的实际时间会变长。
+
+5. 性能优化不是当前瓶颈  
+   每帧都对 200 个点算均值和方差，数据量很小时完全够用。真要追速度，可以在环形缓冲区里维护 `sum` 和 `sum_sq`，把基线计算从每帧 O(200) 变成 O(1)，但代码复杂度会上来。
+
+我的判断：现在参考算法在这两个数据集上的结果是正常的。优先优化第 1 点和第 3 点，收益最大；性能优化可以先不急。
