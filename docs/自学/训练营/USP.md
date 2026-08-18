@@ -1,6 +1,39 @@
 ## 任务
 **要求**：在⻋辆到达充电桩时，温度达标的前提下（通常 20~25℃），使得后续充电到⽬标 SOC（如 80%）的时间最短，且最⼩化整个预热过程中总的预热能耗。
 
+### 参数
+#### 恒定物理参数
+![](png/Pasted%20image%2020260818131116.png)
+
+#### 目标参数
+![](png/Pasted%20image%2020260818131141.png)
+
+#### map 图
+- 电池的内阻随着电池的 SOC 以及温度的变化：  
+	![](png/Pasted%20image%2020260818131233.png)
+- 电池的开路电压随着 SOC 以及温度的变化  
+	![](png/Pasted%20image%2020260818131327.png)
+- 充电功率的 map 图：  
+	![](png/Pasted%20image%2020260818131349.png)
+
+### 物理模型
+#### 电池热模型：
+
+$$
+\begin{aligned}&M_{bat}\cdot c_{p,bat}\cdot\frac{dT_{bat}}{dt}=\dot{Q}_{gen}+\dot{Q}_{heat}-\dot{Q}_{loss}\\&\dot{Q}_{bat}=I_{bat}{}^{2}R_{bat}(SoC_{bat},T_{bat})\\&\mathrm{I}\\&\dot{Q}_{heat}=\eta_{heat}\cdot P_{heat}\cdot u_{on}\end{aligned}
+$$
+
+- 当 $u_on=0$ 时，加热关闭；$u_on=1$ 时，加热开启。
+- $\eta_{heat}$ : 加热效率，通常取 0.9~0.95
+
+---
+
+$$
+\dot{Q}_{loss}=k_{env}\cdot(T_{bat}-T_{env})\quad k_{env}=h_{0}+k_{v}\cdot V_{veh}\quad
+$$
+
+通过电池的产热，加热以及散热的计算得到在**单位时间**内**电池温度的变化量** $dT$ ,需要知道初始电池温度，环境温度，电池 SOC（得到电池电阻），加热状态；以及当前的功率，电压（计算得到电流）
+
 ## SOA 设计原则
 - 以下是 SOA 设计原则的简要解释：
 
@@ -101,3 +134,70 @@ AI inference
 
 RAG 的问题在于 " **只认字面相似，不懂领域结构** "（找字面的相似，不懂概念之间的关系）；本体提供的是**显式的概念关系网**（概念的逻辑关系网），让检索从 " 猜 " 变成 " 查 "，还能做推理和约束校验。 专业领域（汽车、医疗、法律、工业）里，纯 RAG 天花板低，本体 + RAG 的混合方案才够用。
 
+## USP 2
+使用 Ulystudio 工具进行开发即可  
+![](png/Pasted%20image%2020260818135036.png)
+
+新建一个应用，使用左侧的 ai 生成 `雨天上车，当主驾驶车门关闭时，检测到钥匙在车内，开启前雨刷，开启近光灯，车门内部落锁。当打开主驾车门，则关闭雨刷，车内内部解锁`
+
+- 状态通知接口：主驾门状态，钥匙状态
+- 控制接口：雨刮控制，近光灯控制，整车门控制  
+	整个使用的流程就是先用 ai 生成需求，之后点击实现，自动使用 ai 生成相应的代码部分
+
+```c
+#include "UaesAPI.h"
+
+
+
+void algo_initialize()
+{
+    /* Algo initialize function */
+    // std::cout << "algorithm initialized."<<std::endl;
+}
+
+void algo_terminate()
+{
+    /* Algo terminate function */
+    // std::cout << "algorithm terminated."<<std::endl;
+}
+
+void algo_step() {
+    // 检查前置条件
+    bool engineRunning = EMS_Engine_getEngStrtStatus() != 0;  // 发动机是否启动
+    bool rainExceedsThreshold = BO_Atm_RainSnsr_ntfRainSnsrSys() > RAIN_THRESHOLD;  // 雨量是否超标
+    bool lightInsufficient = TMS_EnvMonitor_getLightIntensity() < LIGHT_THRESHOLD;  // 光照是否不足
+    bool keyInCar = BO_Atm_FobKey_ntfKey1Info().keyInCar;  // 钥匙是否在车内
+    bool systemFault = checkSystemFault();  // 系统是否有故障
+
+    // 检查主驾驶车门状态
+    bool driverDoorOpen = BO_Bs_VehDoor_ntfAny4DoorOpenFlg();
+    bool driverDoorClosed = !driverDoorOpen;
+
+    // 检查车速
+    float vehicleSpeed = VCS_Atm_VehSpd_ntfVehSpdAbslt().speed;
+
+    // 当主驾驶车门由开启转为关闭时
+    if (driverDoorClosed && !engineRunning && rainExceedsThreshold && lightInsufficient && keyInCar && !systemFault) {
+        // 自动执行前雨刷刮刷
+        BO_Bs_WiprFrnt_wiprCtrl(WIPR_CMD_START);
+        // 强制开启近光灯
+        BO_Bs_LoBeam_liCtrl(LIGHT_CMD_ON);
+        // 全车电子落锁
+        BO_Bs_DoorLock_lockCtrl(LOCK_CMD_LOCK, ALL_DOORS, PRIORITY_HIGH);
+    }
+
+    // 当主驾驶车门再次打开且车速为0时
+    if (driverDoorOpen && vehicleSpeed == 0) {
+        // 雨刷复位停放
+        BO_Bs_WiprFrnt_wiprCtrl(WIPR_CMD_STOP);
+        // 门锁解锁
+        BO_Bs_DoorLock_lockCtrl(LOCK_CMD_UNLOCK, ALL_DOORS, PRIORITY_HIGH);
+        // 近光灯保持开启
+        BO_Bs_LoBeam_liCtrl(LIGHT_CMD_ON);
+    }
+}
+```
+
+![](png/Pasted%20image%2020260818140724.png)
+
+在服务——文档中有很多的接口
