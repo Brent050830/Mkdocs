@@ -186,6 +186,131 @@ angular:
 
 ```
 
-通过这种方式给小乌龟输入速度和角度的输入量，控制运行
-![](png/Pasted%20image%2020260824195302.png)
-这个就是两个节点之间的通讯（椭圆形的表示的是节点）（左边给到右边的是控制的数据）
+通过这种方式给小乌龟输入速度和角度的输入量，控制运行  
+
+---
+
+目前有的**节点**为：
+
+```cmd
+chenbo@chenbo-VMware-Virtual-Platform:~$ ros2 node list
+/rqt_gui_py_node_12740
+/teleop_turtle
+/turtlesim
+```
+
+现在有的 topic(这个就是通信的通道，也就是传送带，在节点之间传送信息) 为：
+
+```cmd
+chenbo@chenbo-VMware-Virtual-Platform:~$ ros2 topic list
+/parameter_events
+/rosout
+/turtle1/cmd_vel
+/turtle1/color_sensor
+/turtle1/pose
+```
+
+![](png/Pasted%20image%2020260824195302.png)  
+这个就是两个节点之间的通讯（椭圆形的表示的是节点）（左边给到右边的是控制的数据），右边通过通道给到左边的是此时位置的数据
+
+---
+我们还可以通过 `ros2 run rqt_publisher rqt_publisher` 帮助我们发送消息
+
+在这里选择我们的 `/turtle1/cmd_vel` 的 topic 传递信息如下：  
+![](png/Pasted%20image%2020260824205510.png)
+
+### 标准开发实践
+![](png/Pasted%20image%2020260824205729.png)
+
+我们创建一下我们的包以及节点：
+
+```cmd
+chenbo@chenbo-VMware-Virtual-Platform:~/dev_ws/src$ ros2 pkg create --build-type ament_python --node-name turtle_ctrl_node turtle_pkg
+```
+
+我们现在内部有着一个空的节点，现在编写这个节点：  
+![](png/Pasted%20image%2020260824210410.png)
+
+好像是注册一个专栏，准备广播（或者说是工人和运输带）
+
+初始的为：
+
+```python
+def main():
+    print('Hi from turtle_pkg.')
+
+
+if __name__ == '__main__':
+    main()
+
+```
+
+> 帮我为 src/turtle\_pkg/turtle\_pkg/turtle\_ctrl\_node.py 创建节点，并且实现为节点提供 publisher 的功能——给小乌龟发送速度控制指令
+
+改变之后的代码为：
+
+```python
+import rclpy
+from geometry_msgs.msg import Twist
+from rclpy.node import Node
+
+
+class TurtleCtrlNode(Node):
+    """定时向 turtlesim 发布速度控制指令的节点。"""
+
+    def __init__(self):
+        super().__init__('turtle_ctrl_node')
+
+        # 创建速度指令发布者，话题名称与 turtlesim 默认订阅话题一致。
+        self.publisher = self.create_publisher(
+            Twist,
+            '/turtle1/cmd_vel',
+            10,
+        )
+
+        # 每隔 0.5 秒调用一次 publish_velocity 方法。
+        self.timer = self.create_timer(0.5, self.publish_velocity)
+        self.get_logger().info(
+            'Publishing velocity commands to /turtle1/cmd_vel'
+        )
+
+    def publish_velocity(self):
+        """创建并发布一条速度控制指令。"""
+        message = Twist()
+
+        # 设置前进线速度，单位为米每秒。
+        message.linear.x = 2.0
+
+        # 设置绕 Z 轴旋转的角速度，单位为弧度每秒。
+        # 同时设置线速度和角速度，可以让小乌龟沿圆形轨迹运动。
+        message.angular.z = 1.0
+
+        # 将速度指令发送到 /turtle1/cmd_vel 话题。
+        self.publisher.publish(message)
+        self.get_logger().info(
+            f'linear.x={message.linear.x:.1f}, '
+            f'angular.z={message.angular.z:.1f}'
+        )
+
+
+def main(args=None):
+    # 初始化 ROS 2 Python 客户端。
+    rclpy.init(args=args)
+    node = TurtleCtrlNode()
+
+    try:
+        # 持续处理定时器等 ROS 2 回调，直到节点被终止。
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        # 退出前销毁节点并安全关闭 ROS 2。
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+
+```
