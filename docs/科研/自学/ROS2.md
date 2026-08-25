@@ -314,3 +314,398 @@ if __name__ == '__main__':
     main()
 
 ```
+
+![](png/Pasted%20image%2020260825102656.png)  
+使用这种方式进行执行
+
+使用定时器的概念：  
+![](png/Pasted%20image%2020260825102728.png)
+
+create timer
+
+---
+
+#### 整体的流程：
+![](png/Pasted%20image%2020260825102855.png)
+
+写完新的代码之后要先编译和构建（编译操作），之后在运行之前，要先刷新环境，才能运行我们新的节点
+
+### 架构进阶
+
+> 帮我实现一个小乌龟控制节点：turtle\_gui\_ctrl\_node，参考 src/turtle\_pkg/turtle\_pkg/turtle\_ctrl\_node.py,结合图形化进行实现（图像如图，要求采用 pyqt 进行实现
+
+新创建的是：
+
+```python
+import sys
+
+import rclpy
+from geometry_msgs.msg import Twist
+from PyQt5.QtCore import QTimer
+from PyQt5.QtGui import QDoubleValidator
+from PyQt5.QtWidgets import (
+    QApplication,
+    QFormLayout,
+    QLineEdit,
+    QMessageBox,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+)
+from rclpy.node import Node
+
+
+class TurtleGuiCtrlNode(Node):
+    """接收图形界面中的速度值，并发布给 turtlesim。"""
+
+    def __init__(self):
+        super().__init__('turtle_gui_ctrl_node')
+
+        # 创建速度指令发布者，控制 turtlesim 中默认的 turtle1。
+        self.publisher = self.create_publisher(
+            Twist,
+            '/turtle1/cmd_vel',
+            10,
+        )
+        self.get_logger().info('小乌龟图形化控制节点已启动')
+
+    def publish_velocity(self, linear_velocity, angular_velocity):
+        """发布由图形界面输入的线速度和角速度。"""
+        message = Twist()
+        message.linear.x = linear_velocity
+        message.angular.z = angular_velocity
+        self.publisher.publish(message)
+
+        self.get_logger().info(
+            f'发送速度：线速度={linear_velocity:.2f} m/s，'
+            f'角速度={angular_velocity:.2f} rad/s'
+        )
+
+    def stop_turtle(self):
+        """发布零速度，使小乌龟停止运动。"""
+        self.publish_velocity(0.0, 0.0)
+
+
+class TurtleControlWindow(QWidget):
+    """小乌龟速度控制窗口。"""
+
+    def __init__(self, node):
+        super().__init__()
+        self.node = node
+        self.setWindowTitle('小乌龟控制器')
+        self.setMinimumWidth(400)
+
+        # 限制输入内容为 -1000.0 到 1000.0 之间的小数。
+        validator = QDoubleValidator(-1000.0, 1000.0, 3, self)
+
+        self.linear_input = QLineEdit('0.0')
+        self.linear_input.setValidator(validator)
+        self.linear_input.setPlaceholderText('请输入线速度')
+
+        self.angular_input = QLineEdit('0.0')
+        self.angular_input.setValidator(validator)
+        self.angular_input.setPlaceholderText('请输入角速度')
+
+        # 使用表单布局排列速度标签和输入框。
+        form_layout = QFormLayout()
+        form_layout.addRow('线速度', self.linear_input)
+        form_layout.addRow('角速度', self.angular_input)
+
+        self.send_button = QPushButton('发送')
+        self.send_button.clicked.connect(self.send_velocity)
+
+        main_layout = QVBoxLayout()
+        main_layout.addLayout(form_layout)
+        main_layout.addWidget(self.send_button)
+        self.setLayout(main_layout)
+
+    def send_velocity(self):
+        """读取输入框并调用 ROS 2 节点发布速度指令。"""
+        try:
+            linear_velocity = float(self.linear_input.text())
+            angular_velocity = float(self.angular_input.text())
+        except ValueError:
+            QMessageBox.warning(self, '输入错误', '请输入有效的速度数值。')
+            return
+
+        self.node.publish_velocity(linear_velocity, angular_velocity)
+
+    def closeEvent(self, event):
+        """关闭窗口前发送零速度，避免小乌龟继续运动。"""
+        self.node.stop_turtle()
+        event.accept()
+
+
+def main(args=None):
+    # 分别初始化 ROS 2 和 PyQt5。
+    rclpy.init(args=args)
+    app = QApplication(sys.argv)
+    node = TurtleGuiCtrlNode()
+    window = TurtleControlWindow(node)
+
+    # 通过 Qt 定时器处理 ROS 2 回调，避免阻塞图形界面。
+    ros_timer = QTimer()
+    ros_timer.timeout.connect(lambda: rclpy.spin_once(node, timeout_sec=0.0))
+    ros_timer.start(10)
+
+    window.show()
+
+    try:
+        exit_code = app.exec_()
+    finally:
+        ros_timer.stop()
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
+
+    sys.exit(exit_code)
+
+
+if __name__ == '__main__':
+    main()
+
+```
+
+```cmd
+cd /home/chenbo/dev_ws
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+ros2 run turtle_pkg turtle_gui_ctrl_node
+```
+
+最后的运行成果：  
+![](png/Pasted%20image%2020260825104000.png)
+
+### 小乌龟发布位置信息
+
+```cmd
+chenbo@chenbo-VMware-Virtual-Platform:~/dev_ws$ ros2 topic list 
+/parameter_events
+/rosout
+/turtle1/cmd_vel
+/turtle1/color_sensor
+/turtle1/pose
+chenbo@chenbo-VMware-Virtual-Platform:~/dev_ws$ ros2 topic info /turtle1/pose
+Type: turtlesim/msg/Pose
+Publisher count: 1
+Subscription count: 0
+chenbo@chenbo-VMware-Virtual-Platform:~/dev_ws$ ros2 node list
+/turtlesim
+
+```
+
+可见，/turtle 1/pose 这个 topic（专栏或者说通道）只有一个发布者（就是我们小乌龟这个节点），但是没有订阅者/节点
+
+我们可以手动观测一折发布的这个专栏里面的消息：`ros2 topic echo /turtle1/pose`
+
+```text
+ros2 topic echo /turtle1/pose
+x: 5.211894989013672
+y: 9.775237083435059
+theta: 2.8510582447052
+linear_velocity: 0.0
+angular_velocity: 0.0
+---
+x: 5.211894989013672
+y: 9.775237083435059
+theta: 2.8510582447052
+linear_velocity: 0.0
+angular_velocity: 0.0
+
+```
+
+这个就是数据的流向
+
+#### 我们让实现坐标显示
+
+> 帮我创建一个节点，取名为 turtle\_advce\_ctrl\_node 节点，同样参考上一个节点，并且额外增加小乌龟的 pose 的订阅，要求实现的 GUI 为图片
+
+```python
+import sys
+
+import rclpy
+from geometry_msgs.msg import Twist
+from PyQt5.QtCore import QTimer
+from PyQt5.QtGui import QDoubleValidator
+from PyQt5.QtWidgets import (
+    QApplication,
+    QFormLayout,
+    QLabel,
+    QLineEdit,
+    QMessageBox,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+)
+from rclpy.node import Node
+from turtlesim.msg import Pose
+
+
+class TurtleAdvceCtrlNode(Node):
+    """发布速度指令并订阅小乌龟位姿的 ROS 2 节点。"""
+
+    def __init__(self):
+        super().__init__('turtle_advce_ctrl_node')
+
+        # 向 turtlesim 发布速度控制指令。
+        self.velocity_publisher = self.create_publisher(
+            Twist,
+            '/turtle1/cmd_vel',
+            10,
+        )
+
+        # 订阅 turtle1 的实时位置、角度和速度信息。
+        self.pose_subscription = self.create_subscription(
+            Pose,
+            '/turtle1/pose',
+            self.pose_callback,
+            10,
+        )
+
+        # GUI 创建后会把界面更新函数保存到这里。
+        self.pose_update_handler = None
+        self.get_logger().info('小乌龟高级图形化控制节点已启动')
+
+    def publish_velocity(self, linear_velocity, angular_velocity):
+        """发布图形界面中设置的线速度和角速度。"""
+        message = Twist()
+        message.linear.x = linear_velocity
+        message.angular.z = angular_velocity
+        self.velocity_publisher.publish(message)
+
+        self.get_logger().info(
+            f'发送速度：线速度={linear_velocity:.2f} m/s，'
+            f'角速度={angular_velocity:.2f} rad/s'
+        )
+
+    def pose_callback(self, message):
+        """收到 Pose 消息后通知 GUI 更新显示内容。"""
+        if self.pose_update_handler is not None:
+            self.pose_update_handler(message)
+
+    def stop_turtle(self):
+        """发布零速度，使小乌龟停止运动。"""
+        self.publish_velocity(0.0, 0.0)
+
+
+class TurtleAdvceControlWindow(QWidget):
+    """可以控制速度并实时显示小乌龟位姿的窗口。"""
+
+    def __init__(self, node):
+        super().__init__()
+        self.node = node
+        self.node.pose_update_handler = self.update_pose
+
+        self.setWindowTitle('小乌龟控制器')
+        self.setMinimumWidth(420)
+
+        # 限制输入框只能输入有效的小数。
+        validator = QDoubleValidator(-1000.0, 1000.0, 3, self)
+
+        self.linear_input = QLineEdit('0.0')
+        self.linear_input.setValidator(validator)
+        self.linear_input.setPlaceholderText('请输入线速度')
+
+        self.angular_input = QLineEdit('0.0')
+        self.angular_input.setValidator(validator)
+        self.angular_input.setPlaceholderText('请输入角速度')
+
+        # 创建用于显示 Pose 消息各字段的标签。
+        self.x_value = QLabel('0.000000')
+        self.y_value = QLabel('0.000000')
+        self.linear_velocity_value = QLabel('0.000000')
+        self.angular_velocity_value = QLabel('0.000000')
+        self.theta_value = QLabel('0.000000')
+
+        form_layout = QFormLayout()
+        form_layout.addRow('线速度', self.linear_input)
+        form_layout.addRow('角速度', self.angular_input)
+        form_layout.addRow('当前X坐标', self.x_value)
+        form_layout.addRow('当前Y坐标', self.y_value)
+        form_layout.addRow('当前线速度', self.linear_velocity_value)
+        form_layout.addRow('当前角速度', self.angular_velocity_value)
+        form_layout.addRow('当前角度', self.theta_value)
+
+        self.send_button = QPushButton('发送')
+        self.send_button.clicked.connect(self.send_velocity)
+
+        main_layout = QVBoxLayout()
+        main_layout.addLayout(form_layout)
+        main_layout.addWidget(self.send_button)
+        self.setLayout(main_layout)
+
+    def send_velocity(self):
+        """读取用户输入，并通过 ROS 2 节点发送速度指令。"""
+        try:
+            linear_velocity = float(self.linear_input.text())
+            angular_velocity = float(self.angular_input.text())
+        except ValueError:
+            QMessageBox.warning(self, '输入错误', '请输入有效的速度数值。')
+            return
+
+        self.node.publish_velocity(linear_velocity, angular_velocity)
+
+    def update_pose(self, message):
+        """把最新的 Pose 消息显示到界面标签中。"""
+        self.x_value.setText(f'{message.x:.6f}')
+        self.y_value.setText(f'{message.y:.6f}')
+        self.linear_velocity_value.setText(f'{message.linear_velocity:.6f}')
+        self.angular_velocity_value.setText(f'{message.angular_velocity:.6f}')
+        self.theta_value.setText(f'{message.theta:.6f}')
+
+    def closeEvent(self, event):
+        """关闭窗口前停止小乌龟。"""
+        self.node.stop_turtle()
+        self.node.pose_update_handler = None
+        event.accept()
+
+
+def main(args=None):
+    # 初始化 ROS 2 和 PyQt5。
+    rclpy.init(args=args)
+    app = QApplication(sys.argv)
+    node = TurtleAdvceCtrlNode()
+    window = TurtleAdvceControlWindow(node)
+
+    # 定时处理发布和订阅回调，同时保持 GUI 响应。
+    ros_timer = QTimer()
+    ros_timer.timeout.connect(lambda: rclpy.spin_once(node, timeout_sec=0.0))
+    ros_timer.start(10)
+
+    window.show()
+
+    try:
+        exit_code = app.exec_()
+    finally:
+        ros_timer.stop()
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
+
+    sys.exit(exit_code)
+
+
+if __name__ == '__main__':
+    main()
+
+```
+
+终端运行为：
+
+```python
+cd /home/chenbo/dev_ws
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+ros2 run turtle_pkg turtle_advce_ctrl_node
+```
+
+可见，运行节点的时候，节点前面要加上包的名字（实际上就是定位）
+
+![](png/Pasted%20image%2020260825110441.png)  
+现在就可以了
+
+## ROS 2 视觉与控制
+### OPENCV 的写法
+首先安装 OpenCV：`pip install opencv-python`
+
+#### 数字图像的本质
