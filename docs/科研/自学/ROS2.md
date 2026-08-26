@@ -863,6 +863,98 @@ ROS 的图像和 OpenCV 的图像矩阵
 ### 正解反解部分
 ![](png/Pasted%20image%2020260825171751.png)
 
-正解：固定的输入（手臂的角度），输出为箭靶的位置，这是唯一的
+正解：固定的输入（手臂的角度），输出为箭靶的位置，这是唯一的  
 反解：已知目标的位置，反推出要求输入的关节的角度怎么样（可能会有多个解）
+
+关节空间和笛卡尔坐标系的空间  
+![](png/Pasted%20image%2020260825190914.png)
+
+正向的解就是向量的叠加  
+**逆向解**：  
+![](png/Pasted%20image%2020260825191108.png)
+
+![](png/Pasted%20image%2020260825191257.png)
+
+> 帮我创建一个 python 的工具方法，用于解析 genkiarm.urdf 这个文件，并且基于这个文件，实现正解操作
+
+直到六个关节的角度，输出末端的坐标
+
+---
+反解操作为：
+
+> 帮我创建一个 python 的工具方法，用于解析 genkiarm.urdf 这个文件，并且基于这个文件，实现反解操作，我希望反解做到的是将末端的位置信息 转换为关节角度
+
+```cmd
+PS C:\Users\17871\Desktop\ROS2> python ".\urdf正解反解\urdf_ik.py" 0.0750637 0.0697314 0.40415263
+反解成功，正解回代误差 5.64959e-12 m；函数评估次数 38
+目标位置 [m]: [0.0750637  0.0697314  0.40415263]
+回代位置 [m]: [0.0750637  0.0697314  0.40415263]
+位置误差 [m]: 5.64959079e-12
+关节角 [deg]:
+  Rotation: 44.59989306
+  Rotation2: 11.22046519
+  Rotation3: 9.61692656
+  Rotation4: 8.90890081
+  Rotation5: 24.90770753
+  Rotation6: 0.00000000
+PS C:\Users\17871\Desktop\ROS2> 
+```
+
+#### 实现抓取操作
+![](png/Pasted%20image%2020260825194409.png)
+
+现在我们实现了前 3 个节点，还有就是最后的节点，但是抓取的节点还没有（需要订阅物体相对于机械臂基座的坐标，最后再播报出（反解关节位置））
+
+> 再 arm\_pkg 中创建 arm\_catch\_box\_node 节点，要求实现 src/vision\_pkg/vision\_pkg/box\_tf\_node.py 发布的坐标信息，将这个坐标信息进行反解，反解的操作类似 src/arm\_pkg/arm\_pkg/urdf\_ik.py，将反解的结果播报出来，对应的 urdf 在 src/arm\_pkg/urdf/genkiarm.urdf
+
+> 由于验证起来比较复杂，需要启动多个节点，帮我创建一个 launch 文件，在 arm_pkg 中创建，取名为 arm_catch_box，要求启动 usb camera 节点，要求启动 arm_joint_node.py（接收角度，驱动舵机） 节点，启动物体识别 box_detect_node 节点，启动 box_tf 节点，启动 arm_catch_box_node 节点（就是图中所有的节点都启动）
+
+#### 开启我们最后的验证
+
+> 在 src/arm_pkg/arm_pkg/arm_catch_box_node.py 中，收到 tf 转换后的坐标，将 z 轴默认提高 0.2，再反解后的角度信息，通过主题发布给我们的 joint 节点，驱动机械臂转动
+
+---
+现在会驱动了，还要抓取
+
+> 在 arm_pkg 中创建一个节点 arm_catch_box_node 2（根据），要求参考 arm_catch_box_node 实现，首先记住这个坐标点，我们认为是目标点，接着创建一个新的坐标点，相比目标点升高 0.2 m，整个流程是机械臂收到坐标信息后，将末端的关节打开，去到目标位置，再将末端的关节关闭，接着抬起机械臂到创建的新坐标（抓取的动作）要求做操作的过程中不要去接收 tf 转换后的数据
+
+然后把之前那个 arm_catch_box_node 代替掉即可
+
+## 总结
+总结上面的 5 个节点：
+
+| 节点                    | 接收                                  | 发布                           | 作用                                     |
+| --------------------- | ----------------------------------- | ---------------------------- | -------------------------------------- |
+| `usb_cam`             | USB 摄像头画面                           | `/image_raw`、`/camera_info`  | 采集摄像头图像并转换为 ROS 图像消息                   |
+| `box_detect_node`     | `/image_raw`                        | `/box_center`                | 通过 HSV 等方法识别箱子，发布箱子中心像素坐标              |
+| `box_tf_node`         | `/box_center`                       | `/box_position`、`/tf_static` | 把像素坐标转换成机械臂 `base_link` 坐标系下的米制 XYZ 坐标 |
+| `arm_catch_box_node2` | `/box_position`、`/arm_joint_angles` | `/cmd_angles`                | 保存目标点、创建抬升点、执行逆解并按顺序发布抓取动作             |
+| `arm_joint_node`      | `/cmd_angles`                       | `/arm_joint_angles`          | 将目标角度发送给机械臂舵机，同时发布当前关节角反馈              |
+
+```mermaid
+flowchart TD
+    CAMERA["USB 摄像头"] -->|视频画面| USB["usb_cam"]
+
+    USB -->|"/image_raw<br/>sensor_msgs/Image"| DETECT["box_detect_node"]
+
+    DETECT -->|"/box_center<br/>像素坐标"| TF["box_tf_node"]
+
+    TF -->|"/box_position<br/>base_link 米制坐标"| CATCH["arm_catch_box_node2"]
+
+    JOINT -->|"/arm_joint_angles<br/>当前关节反馈"| CATCH
+
+    CATCH --> SAVE["保存目标点<br/>[x, y, z]"]
+    SAVE --> LIFT["创建抬升点<br/>[x, y, z + 0.2]"]
+    LIFT --> IK["目标点和抬升点逆解"]
+
+    IK -->|反解失败| CANCEL["取消整个抓取"]
+    IK -->|反解成功| OPEN["打开夹爪"]
+    OPEN --> MOVE["移动到目标点"]
+    MOVE --> CLOSE["关闭夹爪"]
+    CLOSE --> RAISE["移动到抬升点"]
+
+    RAISE -->|"/cmd_angles<br/>六个关节目标角度"| JOINT["arm_joint_node"]
+
+    JOINT --> DRIVER["串口舵机驱动"]
+```
 
