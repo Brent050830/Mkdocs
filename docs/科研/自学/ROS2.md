@@ -1183,6 +1183,16 @@ Nav 2 goal 工具（也是按住拖动）
 - `ros2 run rqt_tf_tree rqt_tf_tree`：查看 TFtree
 - `ros2 run rqt_graph rqt_graph`：节点 - 话题关系图
 - `ros2 topic echo /scan` : 查看某个节点发布的 topic 的内容
+- `ros2 lifecycle get /节点名`：检查生命周期，常见的输出为：
+
+```python
+unconfigured [1]
+inactive [2]
+active [3]
+finalized [4]
+```
+
+- 查看有哪些生命周期节点：`ros2 lifecycle nodes`，查看节点支持哪些状态转换：`ros2 lifecycle list /amcl`
 
 #### 优化导航速度和膨胀半径
 修改的部分就是控制器服务器相关节点中进行
@@ -1246,3 +1256,109 @@ controller_server:
 ---
 膨胀半径，一般设置为机器人的半径：在代价地图中  
 同样的 nav_params.yaml 中 `inflation_radius: 0.7`（全局和本地代价地图中都要修改）
+
+#### 优化机器人到点精度
+之前的精度是不够高的：
+
+```python
+    general_goal_checker:
+      stateful: True
+      plugin: "nav2_controller::SimpleGoalChecker"
+      xy_goal_tolerance: 0.25
+      yaw_goal_tolerance: 0.25
+```
+
+这个就是到点精度的确定：
+
+### 导航应用开发
+#### 使用话题初始化机器人位姿
+
+> ros 2 node info /amcl
+
+查看这个节点的信息：
+
+```ymal
+/amcl
+  Subscribers:
+    /bond: bond/msg/Status
+    /clock: rosgraph_msgs/msg/Clock
+    /initialpose: geometry_msgs/msg/PoseWithCovarianceStamped
+    /map: nav_msgs/msg/OccupancyGrid
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /scan: sensor_msgs/msg/LaserScan
+    /tf: tf2_msgs/msg/TFMessage
+    /tf_static: tf2_msgs/msg/TFMessage
+  Publishers:
+    /amcl/transition_event: lifecycle_msgs/msg/TransitionEvent
+    /amcl_pose: geometry_msgs/msg/PoseWithCovarianceStamped
+    /bond: bond/msg/Status
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /particle_cloud: nav2_msgs/msg/ParticleCloud
+    /rosout: rcl_interfaces/msg/Log
+    /tf: tf2_msgs/msg/TFMessage
+  Service Servers:
+    /amcl/change_state: lifecycle_msgs/srv/ChangeState
+    /amcl/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /amcl/get_available_states: lifecycle_msgs/srv/GetAvailableStates
+    /amcl/get_available_transitions: lifecycle_msgs/srv/GetAvailableTransitions
+    /amcl/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /amcl/get_parameters: rcl_interfaces/srv/GetParameters
+    /amcl/get_state: lifecycle_msgs/srv/GetState
+    /amcl/get_transition_graph: lifecycle_msgs/srv/GetAvailableTransitions
+    /amcl/get_type_description: type_description_interfaces/srv/GetTypeDescription
+    /amcl/list_parameters: rcl_interfaces/srv/ListParameters
+    /amcl/set_parameters: rcl_interfaces/srv/SetParameters
+    /amcl/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+    /reinitialize_global_localization: std_srvs/srv/Empty
+    /request_nomotion_update: std_srvs/srv/Empty
+    /set_initial_pose: nav2_msgs/srv/SetInitialPose
+  Service Clients:
+
+  Action Servers:
+
+  Action Clients:
+
+```
+
+![](png/Pasted%20image%2020260827150337.png)
+
+现在已经完全可以实现导航的命令
+
+现在怎么自动实现初始定位：  
+`ros2 topic pub /initialpose geometry_msgs/msg/PoseWithCovarianceStamped  
+"{header: {frame_id: 'map'}}" --once `: 调用这个命令初始化
+
+```python
+from geometry_msgs.msg import PoseStamped
+from nav2_simple_commander.robot_navigator import BasicNavigator
+import rclpy
+
+def main():
+    rclpy.init()
+    navigator = BasicNavigator()
+
+    # 设置初始位姿
+    initial_pose = PoseStamped()
+    initial_pose.header.frame_id = 'map'
+    initial_pose.header.stamp = navigator.get_clock().now().to_msg()
+    initial_pose.pose.position.x = 0.0
+    initial_pose.pose.position.y = 0.0
+    initial_pose.pose.orientation.w = 1.0
+
+    navigator.setInitialPose(initial_pose)
+
+    # 等待导航器准备就绪
+    navigator.waitUntilNav2Active()
+    rclpy.spin(navigator)
+
+    rclpy.shutdown()
+```
+
+增加自动初始化定位的代码
+
+然后再 setup
+`ros2 run fish_application init_robot_pose`
+
+现在就可以自动初始化位姿了
+
+#### 获取机器人的实时位置
