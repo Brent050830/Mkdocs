@@ -1356,9 +1356,103 @@ def main():
 
 增加自动初始化定位的代码
 
-然后再 setup
+然后再 setup  
 `ros2 run fish_application init_robot_pose`
 
 现在就可以自动初始化位姿了
 
 #### 获取机器人的实时位置
+`ros2 run fish_application get_robot_pose`
+
+执行这个就会获得机器人的实时位置信息
+
+map,odom（里程计下的）
+
+#### 调用接口进行单点导航
+`ros2 action list -t`：这是动作的列表
+
+```cmd
+ros2 action send_goal /navigate_to_pose nav2_msgs/action/NavigateToPose \
+"{pose: {header: {frame_id: 'map'}, pose: {position: {x: 2.0, y: 1.0, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}}" \
+--feedback
+```
+
+然后就会自动执行
+
+用代码完成与命令行相同的功能
+
+action 实际上是由服务和话题共同实现的
+
+```text
+Package
+= 装程序和资源的“文件夹/功能模块”
+
+Node
+= 真正运行起来干活的程序
+
+Message
+= Topic 上传输的数据格式
+
+Topic
+= 持续通信通道，一对多、多对多
+
+Service
+= 请求一次，回答一次
+
+Action
+= 长时间任务：
+  Goal + Feedback + Result + Cancel
+```
+
+比如 nav 2 的：
+
+```text
+Package
+nav2_bt_navigator
+        │
+        ↓
+Node
+/bt_navigator
+        │
+        ↓
+Action
+/navigate_to_pose
+        │
+        ↓
+Action Type
+nav2_msgs/action/NavigateToPose
+        │
+        ├── Goal
+        │    目标位置
+        │
+        ├── Feedback
+        │    剩余距离、导航时间...
+        │
+        └── Result
+             成功或失败
+```
+
+![](png/Pasted%20image%2020260827165115.png)
+
+```cmd
+ros2 run fish_application nav_to_pose
+```
+
+使用代码发布目标位置
+
+#### 使用接口完成路点导航
+ 多点的导航  
+ `ros2 interface show nav2_msgs/action/FollowWaypoints`：调用这个命令显示该动作的信息（如何调用，输出是什么，反馈值等等）
+
+`ros2 run fish_application waypoint_follower` 调用这个 node，做多路点的动作
+
+### 巡检机器人的项目实战
+- 巡检机器人能够在不同目标点之间进行循环移动
+- 到达每个目标点时播放对应的语音提示
+- 达到目标点时，通过摄像头拍摄实时地图并保存到本地
+
+![](png/Pasted%20image%2020260827171118.png)
+
+整体的框架
+
+#### 编写巡检控制节点
