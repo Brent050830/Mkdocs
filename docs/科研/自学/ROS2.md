@@ -999,3 +999,182 @@ Nav 2（导航 2）
 #### 安装
 ![](png/Pasted%20image%2020260826113331.png)
 
+#### 导航条件
+- ROS 2 通信：节点、话题、服务、动作等等基本概念
+- 生命周期的管理：熟悉 ROS 2 中的生命周期节点，理解节点的启动、配置、激活等等
+- rbiz 2：进行可视化调试
+- URDF：描述机器人模型
+- TF 变换：确保机器人定位自身和周围的环境
+
+slam toolbox 是提供了丰富的数据处理和滤波函数，以及地图构建和环境建模工具
+
+**功能**：
+
+- 算法集成：滤波，基于图优化
+- 数据处理：支持激光雷达、摄像头、IMU 等多种传感器数据的处理
+- 地图构建：利用传感器数据和机器人运动信息构建准确的地图，并进行更新和优化
+- 模块化设计
+
+### slam toolbox 功能说明
+
+```cmd
+slam_toolbox async_slam_toolbox_node
+slam_toolbox lifelong_slam_toolbox_node
+slam_toolbox localization_slam_toolbox_node
+slam_toolbox map_and_localization_slam_toolbox_node
+slam_toolbox merge_maps_kinematic 多地图合并
+slam_toolbox sync_slam_toolbox_node
+
+```
+
+这就是里面所有的节点
+
+- sync_slam_toolbox_node：同步节点：等所有的传感器数据到达后处理，延迟高，适合对数据一致性和准确性要求高的，实时性要求不高的
+- slam_toolbox async_slam_toolbox_node：异步节点，相反，立即处理已经接收的数据，适合对实时性要求高，一致性和准确性要求低的场景
+	- 订阅：/scan,/tf：扫描数据，经过变换的数据
+	- 发布数据：/map,/pose：地图以及机器人的位置
+	- 发布服务：save_map：保存地图
+
+### slam 基本使用
+视觉，激光 slam 技术（激光深度）  
+![](png/Pasted%20image%2020260826160738.png)
+
+现在模拟了，但是有着很大的误差，而 slam 就是通过技术实现滤波建图
+
+依靠全局路径规划、局部路径、恢复行为实现
+
+### 构建地图
+`ros2 launch fishbot_description gazebo_sim.launch.py`：运行代码  
+`ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True` 使用在线异步建图的 slam 工具  
+`rviz2`：查看地图，使用 Gazebo 进行建图
+
+![](png/Pasted%20image%2020260826170006.png)
+
+链式的信息图
+
+在这个 rviz 2 框中，找到 map,robot,TF 进行设计
+
+![](png/Pasted%20image%2020260826191409.png)
+
+这就是建立好的图，slam 还有的作用就是能够
+
+### 将地图保存
+新建文件，运行 `ros2 run nav2_map_server map_saver_cli -f room` 保存这个地图
+
+```yaml
+image: room.pgm
+mode: trinary
+resolution: 0.050
+origin: [-6.500, -5.500, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+```
+
+### nav 2 介绍
+行为树：![](png/Pasted%20image%2020260826192716.png)
+
+规划器服务器规划全局的地图，之后给到控制器服务器，该服务器再结合实时的感知数据生成代价地图，最后当代价地图生成的路线不行时，启动恢复器服务器进行恢复操作
+
+#### 配置参数
+
+> cp /opt/ros/jazzy/share/nav 2_bringup/params/nav 2_params.yaml .
+
+新建一个参数的文件（各个节点的参数）  
+搜索 topic 就可以看见  
+将机器人的半径改为 0.12
+
+#### 编写 launch 启动导航
+
+```python
+import os
+import launch
+import launch_ros
+from ament_index_python.packages import get_package_share_directory
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+
+
+def generate_launch_description():
+    # 获取与拼接默认路径
+    fishbot_navigation2_dir = get_package_share_directory(
+        'fishbot_navigation2')
+    nav2_bringup_dir = get_package_share_directory('nav2_bringup')
+    rviz_config_dir = os.path.join(
+        nav2_bringup_dir, 'rviz', 'nav2_default_view.rviz')
+    
+    # 创建 Launch 配置
+    use_sim_time = launch.substitutions.LaunchConfiguration(
+        'use_sim_time', default='true')
+    map_yaml_path = launch.substitutions.LaunchConfiguration(
+        'map', default=os.path.join(fishbot_navigation2_dir, 'maps', 'room.yaml'))
+    nav2_param_path = launch.substitutions.LaunchConfiguration(
+        'params_file', default=os.path.join(fishbot_navigation2_dir, 'config', 'nav2_params.yaml'))
+
+    return launch.LaunchDescription([
+        # 声明新的 Launch 参数
+        launch.actions.DeclareLaunchArgument('use_sim_time', default_value=use_sim_time,
+                                             description='Use simulation (Gazebo) clock if true'),
+        launch.actions.DeclareLaunchArgument('map', default_value=map_yaml_path,
+                                             description='Full path to map file to load'),
+        launch.actions.DeclareLaunchArgument('params_file', default_value=nav2_param_path,
+                                             description='Full path to param file to load'),
+
+        launch.actions.IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                [nav2_bringup_dir, '/launch', '/bringup_launch.py']),
+            # 使用 Launch 参数替换原有参数
+            launch_arguments={
+                'map': map_yaml_path,
+                'use_sim_time': use_sim_time,
+                'params_file': nav2_param_path}.items(),
+        ),
+        launch_ros.actions.Node(
+            package='rviz2',
+            executable='rviz2',
+            name='rviz2',
+            arguments=['-d', rviz_config_dir],
+            parameters=[{'use_sim_time': use_sim_time}],
+            output='screen'),
+    ])
+```
+
+然后进行拷贝的命令
+
+进行仿真：
+
+```python
+cd ~/chapt6/chapt6_ws
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+
+ros2 launch fishbot_description gazebo_sim.launch.py
+```
+
+之后启动 nav 2  
+: `ros2 launch  fish_navigation2 navigation2_launch.py`
+
+```python
+cd ~/chapt6/chapt6_ws
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+
+ros2 launch fish_navigation2 navigation2_launch.py
+```
+
+`rqt` 查看链条
+
+启动 slam
+
+现在是好的  
+![](png/Pasted%20image%2020260826211645.png)  
+我们现在就完全启动了
+
+### 单点与路点导航
+Nav 2 goal 工具（也是按住拖动）  
+![](png/Pasted%20image%2020260826211817.png)  
+蓝色的部分为局部的路径规划（局部代价的部分）
+
+点击取消，还有左下角的路点的模式  
+还是使用 goal 工具，之后点击 start
+
+#### 导航时，动态避障
