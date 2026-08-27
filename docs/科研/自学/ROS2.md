@@ -1178,3 +1178,71 @@ Nav 2 goal 工具（也是按住拖动）
 还是使用 goal 工具，之后点击 start
 
 #### 导航时，动态避障
+
+常用的一些查看节点通信图的指令：
+- `ros2 run rqt_tf_tree rqt_tf_tree`：查看 TFtree
+- `ros2 run rqt_graph rqt_graph`：节点 - 话题关系图
+- `ros2 topic echo /scan` : 查看某个节点发布的 topic 的内容
+
+#### 优化导航速度和膨胀半径
+修改的部分就是控制器服务器相关节点中进行
+
+```python
+controller_server:
+  ros__parameters:
+    controller_frequency: 20.0
+    costmap_update_timeout: 0.30
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.5
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 0.3
+    progress_checker_plugins: ["progress_checker"]
+    goal_checker_plugins: ["general_goal_checker"] # "precise_goal_checker"
+    controller_plugins: ["FollowPath"]
+    use_realtime_priority: false
+
+    # Progress checker parameters
+    progress_checker:
+      plugin: "nav2_controller::SimpleProgressChecker"
+      required_movement_radius: 0.5
+      movement_time_allowance: 10.0
+    # Goal checker parameters
+    #precise_goal_checker:
+    #  plugin: "nav2_controller::SimpleGoalChecker"
+    #  xy_goal_tolerance: 0.25
+    #  yaw_goal_tolerance: 0.25
+    #  stateful: True
+    general_goal_checker:
+      stateful: True
+      plugin: "nav2_controller::SimpleGoalChecker"
+      xy_goal_tolerance: 0.25
+      yaw_goal_tolerance: 0.25
+    FollowPath:
+      plugin: "nav2_mppi_controller::MPPIController"
+      time_steps: 56
+      model_dt: 0.05
+      batch_size: 2000
+      ax_max: 3.0
+      ax_min: -3.0
+      ay_max: 3.0
+      ay_min: -3.0
+      az_max: 3.5
+      vx_std: 0.2
+      vy_std: 0.2
+      wz_std: 0.4
+      vx_max: 0.5
+      vx_min: -0.35
+      vy_max: 0.5
+      wz_max: 1.9
+      iteration_count: 1
+      prune_distance: 1.7
+      transform_tolerance: 0.1
+      temperature: 0.3
+      gamma: 0.015
+```
+
+在这个服务器中进行参数的修改，然后可以查看 cmd_vel 这个 topic 看修改的效果
+
+---
+膨胀半径，一般设置为机器人的半径：在代价地图中  
+同样的 nav_params.yaml 中 `inflation_radius: 0.7`（全局和本地代价地图中都要修改）
