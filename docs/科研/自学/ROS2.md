@@ -1456,3 +1456,72 @@ ros2 run fish_application nav_to_pose
 整体的框架
 
 #### 编写巡检控制节点
+如何生成该 pkg 下的配置文件，首先新建 config 文件夹和响应的 yaml 文件  
+然后使用自动生成：
+
+- 构建，source
+- `ros2 param --help` : 帮助文件
+- `ros2 param dump /partol_node`：生成相应的配置文件
+- 再复制到我们新建的文件中去
+- 最后再写入我们的 setup.py 文件，重建  
+	![](png/Pasted%20image%2020260827202837.png)
+
+现在效果还是很好的
+
+## 导航进阶（使用自己的规划器与控制器）
+### ROS 2 的插件机制
+比如 rqt 的 TF 树插件  
+我们要在 nav 中使用自己的规划器也要用到插件
+
+#### pluginlib 的介绍与安装
+![](png/Pasted%20image%2020260827203529.png)
+
+有一个内加载器的东西  
+这个东西已经安装了
+
+#### 定义插件抽象类
+ClassLoader
+
+抽象类：子类继承父类就有父类的方法（比如继承 node 就有创建发布者和接收者的方法）
+
+```python
+virtual void start() = 0; # 纯虚函数
+```
+
+类中有这个的就是抽象类，抽象类只能被继承，不能被实例化（定义了一种规范，都有这个虚函数的接口）
+
+相当于函数的模版
+
+```c++
+#ifndef MOTION_CONTROL_INTERFACE_HPP
+#define MOTION_CONTROL_INTERFACE_HPP
+
+namespace motion_control_system{
+
+    class MMotionControler
+    {
+        private:
+        public:
+            virtual void start() = 0;
+            virtual void stop() = 0;
+    };
+
+}
+
+#endif // MOTION_CONTROL_INTERFACE_HPP
+```
+
+#### 编写第一个插件
+需求分析：创建运动插件，运动控制器通过调用不同插件实现不同方式运动  
+![](png/Pasted%20image%2020260827205203.png)
+
+控制器能加载这些不同的插件
+
+子类，父类
+
+- cpp 文件：定义动态运行库
+- xml 文件：库的描述
+- Cmake 文件
+- 现在就有 lib 下的动态运行库了，.so 后缀的
+
+以上就是第一个插件
