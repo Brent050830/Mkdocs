@@ -1525,3 +1525,192 @@ namespace motion_control_system{
 - 现在就有 lib 下的动态运行库了，.so 后缀的
 
 以上就是第一个插件
+
+#### 编写插件测试程序
+
+```c++
+#include "motion_control_system/motion_control_interface.hpp"
+#include <pluginlib/class_loader.hpp>
+
+int main(int argc, char **argv) {
+  // 判断参数数量是否合法
+  if (argc != 2)
+    return 0;
+  // 通过命令行参数，选择要加载的插件,argv[0]是可执行文件名，argv[1]表示参数名
+  std::string controller_name = argv[1];
+  // 1.通过功能包名称和基类名称创建控制器加载器
+  pluginlib::ClassLoader<motion_control_system::MotionController>
+      controller_loader("motion_control_system",
+                        "motion_control_system::MotionController");
+  // 2.使用加载器加载指定名称的插件，返回的是指定插件类的对象的指针
+  auto controller = controller_loader.createSharedInstance(controller_name);
+  // 3.调用插件的方法
+  controller->start();
+  controller->stop();
+  return 0;
+}
+```
+
+```cmd
+ros2 run motion_control_system test_plugin motion_control_system/SpinMotionController %%要加载的插件的名称（位置），在xml中有%%
+SpinMotionController::start
+SpinMotionController::stop
+```
+
+就是一个**插件管理器**，通过动态加载动态库以及约定好的 C 接口来创建类对象
+
+### 自定义导航规划器
+#### 自定义规划器的介绍
+位置、路径、占据栅格地图
+
+```cmd
+S ros2 interface show nav_msgs/msg/Path 
+$ ros2 interface show geometry_msgs/msg/PoseStamped
+S ros2 interface show nav_msgs/msg/OccupancyGrid
+```
+
+- `ros2 interface show geometry_msgs/msg/PoseStamped` : 获取位置
+- `ros2 interface show nav_msgs/msg/OccupancyGrid`：栅格地图（根据像素值的范围确定是否有障碍物）（一个像素点代表 0.05 m）
+- `ros2 interface show nav_msgs/msg/Path `：路径：PoseStamped[] poses，数组构成的
+
+地图中的数据是左上角为 零点  
+![](png/Pasted%20image%2020260828104656.png)
+
+通过在地图上几行几列来定位是否有障碍物
+
+---
+
+#### 搭建规划器插件框架
+- 插件类：`CustomPlanner`
+	- 继承：`nav_core::GlobalPlanner`
+	- 重写基类的五个纯虚函数
+		- `configure`：插件配置（TF,node）
+		- `createPlan`：创建路径
+
+- 创建包：`ros2 pkg create nav2_custom_planner --dependencies pluginlib nav2_core`
+- 然后定义一个类继承 nav 2 的父类：
+
+```c++
+#ifndef NAV2_CUSTOM_PLANNER__NAV2_CUSTOM_PLANNER_HPP_
+#define NAV2_CUSTOM_PLANNER__NAV2_CUSTOM_PLANNER_HPP_
+#include <memory>
+#include <string>
+#include "geometry_msgs/msg/point.hpp"
+#include "geometry_msgs/msg/pose_stamped.hpp"
+#include "rclcpp/rclcpp.hpp"
+#include "nav2_core/global_planner.hpp"
+#include "nav2_costmap_2d/costmap_2d_ros.hpp"
+#include "nav2_util/lifecycle_node.hpp"
+#include "nav2_util/robot_utils.hpp"
+#include "nav_msgs/msg/path.hpp"
+
+namespace nav2_custom_planner {
+// 自定义导航规划器类
+class CustomPlanner : public nav2_core::GlobalPlanner {
+public:
+  CustomPlanner() = default;
+  ~CustomPlanner() = default;
+  // 插件配置方法
+  void configure(
+      const rclcpp_lifecycle::LifecycleNode::WeakPtr &parent, std::string name,
+      std::shared_ptr<tf2_ros::Buffer> tf,
+      std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros) override;
+  // 插件清理方法
+  void cleanup() override;
+  // 插件激活方法
+  void activate() override;
+  // 插件停用方法
+  void deactivate() override;
+  // 为给定的起始和目标位姿创建路径的方法
+  nav_msgs::msg::Path
+  createPlan(const geometry_msgs::msg::PoseStamped &start,
+             const geometry_msgs::msg::PoseStamped &goal) override;
+
+private:
+  // 坐标变换缓存指针，可用于查询坐标关系
+  std::shared_ptr<tf2_ros::Buffer> tf_;
+  // 节点指针
+  nav2_util::LifecycleNode::SharedPtr node_;
+  // 全局代价地图
+  nav2_costmap_2d::Costmap2D *costmap_;
+  // 全局代价地图的坐标系
+  std::string global_frame_, name_;
+  // 插值分辨率
+  double interpolation_resolution_;
+};
+
+} // namespace nav2_custom_planner
+
+#endif // NAV2_CUSTOM_PLANNER__NAV2_CUSTOM_PLANNER_HPP_
+```
+
+生命周期节点
+
+- 然后创建 cpp 文件
+- 之后创建插件描述文件 xml(写入路径，父类、子类名称)
+
+```xml
+<library path="nav2_custom_planner_plugin">
+	<class name="nav2_custom_planner/CustomPlanner" type="nav2_custom_planner::CustomPlanner"  base_class_type="nav2_core::GlobalPlanner">
+	  <description>是一个自定义示例插件，用于生成自定义路径。</description>
+	</class>
+</library>
+```
+
+- 编写 Cmake 文件：
+
+```txt
+cmake_minimum_required(VERSION 3.8)
+project(nav2_custom_planner)
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+# find dependencies
+find_package(ament_cmake REQUIRED)
+find_package(nav2_core REQUIRED)
+find_package(pluginlib REQUIRED)
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  # the following line skips the linter which checks for copyrights
+  # comment the line when a copyright and license is added to all source files
+  set(ament_cmake_copyright_FOUND TRUE)
+  # the following line skips cpplint (only works in a git repo)
+  # comment the line when this package is in a git repo and when
+  # a copyright and license is added to all source files
+  set(ament_cmake_cpplint_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
+endif()
+
+# 包含头文件目录
+include_directories(include)
+# 定义库名称
+set(library_name ${PROJECT_NAME}_plugin)
+# 创建共享库
+add_library(${library_name} SHARED  src/nav2_custom_planner.cpp)
+# 指定库的依赖关系
+ament_target_dependencies(${library_name} nav2_core pluginlib)
+# 安装库文件到指定目录
+install(TARGETS ${library_name}
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION lib/${PROJECT_NAME}
+)
+# 安装头文件到指定目录
+install(DIRECTORY include/
+  DESTINATION include/ )
+# 导出插件描述文件
+pluginlib_export_plugin_description_file(nav2_core custom_planner_plugin.xml)
+
+ament_package()
+
+```
+
+- 最后再修改一下 packge.xml 文件，加入 `<nav2_core plugin="${prefix}/custom_planner_plugin.xml"/>` 说明一下这个文件即可
+- 最后进行构建，构建好之后我们就可以在 `nav2_custom_planner.cpp` 中编写我们的自定义规划算法
+
+#### 实现自定义规划算法
+最简单的直线路径规划
+
