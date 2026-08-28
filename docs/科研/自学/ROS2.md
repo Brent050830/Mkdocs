@@ -1708,9 +1708,319 @@ ament_package()
 
 ```
 
-- 最后再修改一下 packge.xml 文件，加入 `<nav2_core plugin="${prefix}/custom_planner_plugin.xml"/>` 说明一下这个文件即可
+- 最后再修改一下 package.xml 文件，加入 `<nav2_core plugin="${prefix}/custom_planner_plugin.xml"/>` 说明一下这个文件即可
 - 最后进行构建，构建好之后我们就可以在 `nav2_custom_planner.cpp` 中编写我们的自定义规划算法
 
 #### 实现自定义规划算法
 最简单的直线路径规划
+
+```c++
+#include "nav2_util/node_utils.hpp"
+#include <cmath>
+#include <memory>
+#include <string>
+
+#include "nav2_core/planner_exceptions.hpp"
+#include "nav2_custom_planner/nav2_custom_planner.hpp"
+
+namespace nav2_custom_planner
+{
+
+    void CustomPlanner::configure(
+        const rclcpp_lifecycle::LifecycleNode::WeakPtr &parent, std::string name,
+        std::shared_ptr<tf2_ros::Buffer> tf,
+        std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros)
+    {
+        tf_ = tf;
+        node_ = parent.lock();
+        name_ = name;
+        costmap_ = costmap_ros->getCostmap();
+        global_frame_ = costmap_ros->getGlobalFrameID();
+        // 参数初始化
+        nav2_util::declare_parameter_if_not_declared(
+            node_, name_ + ".interpolation_resolution", rclcpp::ParameterValue(0.1));
+        node_->get_parameter(name_ + ".interpolation_resolution",
+                             interpolation_resolution_);
+    }
+
+    void CustomPlanner::cleanup()
+    {
+        RCLCPP_INFO(node_->get_logger(), "正在清理类型为 CustomPlanner 的插件 %s",
+                    name_.c_str());
+    }
+
+    void CustomPlanner::activate()
+    {
+        RCLCPP_INFO(node_->get_logger(), "正在激活类型为 CustomPlanner 的插件 %s",
+                    name_.c_str());
+    }
+
+    void CustomPlanner::deactivate()
+    {
+        RCLCPP_INFO(node_->get_logger(), "正在停用类型为 CustomPlanner 的插件 %s",
+                    name_.c_str());
+    }
+
+    nav_msgs::msg::Path
+    CustomPlanner::createPlan(const geometry_msgs::msg::PoseStamped &start,
+                              const geometry_msgs::msg::PoseStamped &goal,
+                              std::function<bool()> cancel_checker)
+    {
+        // 1.声明并初始化 global_path
+        nav_msgs::msg::Path global_path;
+        global_path.poses.clear();
+        global_path.header.stamp = node_->now();
+        global_path.header.frame_id = global_frame_;
+
+        // 2.检查目标和起始状态是否在全局坐标系中
+        if (start.header.frame_id != global_frame_)
+        {
+            RCLCPP_ERROR(node_->get_logger(), "规划器仅接受来自 %s 坐标系的起始位置",
+                         global_frame_.c_str());
+            return global_path;
+        }
+
+        if (goal.header.frame_id != global_frame_)
+        {
+            RCLCPP_INFO(node_->get_logger(), "规划器仅接受来自 %s 坐标系的目标位置",
+                        global_frame_.c_str());
+            return global_path;
+        }
+
+        // 3.计算当前插值分辨率 interpolation_resolution_ 下的循环次数和步进值
+        int total_number_of_loop =
+            std::hypot(goal.pose.position.x - start.pose.position.x,
+                       goal.pose.position.y - start.pose.position.y) /
+            interpolation_resolution_;
+        double x_increment =
+            (goal.pose.position.x - start.pose.position.x) / total_number_of_loop;
+        double y_increment =
+            (goal.pose.position.y - start.pose.position.y) / total_number_of_loop;
+
+        // 4. 生成路径
+        for (int i = 0; i < total_number_of_loop; ++i)
+        {
+            if (cancel_checker())
+            {
+                throw nav2_core::PlannerCancelled("规划已取消");
+            }
+
+            geometry_msgs::msg::PoseStamped pose; // 生成一个点
+            pose.pose.position.x = start.pose.position.x + x_increment * i;
+            pose.pose.position.y = start.pose.position.y + y_increment * i;
+            pose.pose.position.z = 0.0;
+            pose.header.stamp = node_->now();
+            pose.header.frame_id = global_frame_;
+            // 将该点放到路径中
+            global_path.poses.push_back(pose);
+        }
+
+        // 5.使用 costmap 检查该条路径是否经过障碍物
+        for (geometry_msgs::msg::PoseStamped pose : global_path.poses)
+        {
+            unsigned int mx, my; // 将点的坐标转换为栅格坐标
+            if (costmap_->worldToMap(pose.pose.position.x, pose.pose.position.y, mx, my))
+            {
+                unsigned char cost = costmap_->getCost(mx, my); // 获取对应栅格的代价值
+                // 如果存在致命障碍物则抛出异常
+                if (cost == nav2_costmap_2d::LETHAL_OBSTACLE)
+                {
+                    RCLCPP_WARN(node_->get_logger(),"在(%f,%f)检测到致命障碍物，规划失败。",
+                        pose.pose.position.x, pose.pose.position.y);
+                    throw nav2_core::PlannerException(
+                        "无法创建目标规划: " + std::to_string(goal.pose.position.x) + "," +
+                        std::to_string(goal.pose.position.y));
+                }
+            }
+        }
+
+        // 6.收尾，将目标点作为路径的最后一个点并返回路径
+        geometry_msgs::msg::PoseStamped goal_pose = goal;
+        goal_pose.header.stamp = node_->now();
+        goal_pose.header.frame_id = global_frame_;
+        global_path.poses.push_back(goal_pose);
+        return global_path;
+    }
+
+} // namespace nav2_custom_planner
+
+#include "pluginlib/class_list_macros.hpp"
+PLUGINLIB_EXPORT_CLASS(nav2_custom_planner::CustomPlanner,
+                       nav2_core::GlobalPlanner)
+
+```
+
+#### 配置导航参数并进行测试：
+由规划服务器进行调用：
+
+在 fishbot_navigation 中的 nav 2_params.yaml 中修改 planner_server 的部分：
+
+```yaml
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 20.0
+    planner_plugins: ["GridBased"]
+    costmap_update_timeout: 1.0
+    GridBased:
+      plugin: "nav2_custom_planner/CustomPlanner" # 名字
+      interpolation_resolution: 0.1
+```
+
+现在重新进行仿真的导航，打开导航之后就会出现下面的日志：
+
+```cmd
+lobal_costmap]: start
+[component_container_isolated-1] [INFO] [1787898374.057819489] [planner_server]: 正在激活类型为 CustomPlanner 的插件 GridBased
+
+```
+
+costmap 为全局的代价地图信息
+
+### 自定义控制器
+#### 介绍
+![](png/Pasted%20image%2020260828143140.png)
+
+我们现在就是自定义了规划器服务器，现在需要新建控制器服务器跟踪路径，实现路径跟踪
+
+#### 搭建控制器插件框架
+- 创建功能包：`ros2 pkg create nav2_custom_controller --build-type ament_cmake --dependencies pluginlib nav2_core`
+- 创建 `custom_controller.hpp`：继承父类
+- 然后新建 `custom_controller.cpp`，进行控制算法的编写（存储、声明参数、实现控制算法等等）
+- 新建插件描述文件：`nav2_custom_controller.xml`
+
+```xml
+<class_libraries>
+    <library path="nav2_custom_controller_plugin">
+        <class type="nav2_custom_controller::CustomController" base_class_type="nav2_core::Controller">
+            <description>
+                自定义导航控制器
+            </description>
+        </class>
+    </library>
+</class_libraries>
+```
+
+- CmakeList 文件编写：声明如何构建
+- 在 pkg.xml 中加入 `<nav2_core plugin="${prefix}/nav2_custom_controller.xml"/>` 表明是 nav 2 的插件，然后指明插件描述文件的名称
+- 构建：`colcon build`
+
+#### 自定义控制算法
+选择与当前位置最近点的下一个点作为目标点
+
+1. 检查路径是否为空
+2. 将机器人当前姿态转换到全局计划坐标系中
+3. 获取最近的目标点和计算角度差
+4. 根据角度差计算线速度和角速度——>根据角度差计算速度，角度差大于 0.3 则原地旋转，否则直行
+
+一个很简单的控制算法
+
+![](png/Pasted%20image%2020260828151102.png)
+
+代码实现：
+
+1. ：(目标点)
+
+```c++
+geometry_msgs::msg::PoseStamped CustomController::getNearestTargetPose(
+    const geometry_msgs::msg::PoseStamped &current_pose) {
+   // 1.遍历路径获取路径中距离当前点最近的索引，存储到 nearest_pose_index
+  using nav2_util::geometry_utils::euclidean_distance;
+  int nearest_pose_index = 0;
+  double min_dist = euclidean_distance(current_pose, global_plan_.poses.at(0));
+  for (unsigned int i = 1; i < global_plan_.poses.size(); i++) {
+    double dist = euclidean_distance(current_pose, global_plan_.poses.at(i));
+    if (dist < min_dist) {
+      nearest_pose_index = i;
+      min_dist = dist;
+    }
+  }
+  // 2.从路径中擦除头部到最近点的路径
+  global_plan_.poses.erase(std::begin(global_plan_.poses),
+                           std::begin(global_plan_.poses) + nearest_pose_index);
+  // 3.如果只有一个点则直接，否则返回最近点的下一个点
+  if (global_plan_.poses.size() == 1) {
+    return global_plan_.poses.at(0);
+  }
+  return global_plan_.poses.at(1);
+}
+```
+
+2. 计算角度差：
+
+```c++
+double CustomController::calculateAngleDifference(
+    const geometry_msgs::msg::PoseStamped &current_pose,
+    const geometry_msgs::msg::PoseStamped &target_pose) {
+ // 计算当前姿态与目标姿态之间的角度差
+  // 1. 获取当前角度
+  float current_robot_yaw = tf2::getYaw(current_pose.pose.orientation);
+  // 2.获取目标点朝向
+  float target_angle =
+      std::atan2(target_pose.pose.position.y - current_pose.pose.position.y,
+                 target_pose.pose.position.x - current_pose.pose.position.x);
+  // 3.计算角度差，并转换到 -M_PI 到 M_PI 之间
+  double angle_diff = target_angle - current_robot_yaw;
+  if (angle_diff < -M_PI) {
+    angle_diff += 2.0 * M_PI;
+  } else if (angle_diff > M_PI) {
+    angle_diff -= 2.0 * M_PI;
+  }
+  return angle_diff;
+}
+```
+
+3. 计算速度的函数：
+
+```c++
+geometry_msgs::msg::TwistStamped CustomController::computeVelocityCommands(
+    const geometry_msgs::msg::PoseStamped &pose,
+    const geometry_msgs::msg::Twist &, nav2_core::GoalChecker *) {
+    // 1. 检查路径是否为空（要么就是没有路，要么就是擦除完了，到终点了）
+  if (global_plan_.poses.empty()) {
+    throw nav2_core::PlannerException("收到长度为零的路径");
+  }
+
+  // 2.将机器人当前姿态转换到全局计划坐标系中
+  geometry_msgs::msg::PoseStamped pose_in_globalframe;
+  if (!nav2_util::transformPoseInTargetFrame(
+          pose, pose_in_globalframe, *tf_, global_plan_.header.frame_id, 0.1)) {
+    throw nav2_core::PlannerException("无法将机器人姿态转换为全局计划的坐标系");
+  }
+
+  // 3.获取最近的目标点和计算角度差
+  auto target_pose = getNearestTargetPose(pose_in_globalframe);
+  auto angle_diff = calculateAngleDifference(pose_in_globalframe, target_pose);
+
+  // 4.根据角度差计算线速度和角速度
+  geometry_msgs::msg::TwistStamped cmd_vel;
+  cmd_vel.header.frame_id = pose_in_globalframe.header.frame_id;
+  cmd_vel.header.stamp = node_->get_clock()->now();
+  // 根据角度差计算速度，角度差大于 0.3 则原地旋转，否则直行
+  if (fabs(angle_diff) > M_PI/10.0) {
+    cmd_vel.twist.linear.x = .0;
+    cmd_vel.twist.angular.z = fabs(angle_diff) / angle_diff * max_angular_speed_;
+  } else {
+    cmd_vel.twist.linear.x = max_linear_speed_;
+    cmd_vel.twist.angular.z = .0;
+  }
+  RCLCPP_INFO(node_->get_logger(), "控制器：%s 发送速度(%f,%f)",
+              plugin_name_.c_str(), cmd_vel.twist.linear.x,
+              cmd_vel.twist.angular.z);
+  return cmd_vel;
+
+}
+```
+
+完成，下一步继续构建即可
+
+#### 配置导航
+参数并测试  
+在 control 中进行 `FollowPath` 修改（nav 2 中修改 `nav2_params.yaml`）
+
+然后进行仿真和运行  
+学习 navigation 2 的中文网
+
+> 如果要在 yaml 中使用 type，就得把插件描述文件中的 name 去掉，我实测是这样
+
+调用的时候使用 name,type 都是可以的
 
