@@ -5,3 +5,10 @@ cedict_ts.u8
 copilot
 .claude
 .claudian
+
+# 大模型知识库（LLM Wiki）——仅本地保存，不随仓库上传
+# 本仓库只上传 docs/ 下的笔记；知识库结构一律忽略
+AGENTS.md
+原始资料 raw/
+知识库 wiki/
+报告 reports/
